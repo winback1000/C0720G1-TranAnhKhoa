@@ -1,0 +1,7 @@
+Mô tả vấn đề: Xuất hiện bọt khí khi đúc nhựa.
+
+1: Tại sao xuất hiện bọt khí?		-khi rót nhựa bị bẫy không khí
+2: Tại sao khi rót nhựa bị bẫy khí?	-áp suất dòng chảy nhựa bị thay đổi khi rót
+3: Tại sao áp suất thay đổi?		-rót quá nhanh
+4: Tại sao rót nhanh?			-tiết kiệm thời gian
+5: Tại sao tiết kiệm thời gian?		-để có thời gian làm những việc khác.
