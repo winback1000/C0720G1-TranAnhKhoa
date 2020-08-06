@@ -1,0 +1,14 @@
+Begin
+	Input N
+	Input A1
+	Max=A1
+	y=2
+	While y<=N
+		Input Ay
+		IF Max<Ay
+			Max=Ay
+		Else Max=Max
+		y=y+1
+		End IF
+	Output Max
+End

@@ -1,0 +1,31 @@
+1. Tính tổng 2 số a và b được nhập vào từ bàn phím.
+
+BEGIN
+	INPUT number1, number2
+	total = number1 + number2
+	OUTPUT total
+END
+
+
+2. Xác định số a có phải là số chẵn không, số a được nhập từ bàn phím.
+
+BEGIN
+	INPUT a
+	IF a mod 2 = 0 (a chia het 2)
+		OUTPUT "La so chan"
+	ELSE
+		OUTPUT "La so le"
+END
+
+
+3. In ra 1000 từ “Hello world”.
+
+BEGIN
+	count = 0
+	
+	WHILE count < 1000
+	DO
+		OUTPUT "Hello world"
+		count = count + 1
+	END DO
+END
