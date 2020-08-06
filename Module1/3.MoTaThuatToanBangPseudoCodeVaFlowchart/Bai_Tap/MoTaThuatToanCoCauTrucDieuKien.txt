@@ -2,19 +2,13 @@ Begin
 	Input M
 	IF M=>75
 		G=A
-	ELSE
-		IF	M=>60
-			G=B
-		ELSE
-			IF	M=>45
-				G=C
-			ELSE
-				IF	M=>35
-					G=D
-				ELSE	G=E
-				END IF
-			END IF
-		END IF
+	ELSE IF	M=>60
+		G=B
+	ELSE IF	M=>45
+		G=C
+	ELSE IF	M=>35
+		G=D
+	ELSE	G=E
 	END IF
 	Output G
 End
