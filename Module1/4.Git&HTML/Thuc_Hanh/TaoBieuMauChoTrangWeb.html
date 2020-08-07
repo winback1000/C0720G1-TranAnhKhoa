@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo Biểu Mẫu Cho Trang Web</title>
+</head>
+<body>
+<form action="/action_page.php">
+    <fieldset>
+        <legend>Personal information</legend>
+    <p><strong>First name</strong></p>
+    <input type="text" name="firstname" value="fill your first name">
+    <br>
+        <p><strong>Last name</strong></p>
+    <input type="text" name="lastname" value="fill your last name">
+    <br><br>
+    <input type="submit" value="Submit">
+    </fieldset>
+</form><br><hr>
+<form action="https://www.google.com/" method="get">
+    <h3>Tìm kiếm:</h3><br>
+    <input type="text" name="search" value="tìm kiếm">
+    <input type="submit" value="Search">
+</form>
+<br>
+<form method="post">
+    <fieldset>
+        <legend><strong>Input types</strong></legend>
+        Account:<br>
+        <input name="account" type="text"><br>
+        Password:<br>
+        <input name="password" type="password"><br>
+        Account type:<br>
+        <label><input name="type" value="Admin" type="radio"/>Page admin</label><br>
+        <label><input name="type" value="Mod" type="radio"/>Moderator</label><br>
+        <label><input name="type" value="Member" type="radio"/>Member</label><br>
+        <label><input name="type" value="Guest" type="radio"/>Guest</label><br><br>
+        <input type="reset" value="Reset"/><input type="submit" value="Submit"/>
+        <br>
+        <h5>Don't have account yet?</h5>
+            <button type="button">
+                <a href="/register.php"><img src="button-dangkyngat.png" height="60" width="200"/></a>
+            </button>
+        <br>
+        <h4>Introduce yourself</h4>
+        <textarea cols="50" rows="5">Write something about yourself</textarea>
+    </fieldset>
+</form>
+</body>
+</html>
