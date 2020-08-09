@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple form</title>
+</head>
+<body>
+    <form action="send to server" method="get">
+        <fieldset>
+            <legend><h2>Order Form</h2></legend>
+            <h3>What would you like to buy?</h3>
+            <select name="item name">
+                <option name="A" value="">A</option>
+                <option name="B" value="">B</option>
+                <option name="C" value="">C</option>
+                <option name="D" value="">D</option>
+            </select><br><br>
+            <H3>How many yould you like to order?</H3>
+            <input type="radio" name="p1" value="p1"/>1 - 10$<br>
+            <input type="radio" name="p2" value="p2"/>2 - 20$<br>
+            <input type="radio" name="p3" value="p3"/>3 - 25$<br>
+            <p>Name <span style="color:red">*</span></p>
+            <input type="text" name="firstname" placeholder="firstname" size="15">
+            <input type="text" name="lastname" placeholder="lastname" size="15">
+            <br><br>
+            <lable>Email</lable><br><br>
+            <input type="text" name="email" size="35"/>
+            <p>Phone Number</p>
+            <input type="text" name="phone1" size="5"> -
+            <input type="text" name="phone2" size="5"> -
+            <input type="text" name="phone3" size="5">
+            <br><br><br>
+            <label><input type="submit" name="Submit" value="submit"></label>
+            <label><input type="reset" name="reset" value="reset"></label>
+        </fieldset>
+    </form>
+</body>
+</html>

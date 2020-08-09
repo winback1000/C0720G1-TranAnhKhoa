@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo Form Đơn </title>
+</head>
+<body>
+<form action="sendtoserver" method="get">
+    <table>
+        <tr>
+            <th align="center" bgcolor="#dc143c" colspan="2"><h4>SỞ THÍCH CỦA BẠN</h4></th>
+        </tr>
+        <tr>
+            <td align="right">Họ và tên</td>
+            <td align="left"><input type="text" name="yourname" value=""/></td>
+        </tr>
+        <tr>
+            <td align="right"><label>Email</label></td>
+            <td align="left"><input type="text" name="email" value=""/></td>
+        </tr>
+        <tr>
+            <td align="right" style="vertical-align: top">Sở thích</td>
+            <td><input type="checkbox" name="hobby" value="">Thể Thao
+                <input type="checkbox" name="hobby" value="">Âm nhạc
+                <input type="checkbox" name="hobby" value="">Đọc sách<br>
+                <input type="checkbox" name="hobby" value="">Lướt web
+                <input type="checkbox" name="hobby" value="">Chơi game
+                <input type="checkbox" name="hobby" value="">Điện ảnh<br>
+                <input type="checkbox" name="hobby" value="">Du lịch<br></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Gửi thông tin">
+                <input type="reset" value="Nhập lại"></td>
+        </tr>
+    </table>
+</form><br>
+<h2>Part 2</h2>
+<form action="sendtoserver" method="get">
+    <table>
+        <tr>
+            <th colspan="2" align="left" bgcolor="#8fbc8f">STUDENT REGISTER</th>
+        </tr>
+        <tr>
+            <td align="left"><label>Full name</label></td>
+            <td><input type="text" name="fullname" value=""></td>
+        </tr>
+        <tr>
+            <td><label>Date of birth</label></td>
+            <td><input type="date" name="birthday" value=""></td>
+        </tr>
+        <tr>
+            <td><label>Sex</label></td>
+            <td><input type="radio" name="sex" value="male">Male
+                <input type="radio" name="sex" value="female">Female</td>
+        </tr>
+        <tr>
+            <td><label>Address</label></td>
+            <td><textarea cols="50" rows="4"></textarea></td>
+        </tr>
+        <tr>
+            <td><label>Class</label></td>
+            <td><select name="class">
+                <option value="A1">A1</option>
+                <option value="A2">A2</option>
+                <option value="A3">A4</option>
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Email</label></td>
+            <td><input type="text" name="email" value=""></td>
+        </tr>
+        <tr>
+            <td><label>Phone number</label></td>
+            <td><input type="Text" name="phonenumber" value=""></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Submit">
+            <input type="reset" value="Reset"</td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

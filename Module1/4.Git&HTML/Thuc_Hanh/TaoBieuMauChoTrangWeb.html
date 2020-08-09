@@ -5,7 +5,7 @@
     <title>Tạo Biểu Mẫu Cho Trang Web</title>
 </head>
 <body>
-<form action="/action_page.php">
+<form action="send to server1" method="get">
     <fieldset>
         <legend>Personal information</legend>
     <p><strong>First name</strong></p>
@@ -17,13 +17,13 @@
     <input type="submit" value="Submit">
     </fieldset>
 </form><br><hr>
-<form action="https://www.google.com/" method="get">
+<form action="https://www.google.com.vn/search" method="get">
     <h3>Tìm kiếm:</h3><br>
     <input type="text" name="search" value="tìm kiếm">
-    <input type="submit" value="Search">
+    <input type="submit" value="search">
 </form>
 <br>
-<form method="post">
+<form action="send to server3" method="post">
     <fieldset>
         <legend><strong>Input types</strong></legend>
         Account:<br>
@@ -35,15 +35,25 @@
         <label><input name="type" value="Mod" type="radio"/>Moderator</label><br>
         <label><input name="type" value="Member" type="radio"/>Member</label><br>
         <label><input name="type" value="Guest" type="radio"/>Guest</label><br><br>
-        <input type="reset" value="Reset"/><input type="submit" value="Submit"/>
-        <br>
-        <h5>Don't have account yet?</h5>
+        <label><h3>Don't have account yet?</h3></label>
             <button type="button">
                 <a href="/register.php"><img src="button-dangkyngat.png" height="60" width="200"/></a>
             </button>
         <br>
+        <label>Current city</label>
+            <select name="city" multiple>
+                <option value="Da Nang">Da Nang</option>
+                <option value="HCM">HCM</option>
+                <option value="Ha Noi">Ha Noi</option>
+                <option value="Other city">Other city</option>
+                <option value="Nha Trang">Nha Trang</option>
+                <option value="Da Lat">Da Lat</option>
+                <option value="Hue">Hue</option>
+                <option value="Hai Phong">Hai Phong</option>
+            </select>
         <h4>Introduce yourself</h4>
-        <textarea cols="50" rows="5">Write something about yourself</textarea>
+        <textarea cols="50" rows="5">Write something about yourself</textarea><br><br>
+        <input type="reset" value="Reset"/><input type="submit" value="Submit"/>
     </fieldset>
 </form>
 </body>
