@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Su kien onchange</title>
+</head>
+<body>
+<h2>Input the amount you want to exchange</h2>
+<table border="1">
+    <tr>
+        <td><input id="amount" type="text" value=""></td>
+        <td><select id="from">
+            <option value="0.00004229">VND</option>
+            <option value="1">USD</option>
+            <option value="0.01">RUB</option>
+            <option value="0.14">CNY</option>
+            <option value="0.74">CAD</option>
+        </select></td>
+        <td><button style="button" onclick="convert()">Convert</button></td>
+        <td style="width: 200px"><div id="result"></div></td>
+        <td><select id="target">
+            <option value="0.00004229">VND</option>
+            <option value="1">USD</option>
+            <option value="0.01">RUB</option>
+            <option value="0.14">CNY</option>
+            <option value="0.74">CAD</option>
+        </select></td>
+    </tr>
+</table>
+<script>
+    function convert() {
+        let a = document.getElementById("amount").value;
+        let from = document.getElementById("from").value;
+        let target = document.getElementById("target").value;
+        let x = (a*from)/target;
+        alert(x)
+        document.getElementById('result').innerHTML = x;
+    }
+</script>
+</body>
+</html>
