@@ -7,8 +7,19 @@
 <body>
     <h1>A Web Page</h1>
     <p id="demo">A Paragraph</p>
-    <button type="button" onclick="myFunction()">Try it</button>
+    <button type="button" onclick="myFunction()">Try it now</button>
     <script src="myScript.js"></script>
+
     <button onclick="alert('xin chao ban!');">click me</button>
+
+    <p id="demo2">Click the button to change the color of this paragraph.</p>
+    <button onclick="changecolor()">try it</button>
+<script>
+    function changecolor() {
+        var x=document.getElementById("demo2")
+        x.style.color="red"
+    }
+</script>
+
 </body>
 </html>
