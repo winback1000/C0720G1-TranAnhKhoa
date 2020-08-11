@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Khai bao va su dung bien</title>
+</head>
+<body>
+<h2>Bai 1</h2>
+<input type="button" value="Start" onclick="bai1()">
+<h2>Bai 2</h2>
+<input type="button" value="Start" onclick="bai2()">
+<h2>Bai 3</h2>
+<input type="button" value="Start" onclick="bai3()">
+    <script>
+        function bai1() {
+            let i = 10;
+            let f = 20.5;
+            let b = true;
+            let s = 'Ha Noi';
+            document.write('i = ' + i);
+            document.write('<br/>');
+            document.write('f = ' + f);
+            document.write('<br/>');
+            document.write('b = ' + b);
+            document.write('<br/>');
+            document.write('s = ' + s);
+        }
+    function bai2() {
+        let width = 20
+        let height = 10
+        let area = width * height
+        document.write('Area = ' + area)
+    }
+    function bai3() {
+        let m = prompt('nhap so thu nhat');
+        let n = prompt('nhap so thu hai');
+        m = parseInt(m);
+        n = parseInt(n);
+        if (m % n == 0){
+            document.write(m+' chia het cho '+n)
+        }
+        else{
+            document.write(m+' khong chia het cho '+n)
+        }
+    }
+    </script>
+</body>
+</html>
