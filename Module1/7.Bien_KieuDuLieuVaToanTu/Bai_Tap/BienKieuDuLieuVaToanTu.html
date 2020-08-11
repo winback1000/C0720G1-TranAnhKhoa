@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bien, kieu du lieu va toan tu</title>
+</head>
+<body>
+    <h4>Bai 1: Tinh diem trung binh</h4>
+    <input type="button" value="Start" onclick="tinhdiemtrungbinh()">
+    <table border="1" style="width: 400px">
+        <tr>
+            <th align="left">Diem vat ly</th>
+            <td style="width: 100px"><p id="physic"></p></td>
+        </tr>
+        <tr>
+            <th align="left">Diem hoa hoc</th>
+            <td><p id="chemistry"></p></td>
+        </tr>
+        <tr>
+            <th align="left">Diem Sinh Hoc</th>
+            <td><p id="biology"></p></td>
+        </tr>
+        <tr>
+            <th align="left">Diem Trung Binh</th>
+            <<td><p id="trungbinh"></p></td>
+        </tr>
+    </table>
+    <h2>Bai 2: chuyen doi do C sang F</h2>
+    <input type="button" value="Start" onclick="tempconvert()">
+    <p id="result"></p>
+    <h2>Bai 3: Tinh dien tich hinh tron</h2>
+    <input type="button" value="Start" onclick="roundarea()">
+    <p id="area"></p>
+    <h2>Bai 4: Tinh chu vi hinh tron</h2>
+    <input type="button" value="Start" onclick="roundperimeter()">
+    <p id="chuvi"></p>
+
+<script>
+    function tinhdiemtrungbinh() {
+        let p = prompt('vui long nhap diem vat ly');
+        p =parseInt(p);
+        let c = prompt('vui long nhap diem hoa hoc');
+        c =parseInt(c);
+        let b = prompt('vui long nhap diem sinh hoc');
+        b =parseInt(b);
+        let t = (p+c+b)/3;
+        document.getElementById("biology").innerHTML=b;
+        document.getElementById("chemistry").innerHTML=c;
+        document.getElementById("physic").innerHTML=p;
+        document.getElementById("trungbinh").innerHTML=t;
+    }
+    function tempconvert() {
+        let tc = prompt('vui long nhap nhiet do celsius');
+        tc = parseInt(tc);
+        let tf = (9*tc/5)+32;
+        document.getElementById("result").innerHTML= (tc + ' độ C tương đương với '+tf+' độ F') ;
+    }
+    function roundarea() {
+        let r = prompt('Nhập bán kính đường tròn');
+        r = parseInt(r);
+        let s = Math.pow(r,2)*Math.PI;
+        document.getElementById("area").innerHTML = ('Dien tich hinh tron co ban kinh '+r+' la '+s);
+    }
+    function roundperimeter() {
+        let d = prompt('Nhap duong kinh duong tron');
+        d = parseInt(d);
+        let perimeter = d*Math.PI;
+        document.getElementById("chuvi").innerHTML = ('Chu vi hinh tron co duong kinh '+d+' la '+perimeter);
+    }
+</script>
+</body>
+</html>
