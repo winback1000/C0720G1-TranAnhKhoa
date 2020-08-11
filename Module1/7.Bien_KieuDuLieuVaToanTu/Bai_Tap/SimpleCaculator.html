@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Caculator</title>
+</head>
+<body>
+    <input type="text" id="geta">
+    <input type="text" id="getb"><br><br>
+    <button type="button" onclick="plus()"><img src="Caculator/plus.png" width="60" height="30"></button>
+    <button onclick="minus()"><img src="Caculator/minus.png" width="60" height="30"></button>
+    <button onclick="multi()"><img src="Caculator/multiple.png" width="60" height="30"></button>
+    <button onclick="divine()"><img src="Caculator/divine.png" width="60" height="30"></button>
+    <br><br>
+    <h3 id="result"></h3>
+<script>
+    function plus() {
+        let a = document.getElementById("geta").value;
+        a=parseInt(a)
+        let b = document.getElementById("getb").value;
+        b=parseInt(b)
+        let p = a+b;
+        document.getElementById("result").innerHTML=('Result Division: '+p);
+    }
+    function minus() {
+        let a = document.getElementById("geta").value;
+        a=parseInt(a)
+        let b = document.getElementById("getb").value;
+        b=parseInt(b)
+        let m = a-b;
+        document.getElementById("result").innerHTML=('Result Division: '+m);
+    }
+    function multi() {
+        let a = document.getElementById("geta").value;
+        a=parseInt(a)
+        let b = document.getElementById("getb").value;
+        b=parseInt(b)
+        let x = a*b;
+        document.getElementById("result").innerHTML=('Result Division: '+x);
+    }
+    function divine() {
+        let a = document.getElementById("geta").value;
+        a=parseInt(a)
+        let b = document.getElementById("getb").value;
+        b=parseInt(b)
+        let d = a/b;
+        document.getElementById("result").innerHTML=('Result Division: '+d);
+    }
+</script>
+</body>
+</html>
