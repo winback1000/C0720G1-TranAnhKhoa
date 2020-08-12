@@ -9,6 +9,7 @@
         <tr>
             <td style="width: 600px; height: 40px" colspan="5" value="0">
                 <input type="text" id="monitor" style="width: 900px; height: 40px" value="0">
+                <p id="monitor2"></p>
             </td>
         </tr>
         <tr>
@@ -20,15 +21,95 @@
         </tr>
     </table>
 <script>
+    let m = 0;
+    let a;
+    let flagplus = false;
+    let flagminus = false;
+    let flagmulti = false;
+    let flagdivine = false;
     function plus() {
-        let p = 0;
-        let a = document.getElementById("monitor").value;
-        let p = p+a;
-        document.getElementById("monitor").innerHTML(p);
+        console.log(m)
+        a = parseFloat(document.getElementById("monitor").value);
+        console.log(a);
+        m += a;
+        document.getElementById("monitor2").innerText=(m);
+        console.log(m)
+        flagplus = true;
+        flagminus = false;
+        flagmulti = false;
+        flagdivine = false;
     }
+    function minus() {
+        console.log(m);
+        a = parseFloat(document.getElementById("monitor").value);
+        if (flagminus == false) {
+            console.log(a);
+            m += a;
+            flagplus = false;
+            flagminus = true;
+            flagmulti = false;
+            flagdivine = false;
 
-
-
+        } else {
+            m = m - a;
+        }
+        document.getElementById("monitor2").innerText=(m);
+        console.log(m);
+    }
+    function multi() {
+        console.log(m);
+        a = parseFloat(document.getElementById("monitor").value);
+        if (flagmulti == false) {
+            console.log(a);
+            m += a;
+            flagplus = false;
+            flagminus = false;
+            flagmulti = true;
+            flagdivine = false;
+        } else {
+            m = m * a;
+        }
+        document.getElementById("monitor2").innerText=(m);
+        console.log(m);
+    }
+    function divine() {
+        console.log(m);
+        a = parseFloat(document.getElementById("monitor").value);
+        if (flagdivine == false) {
+            console.log(a);
+            m += a;
+            flagplus = false;
+            flagminus = false;
+            flagmulti = false;
+            flagdivine = true;
+        } else {
+            m = m / a;
+        }
+        document.getElementById("monitor2").innerText=(m);
+        console.log(m);
+    }
+    function equal() {
+        a = parseFloat(document.getElementById("monitor").value);
+        if (flagplus) {
+            m = m + a;
+        }
+        if (flagminus) {
+            m = m - a;
+        }
+        if (flagmulti) {
+            m = m * a;
+        }
+        if (flagdivine) {
+            m = m / a;
+        }
+        document.getElementById("monitor2").innerText=(m);
+        console.log(m);
+    }
+//    add function clear memory
+//    just 1 flag = true at once (done)
+//    add function M+, M-
+//    and more
+//    display output in the input tab
 </script>
 </body>
 </html>

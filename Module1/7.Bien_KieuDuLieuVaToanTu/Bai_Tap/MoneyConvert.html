@@ -17,7 +17,7 @@
             <option value="0.14">CNY</option>
             <option value="0.74">CAD</option>
         </select></td>
-        <td><button style="button" onclick="convert()">Convert</button></td>
+        <td><button onclick="convert()">Convert</button></td>
         <td style="width: 200px"><div id="result"></div></td>
         <td><select id="target">
             <option value="0.00004229">VND</option>
@@ -30,11 +30,10 @@
 </table>
 <script>
     function convert() {
-        let a = document.getElementById("amount").value;
-        let from = document.getElementById("from").value;
-        let target = document.getElementById("target").value;
+        let a = parseFloat(document.getElementById("amount").value);
+        let from = parseFloat(document.getElementById("from").value);
+        let target = parseFloat(document.getElementById("target").value);
         let x = (a*from)/target;
-        alert(x)
         document.getElementById('result').innerHTML = x;
     }
 </script>
