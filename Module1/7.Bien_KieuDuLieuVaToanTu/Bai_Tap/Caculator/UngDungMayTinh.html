@@ -5,21 +5,20 @@
     <title>Caculator</title>
 </head>
 <body>
-    <table border="1">
-        <tr>
-            <td style="width: 600px; height: 40px" colspan="5" value="0">
-                <input type="text" id="monitor" style="width: 900px; height: 40px" value="0">
-                <p id="monitor2"></p>
-            </td>
-        </tr>
-        <tr>
-            <td><button onclick="plus()"><img src="plus.png"></button></td>
-            <td><button onclick="minus()"><img src="minus.png"></button></td>
-            <td><button onclick="multi()"><img src="multiple.png"></button></td>
-            <td><button onclick="divine()"><img src="divine.png"></button></td>
-            <td><button onclick="equal()"><img src="equal.png"></button></td>
-        </tr>
-    </table>
+<table border="1">
+    <tr>
+        <td style="width: 600px; height: 40px" colspan="5" value="0">
+            <input type="text" id="monitor" style="width: 900px; height: 40px" value="0">
+        </td>
+    </tr>
+    <tr>
+        <td><button onclick="plus()"><img src="plus.png"></button></td>
+        <td><button onclick="minus()"><img src="minus.png"></button></td>
+        <td><button onclick="multi()"><img src="multiple.png"></button></td>
+        <td><button onclick="divine()"><img src="divine.png"></button></td>
+        <td><button onclick="equal()"><img src="equal.png"></button></td>
+    </tr>
+</table>
 <script>
     let m = 0;
     let a;
@@ -32,7 +31,7 @@
         a = parseFloat(document.getElementById("monitor").value);
         console.log(a);
         m += a;
-        document.getElementById("monitor2").innerText=(m);
+        document.getElementById("monitor").value = m;
         console.log(m)
         flagplus = true;
         flagminus = false;
@@ -53,7 +52,7 @@
         } else {
             m = m - a;
         }
-        document.getElementById("monitor2").innerText=(m);
+        document.getElementById("monitor").value = m;
         console.log(m);
     }
     function multi() {
@@ -69,7 +68,7 @@
         } else {
             m = m * a;
         }
-        document.getElementById("monitor2").innerText=(m);
+        document.getElementById("monitor").value = m;
         console.log(m);
     }
     function divine() {
@@ -85,7 +84,7 @@
         } else {
             m = m / a;
         }
-        document.getElementById("monitor2").innerText=(m);
+        document.getElementById("monitor").value = m;
         console.log(m);
     }
     function equal() {
@@ -102,14 +101,19 @@
         if (flagdivine) {
             m = m / a;
         }
-        document.getElementById("monitor2").innerText=(m);
+        document.getElementById("monitor").value = m;
         console.log(m);
+        flagplus = false;
+        flagminus = false;
+        flagmulti = false;
+        flagdivine = false;
     }
-//    add function clear memory (posible)
-//    just 1 flag = true at once (done)
-//    add function M+, M- (posible)
-//    and more (posible)
-//    display output in the input tab (imposible)
+    //    add function clear memory (posible)
+    //    just 1 flag = true at once (done)
+    //    add function M+, M- (posible)
+    //    and more (posible)
+    //    display output in the input tab (imposible)
+//    bug khi thực hiện phép tính sau khi =
 </script>
 </body>
 </html>
