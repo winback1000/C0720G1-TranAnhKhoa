@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap cau truc dieu kien 2</title>
+</head>
+<body>
+    <h2>Task 7</h2>
+    <p>Please input data</p>
+<input type="text" id="soa" style="width: 20px">x^2 + <input type="text" id="sob" style="width: 20px">x +<input type="text" id="soc" style="width: 20px"> = 0
+<br><br>
+<button type="button" onclick="bai7()">Result</button>
+<input type="text" id="ketqua" value="" style="width: 400px">
+<script>
+    function bai7() {
+        let a = parseFloat(document.getElementById('soa').value);
+        let b = parseFloat(document.getElementById('sob').value);
+        let c = parseFloat(document.getElementById('soc').value);
+        let x;
+        let x1;
+        if (a == 0) {
+            x = -c/b;
+            console.log(x)
+            document.getElementById('ketqua').value =('ket qua x = ' +x);
+        }
+        let delta = (b*b) - (4*a*c);
+        console.log("delta = "+delta);
+        if (delta == 0) {
+                x = -b/(2*a);
+                document.getElementById('ketqua').value =('ket qua x1 = x2 = ' +x);
+            } else if (delta < 0) {
+                document.getElementById('ketqua').value =('Phuong trinh vo nghiem');
+            } else if (delta >0) {
+                x = (-b+ Math.sqrt(delta))/(2*a);
+                x1 = (-b- Math.sqrt(delta))/(2*a);
+                document.getElementById('ketqua').value =('x1 ='+x+'    x2 = '+x1);
+            }
+    }
+</script>
+</body>
+</html>

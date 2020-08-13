@@ -19,6 +19,10 @@
     <button type="button" onclick="bai6()">Start</button>
     <h3>Bai 7</h3>
     <button type="button" onclick="bai7()">Start</button>
+    <p>Phí thuê bao bắt buộc là 25 nghìn.</p>
+    <p>600 đồng cho mỗi phút gọi của 50 phút đầu tiên.</p>
+    <p>400 đồng cho mỗi phút gọi của 150 phút tiếp theo.</p>
+    <p>200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.</p>
 <script>
     function bai1() {
         let a = parseFloat(prompt('Please input the first number'));
@@ -83,10 +87,23 @@
         }
     }
     function bai6() {
-
-
+        let a = parseFloat(prompt('Vui long nhap doanh so ban duoc'));
+        let b = parseFloat(prompt('Vui long nhap % hoa hong'));
+        let c = a * b / 100;
+        alert('hoa hong nhan duoc trong thang nay la '+c);
     }
-
+    function bai7() {
+        let a = parseFloat(prompt('Vui long nhap so phut da su dung'));
+        let b;
+        if (a<=50) {
+            b = 25000 + (a*600);
+        } else if (a<=200) {
+            b = (600*50)+25000+(400*(a-50));
+        } else {
+            b = 25000 + (600*50) + (400*100) + (200*(a-200));
+        }
+        alert('phi thue bao la '+b)
+    }
 </script>
 </body>
 </html>
