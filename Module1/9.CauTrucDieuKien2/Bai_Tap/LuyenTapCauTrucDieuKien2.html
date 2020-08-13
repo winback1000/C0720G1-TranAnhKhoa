@@ -10,7 +10,7 @@
 <input type="text" id="soa" style="width: 20px">x^2 + <input type="text" id="sob" style="width: 20px">x +<input type="text" id="soc" style="width: 20px"> = 0
 <br><br>
 <button type="button" onclick="bai7()">Result</button>
-<input type="text" id="ketqua" value="" style="width: 400px">
+<p id="ketqua">Result here</p>
 <script>
     function bai7() {
         let a = parseFloat(document.getElementById('soa').value);
@@ -21,19 +21,19 @@
         if (a == 0) {
             x = -c/b;
             console.log(x)
-            document.getElementById('ketqua').value =('ket qua x = ' +x);
+            document.getElementById('ketqua').innerHTML =('ket qua x = ' +x);
         }
         let delta = (b*b) - (4*a*c);
         console.log("delta = "+delta);
         if (delta == 0) {
                 x = -b/(2*a);
-                document.getElementById('ketqua').value =('ket qua x1 = x2 = ' +x);
+                document.getElementById('ketqua').innerHTML =('ket qua x1 = x2 = ' +x);
             } else if (delta < 0) {
-                document.getElementById('ketqua').value =('Phuong trinh vo nghiem');
+                document.getElementById('ketqua').innerHTML =('Phuong trinh vo nghiem');
             } else if (delta >0) {
                 x = (-b+ Math.sqrt(delta))/(2*a);
                 x1 = (-b- Math.sqrt(delta))/(2*a);
-                document.getElementById('ketqua').value =('x1 ='+x+'    x2 = '+x1);
+            document.getElementById('ketqua').innerHTML =('x1 ='+x+';    x2 = '+x1);
             }
     }
 </script>
