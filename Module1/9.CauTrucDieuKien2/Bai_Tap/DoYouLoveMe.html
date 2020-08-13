@@ -7,19 +7,17 @@
 <body>
     <h1>Do You Love Me???</h1>
     <input type="button" onclick="alert('<3')" style="position: absolute; left: 100px; top: 100px" value="Yes">
-    <input type="button" id="noPosition" onmouseover="randomMove()" style="position: absolute; left: 200px; top: 100px" value="No">
+    <input type="button" id="noPosition" onmouseover="randomMove()" onclick="randomMove()" style="position: absolute; left: 200px; top: 100px" value="No">
 <script>
     let c = window.innerWidth;
     let d = window.innerHeight;
-    console.log(c+','+d)
     function randomMove() {
         let l = document.getElementById('noPosition');
-        let a = parseInt(l.style.left);
-        let b = parseInt(l.style.top);
-        console.log("toa do dau: "+a+","+b);
-        l.style.left = a + (Math.random()*100) + 'px';
-        l.style.top = b + (Math.random()*100) + 'px';
-        console.log("toa do sau: "+a+","+b);
+        let a = 200;
+        let b = 100;
+        l.style.left = a + (Math.random()*(c-200)) + 'px';
+        l.style.top = b + (Math.random()*(d-200)) + 'px';
+        console.log("toa do sau: "+l.style.left+","+l.style.top);
     }
 
 </script>
