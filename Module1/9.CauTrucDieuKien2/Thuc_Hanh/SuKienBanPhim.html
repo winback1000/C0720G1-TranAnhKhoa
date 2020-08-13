@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Su Kien Ban Phim</title>
+</head>
+<body onload="docReady()">
+    <img id="nobita" src="../../7.Bien_KieuDuLieuVaToanTu/Bai_Tap/Caculator/degree.png" style="position: absolute; left: 0; top: 0" height="200" width="180"/>
+<script>
+    var element = document.getElementById("nobita");
+    function upArrowPressed() {
+        element.style.top = parseInt(element.style.top) - 5 + 'px';
+    }
+    function downArrowPressed() {
+        element.style.top = parseInt(element.style.top) + 5 + 'px';
+    }
+    function leftArrowPressed() {
+        element.style.left = parseInt(element.style.left) - 5 + 'px';
+    }
+    function rightArrowPressed() {
+        element.style.left = parseInt(element.style.left) + 5 + 'px';
+    }
+    function moveSelection(evt) {
+        switch (evt.keyCode) {
+            case 65:
+                leftArrowPressed();
+                break;
+            case 68:
+                rightArrowPressed();
+                break;
+            case 87:
+                upArrowPressed();
+                break;
+            case 83:
+                downArrowPressed();
+                break;
+        }
+    }
+    function docReady() {
+        window.addEventListener('keydown', moveSelection);
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Do You Love me</title>
+</head>
+<body>
+    <h1>Do You Love Me???</h1>
+    <input type="button" onclick="alert('<3')" style="position: absolute; left: 100px; top: 100px" value="Yes">
+    <input type="button" id="noPosition" onmouseover="randomMove()" style="position: absolute; left: 200px; top: 100px" value="No">
+<script>
+    let c = window.innerWidth;
+    let d = window.innerHeight;
+    console.log(c+','+d)
+    function randomMove() {
+        let l = document.getElementById('noPosition');
+        let a = parseInt(l.style.left);
+        let b = parseInt(l.style.top);
+        console.log("toa do dau: "+a+","+b);
+        l.style.left = a + (Math.random()*100) + 'px';
+        l.style.top = b + (Math.random()*100) + 'px';
+        console.log("toa do sau: "+a+","+b);
+    }
+
+</script>
+</body>
+</html>

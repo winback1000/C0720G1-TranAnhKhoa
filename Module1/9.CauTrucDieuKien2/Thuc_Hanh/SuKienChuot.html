@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Su Kien Chuot</title>
+</head>
+<body>
+    <form>
+        <img id="myImage" src="../../7.Bien_KieuDuLieuVaToanTu/Bai_Tap/Caculator/equal.png" height="75" width="152"/>
+        <br><br>
+        <input type="button" value="Click Me" onclick="moveRight();" />
+        <button type="button" onclick="moveRight()">Move to the right</button>
+<!--        <button type="default is submit, reload the page after click"-->
+    </form>
+<script>
+     let imgObj= null;
+     imgObj = document.getElementById('myImage');
+     function init() {
+         imgObj = document.getElementById('myImage');
+         imgObj.style.position = 'relative';
+         imgObj.style.left = '0px';
+     }
+     function moveRight() {
+         imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+     }
+     window.onload = init;
+    </script>
+</body>
+</html>

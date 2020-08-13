@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh so ngay trong thang</title>
+</head>
+<body>
+    <input type="text" id="month" value="">
+    <button type="button" onclick="count()">Tinh so ngay</button>
+    <br>
+    <input type="text" id="ketqua" value="">
+<script>
+    function count() {
+    let a = parseInt(document.getElementById('month').value);
+    switch (a) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12: {
+            document.getElementById('ketqua').value= ("thang "+a+" co 30 ngay");
+            break;}
+        case 4:
+        case 6:
+        case 9:
+        case 11: {
+            document.getElementById('ketqua').value= ("thang "+a+" co 31 ngay");
+            break;}
+        case 2: {
+            document.getElementById('ketqua').value= ("thang 2 co 28 hoac 29 ngay");
+            break;}
+    }
+    }
+</script>
+</body>
+</html>

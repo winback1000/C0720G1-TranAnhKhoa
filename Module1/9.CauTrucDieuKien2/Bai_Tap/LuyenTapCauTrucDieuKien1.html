@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap cau truc dieu kien 1</title>
+</head>
+<body>
+    <h3>Bai 1</h3>
+    <button type="button" onclick="bai1()">Start</button>
+    <h3>Bai 2</h3>
+    <button type="button" onclick="bai2()">Start</button>
+    <h3>Bai 3</h3>
+    <button type="button" onclick="bai3()">Start</button>
+    <h3>Bai 4</h3>
+    <button type="button" onclick="bai4()">Start</button>
+    <h3>Bai 5</h3>
+    <button type="button" onclick="bai5()">Start</button>
+    <h3>Bai 6</h3>
+    <button type="button" onclick="bai6()">Start</button>
+    <h3>Bai 7</h3>
+    <button type="button" onclick="bai7()">Start</button>
+<script>
+    function bai1() {
+        let a = parseFloat(prompt('Please input the first number'));
+        let b = parseFloat(prompt('Please input the second number'));
+        if (b == 0) {
+            alert('so thu 2 khong hop le');
+        } else {
+            if (a % b == 0) {
+                alert(a + " chia het cho "+ b);
+            } else  {
+                alert (a + " khong chia het cho "+ b);
+            }
+        }
+    }
+    function bai2() {
+        let a =  parseInt(prompt('Please input the age of the student'));
+        if (a<16) {
+            alert("this student doesn't meet the requirement to study at the 10th grade");
+        } else {
+            alert("this student meets the requirement to study at the 10th grade");
+        }
+    }
+    function bai3() {
+        let a = parseFloat(prompt('Please input the number'));
+        if (a == 0) {
+            alert('so nay bang 0');
+        } else {
+            if (a > 0) {
+                alert(a + " lon hon 0");
+            } else  {
+                alert (a + " nho hon 0");
+            }
+        }
+    }
+    function bai4() {
+        let a = parseFloat(prompt('Please input the first number'));
+        let b = parseFloat(prompt('Please input the second number'));
+        if (b>a) {
+            a = b;
+        }
+        let c = parseFloat(prompt('Please input the third number'));
+        if (c>a) {
+            a = c;
+        }
+        alert('so lon nhat la '+a);
+    }
+    function bai5() {
+        let a = parseFloat(prompt('Please input the test mark'));
+        let b = parseFloat(prompt('Please input the mid term exam mark'));
+        let c = parseFloat(prompt('Please input the end term exam mark'));
+        let d = (a+b+c)/3;
+        if (d>8) {
+            alert('hoc sinh gioi');
+        } else if (d>6) {
+            alert('hoc sinh kha');
+        } else if (d>5) {
+            alert('hoc sinh trung binh');
+        } else if (d>3) {
+            alert('hoc sinh yeu');
+        } else if (d>=0) {
+            alert('hoc sinh nay khong can phai hoc nua');
+        }
+    }
+
+</script>
+</body>
+</html>
