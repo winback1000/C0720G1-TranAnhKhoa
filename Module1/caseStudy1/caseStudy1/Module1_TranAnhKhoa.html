@@ -4,7 +4,18 @@
     <meta charset="UTF-8">
     <title>Module 1 - Tran Anh Khoa</title>
 </head>
+<style>
+    div.ex1 {
+        width: 500px;
+        margin: auto;
+    }
+    div.ex2 {
+        margin: auto;
+        border: 3px solid #73AD21;
+    }
+</style>
 <body>
+<div class="ex1" id="div1">
 <h2>Please tell us some information about you</h2>
     <table>
         <tr>
@@ -44,7 +55,7 @@
             <td align="left"><input id="discount" type="number" >%</td>
         </tr>
         <tr>
-            <th align="right">How many people will stay in our resort?</th>
+            <th align="right">How many people<br>will stay in our resort?</th>
             <td align="left"><input id="people" type="number" ></td>
         </tr>
         <tr>
@@ -71,14 +82,63 @@
                 </select>
             </td>
         </tr>
+    </table>
+<button onclick="getinfo()"; style="position: absolute;left: 500px; top: 400px">Submit</button>
+</div>
+<div class="ext2" id="div2" style="display: none">
+    <h2 id="greeting" value=""></h2>
+    <table border="1">
         <tr>
-            <th align="right">Estimate price</th>
-            <td><input type="text" id="estimatedcost" value="">$</td>
+            <th align="right">Full name: </th>
+            <td align="left" id="profileName"></td>
+        </tr>
+        <tr>
+            <th align="right">Identity number: </th>
+            <td align="left" id="profileIdentityNumber"></td>
+        </tr>
+        <tr>
+            <th align="right">Date of birth: </th>
+            <td align="left" id="profileDateOfBirth"></td>
+        </tr>
+        <tr>
+            <th align="right">Email: </th>
+            <td align="left" id="profileEmail"></td>
+        </tr>
+        <tr>
+            <th align="right">Address: </th>
+            <td align="left" id="profileAddress"></td>
+        </tr>
+        <tr>
+            <th align="right">Vip type: </th>
+            <td align="left" id="profileVipType"></td>
+        </tr>
+        <tr>
+            <th align="right">Discount: </th>
+            <td align="left" id="profileDiscount">%</td>
+        </tr>
+        <tr>
+            <th align="right">How many people<br>will stay in our resort?: </th>
+            <td align="left" id="profileAmountPeople"></td>
+        </tr>
+        <tr>
+            <th align="right">Rent day: </th>
+            <td align="left" id="profileRentDay"></td>
+        </tr>
+        <tr>
+            <th align="right">Service type: </th>
+            <td align="left" id="profileServiceType"></td>
+        </tr>
+        <tr>
+            <th align="right">Room Type: </th>
+            <td align="left" id="profileRoomType"></td>
+        </tr>
+        <tr>
+            <th align="right">Estimate price: </th>
+            <td align="left" id="ProfileEstimatePrice"></td>
         </tr>
     </table>
-<button onclick="getinfo()">Submit</button>
-<br><br>
-
+    <button onclick="edit()"; style="position: absolute;left: 100px; top: 450px">Edit</button>
+</div>
 <script src="Module1_TranAnhKhoa.js"></script>
 </body>
 </html>
