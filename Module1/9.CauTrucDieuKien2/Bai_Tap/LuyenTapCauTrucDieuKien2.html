@@ -5,37 +5,195 @@
     <title>Luyen tap cau truc dieu kien 2</title>
 </head>
 <body>
+    <h2>Task 1</h2>
+    <button type="button" onclick="bai1()">Start</button>
+    <p id="ketqua1">Result</p>
+    <h2>Task 2</h2>
+    <button type="button" onclick="bai2()">Start</button>
+    <p id="ketqua2">Result</p>
+    <h2>Task 3</h2>
+    <button type="button" onclick="bai3()">Start</button>
+    <p id="ketqua3">Result</p>
+    <h2>Task 4</h2>
+    <button type="button" onclick="bai4()">Start</button>
+    <p id="ketqua4">Result</p>
+    <h2>Task 5</h2>
+    <button type="button" onclick="bai5()">Start</button>
+    <p id="ketqua5">Result</p>
+    <h2>Task 6</h2>
+    <button type="button" onclick="bai6()">Start</button>
+    <p id="ketqua6">Result</p>
     <h2>Task 7</h2>
     <p>Please input data</p>
 <input type="text" id="soa" style="width: 20px">x^2 + <input type="text" id="sob" style="width: 20px">x +<input type="text" id="soc" style="width: 20px"> = 0
 <br><br>
 <button type="button" onclick="bai7()">Result</button>
 <p id="ketqua">Result here</p>
+    <h2>Task 8</h2>
+    <button type="button" onclick="bai8()">Start</button>
+    <p id="ketqua8">Result</p>
+    <h2>Task 9</h2>
+    <button type="button" onclick="bai9()">Start</button>
+    <p id="ketqua9">Result</p>
+    <h2>Task 10</h2>
+    <button type="button" onclick="bai10()">Coming soon</button><br>
+    <table border="1">
+        <tr>
+            <th>Nhóm đối tượng khách hàng</th>
+            <th>Giá bán điện<br>
+                (đồng/kWh)</th>
+        </tr>
+        <tr>
+            <td> Bậc 1: Cho kWh từ 0 – 50</td>
+            <td>1.549</td>
+        </tr>
+        <tr>
+            <td>Bậc 2: Cho kWh từ 51 – 100</td>
+            <td>1.600</td>
+        </tr>
+        <tr>
+            <td>Bậc 3: Cho kWh từ 101 – 200	</td>
+            <td>1.858</td>
+        </tr>
+        <tr>
+            <td>Bậc 4: Cho kWh từ 201 – 300</td>
+            <td>2.340</td>
+        </tr>
+        <tr>
+            <td>Bậc 5: Cho kWh từ 301 – 400</td>
+            <td>2.615</td>
+        </tr>
+        <tr>
+            <td>Bậc 6: Cho kWh từ 401 trở lên</td>
+            <td>2.701</td>
+        </tr>
+    </table>
+<table border="1">
+    <tr>
+        <th>Ten Khach Hang</th>
+        <th>So dien da tieu thu<br>kWh</th>
+        <th>Thanh tien<br>VND</th>
+    </tr>
+    <tr>
+        <td>
+            <select>
+                <option>Nguyen Van A</option>
+                <option>Nguyen Van B</option>
+                <option>Nguyen Van C</option>
+            </select>
+        </td>
+        <td>
+            <input type="text" id="soDien" value="">
+        </td>
+        <td>
+            <input type="text" id="soTien" value="">
+        </td>
+    </tr>
+</table>
 <script>
-    function bai7() {
-        let a = parseFloat(document.getElementById('soa').value);
-        let b = parseFloat(document.getElementById('sob').value);
-        let c = parseFloat(document.getElementById('soc').value);
-        let x;
-        let x1;
-        if (a == 0) {
-            x = -c/b;
-            console.log(x)
-            document.getElementById('ketqua').innerHTML =('ket qua x = ' +x);
+    // let p = Math.random()*10;
+    // let flagBai10 = false;
+    // // function boDem() {
+    // //     document.getElementById('soDien').value = (p);
+    // //     p += 1;
+    // //     console.log(p);
+    // function bai10 () {
+    //     if (flagBai10 == false) {
+    //         flagBai10 = true;
+    //              setTimeout(function bodem() {
+    //                 while (flagBai10 == true) {
+    //                     document.getElementById('soDien').value = (p);
+    //                     p += 1;
+    //                     console.log(p);
+    //                 }
+    //             }, 500);
+    //     } else {
+    //         flagBai10 = false;
+    //     }
+    //     console.log(flagBai10);
+    // }
+           function bai1() {
+            let a = parseFloat(prompt('pls input the temperature in Celsius'));
+            let f = (a * 9 / 5) + 32;
+            document.getElementById('ketqua1').innerHTML = (f);
         }
-        let delta = (b*b) - (4*a*c);
-        console.log("delta = "+delta);
-        if (delta == 0) {
-                x = -b/(2*a);
-                document.getElementById('ketqua').innerHTML =('ket qua x1 = x2 = ' +x);
-            } else if (delta < 0) {
-                document.getElementById('ketqua').innerHTML =('Phuong trinh vo nghiem');
-            } else if (delta >0) {
-                x = (-b+ Math.sqrt(delta))/(2*a);
-                x1 = (-b- Math.sqrt(delta))/(2*a);
-            document.getElementById('ketqua').innerHTML =('x1 ='+x+';    x2 = '+x1);
+
+        function bai2() {
+            let a = parseFloat(prompt('pls input the distance in met'));
+            let f = 3.2808 * a;
+            document.getElementById('ketqua2').innerHTML = (f);
+        }
+
+        function bai3() {
+            let a = parseFloat(prompt('pls input the length of an edge'));
+            let f = Math.pow(a, 2);
+            document.getElementById('ketqua3').innerHTML = (f);
+        }
+
+        function bai4() {
+            let a = parseFloat(prompt('pls input the first edge'));
+            let b = parseFloat(prompt('pls input the 2nd edge'));
+            let s = a * b;
+            document.getElementById('ketqua4').innerHTML = (s);
+        }
+
+        function bai5() {
+            let a = parseFloat(prompt('pls input the first edge'));
+            let b = parseFloat(prompt('pls input the 2nd edge'));
+            let s = a * b / 2;
+            document.getElementById('ketqua5').innerHTML = (s);
+        }
+
+        function bai6() {
+            document.getElementById('ketqua6').innerHTML = ('please use the task 7 with the first number = 0');
+        }
+
+        function bai8() {
+            let a = parseFloat(prompt('pls input the number'));
+            if ((a - Math.floor(a) == 0) && (a < 120)) {
+                document.getElementById('ketqua8').innerHTML = ('this number maybe the age of human');
+            } else {
+                document.getElementById('ketqua8').innerHTML = ('this number is not the age of human');
             }
-    }
+        }
+
+        function bai9() {
+            let a = parseFloat(prompt('Please input the first number'));
+            let b = parseFloat(prompt('Please input the 2nd number'));
+            let c = parseFloat(prompt('Please input the 3rd number'));
+            if (((a + b + c) > 0) && (a + b > c) && ((b + c) > a) && (a + c > b)) {
+                document.getElementById('ketqua9').innerHTML = ('They are the edges of a triangles');
+            } else {
+                document.getElementById('ketqua9').innerHTML = ('They are not the edges of a triangles');
+            }
+
+            function bai7() {
+                let a = parseFloat(document.getElementById('soa').value);
+                let b = parseFloat(document.getElementById('sob').value);
+                let c = parseFloat(document.getElementById('soc').value);
+                let x;
+                let x1;
+                if (a == 0) {
+                    x = -c / b;
+                    console.log(x)
+                    document.getElementById('ketqua').innerHTML = ('ket qua x = ' + x);
+                }
+                let delta = (b * b) - (4 * a * c);
+                console.log("delta = " + delta);
+                if (delta == 0) {
+                    x = -b / (2 * a);
+                    document.getElementById('ketqua').innerHTML = ('ket qua x1 = x2 = ' + x);
+                } else if (delta < 0) {
+                    document.getElementById('ketqua').innerHTML = ('Phuong trinh vo nghiem');
+                } else if (delta > 0) {
+                    x = (-b + Math.sqrt(delta)) / (2 * a);
+                    x1 = (-b - Math.sqrt(delta)) / (2 * a);
+                    document.getElementById('ketqua').innerHTML = ('x1 =' + x + '<br>x2 = ' + x1);
+                }
+            }
+        }
+
+
 </script>
 </body>
 </html>

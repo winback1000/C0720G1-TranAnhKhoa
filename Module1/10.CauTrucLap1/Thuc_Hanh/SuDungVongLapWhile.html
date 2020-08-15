@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Su dung vong lap while</title>
+</head>
+<body>
+<h2>Bai 1</h2>
+<button type="button" onclick="bai1()">Start</button>
+<h2>Bai 2</h2>
+<button type="button" onclick="bai2()">Start</button>
+<script>
+    function bai1() {
+        let a = parseInt(prompt('vui long nhap 1 so bat ky, nhap -1 de ket thuc'));
+        let t = 0;
+            while (a != -1) {
+                t = t+ a;
+                document.write(t);
+            }
+    }
+</script>
+</body>
+</html>

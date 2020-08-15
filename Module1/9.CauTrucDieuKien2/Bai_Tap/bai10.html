@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 10</title>
+</head>
+<body>
+<h2>Task 10</h2>
+<button type="button" onclick="bai10(),counter(),money()">Start</button><br>
+<table border="1">
+    <tr>
+        <th>Nhóm đối tượng khách hàng</th>
+        <th>Giá bán điện<br>
+            (đồng/kWh)</th>
+    </tr>
+    <tr>
+        <td> Bậc 1: Cho kWh từ 0 – 50</td>
+        <td>1.549</td>
+    </tr>
+    <tr>
+        <td>Bậc 2: Cho kWh từ 51 – 100</td>
+        <td>1.600</td>
+    </tr>
+    <tr>
+        <td>Bậc 3: Cho kWh từ 101 – 200	</td>
+        <td>1.858</td>
+    </tr>
+    <tr>
+        <td>Bậc 4: Cho kWh từ 201 – 300</td>
+        <td>2.340</td>
+    </tr>
+    <tr>
+        <td>Bậc 5: Cho kWh từ 301 – 400</td>
+        <td>2.615</td>
+    </tr>
+    <tr>
+        <td>Bậc 6: Cho kWh từ 401 trở lên</td>
+        <td>2.701</td>
+    </tr>
+</table>
+<table border="1">
+    <tr>
+        <th>Ten Khach Hang</th>
+        <th>So dien da tieu thu<br>kWh</th>
+        <th>Thanh tien<br>VND</th>
+    </tr>
+    <tr>
+        <td>
+            <select>
+                <option>Nguyen Van A</option>
+                <option>Nguyen Van B</option>
+                <option>Nguyen Van C</option>
+            </select>
+        </td>
+        <td>
+            <input type="text" id="soDien" value="">
+        </td>
+        <td>
+            <input type="text" id="soTien" value="">
+        </td>
+    </tr>
+
+</table>
+<script>
+    let p = (Math.ceil(Math.random()*10))/10;
+    let flagBai10 = false;
+    function bai10() {
+
+        if (flagBai10 === false) {
+            counter();
+            money();
+            flagBai10 = true;
+        } else {
+            flagBai10 = false;
+
+        }
+        console.log(flagBai10);
+    }
+    function counter() {
+        if (flagBai10 === true) {
+            let interval = setInterval(function () {
+                document.getElementById('soDien').value = (p);
+                p += 0.1;
+                console.log(p);
+                if (flagBai10 === false) {
+                    clearInterval(interval)
+                }
+            }, 50);
+        }
+    }
+    function money() {
+        let m;
+        if (flagBai10 === true) {
+        let interval = setInterval(function () {
+        if (p<=50) {
+            m = p*1549;
+        } else if (p<=100) {
+            m = 77450+(1600*(p-50));
+        } else if (p<=200) {
+            m = 157450 + (1858*(p-100));
+        } else if (p<=300) {
+            m = 343250 + (2340 * (p-200));
+        } else if (p<=400) {
+            m = 577250 + (2615*(p-300));
+        } else if (p>400) {
+            m = 838750 + (2701 * (p-400));
+        }
+            document.getElementById('soTien').value = (m);
+    },50);
+    }
+    }
+    // function counter() {
+    // while (flagBai10 === true) {
+    //     setTimeout(function () {
+    //         while ( (flagBai10 === true)) {
+    //             document.getElementById('soDien').value = (p);
+    //             p += 1;
+    //             console.log(p);
+    //         }
+    //     }, 500);
+    //     }
+    // }
+    //     document.getElementById('soDien').value = (p);
+    //     p += 1;
+    //     console.log(p);
+
+
+
+</script>
+</body>
+</html>

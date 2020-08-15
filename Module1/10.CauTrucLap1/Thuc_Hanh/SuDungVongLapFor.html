@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Su dung vong lap for</title>
+</head>
+<body>
+<h2>Bai 1</h2>
+<button type="button" onclick="bai1()">Start</button>
+<h2>Bai 2</h2>
+<button type="button" onclick="bai2()">Start</button>
+    <script>
+        function bai1() {
+            let i;
+            for (i = 1; i < 6; i++) {
+                document.write('N');
+                for (let a = 1; a < 5; a++) {
+                    document.write('M');
+                }
+                document.write('<br>');
+            }
+        }
+        function bai2() {
+            let a = parseInt(prompt('input a number'));
+            let i;
+            let t = 0;
+            for (i = 0; i<=a; i++) {
+                t = t + i;
+                console.log(i);
+            }
+            document.write(t);
+        }
+    </script>
+</body>
+</html>
