@@ -7,16 +7,26 @@
 <body>
 <h2>Bai 1</h2>
 <button type="button" onclick="bai1()">Start</button>
+<p id="ketqua1"></p>
 <h2>Bai 2</h2>
 <button type="button" onclick="bai2()">Start</button>
 <script>
     function bai1() {
-        let a = parseInt(prompt('vui long nhap 1 so bat ky, nhap -1 de ket thuc'));
+        let  a = parseInt(prompt('vui long nhap 1 so bat ky, nhap -1 de ket thuc'));
         let t = 0;
             while (a != -1) {
+                a = parseInt(prompt('vui long nhap 1 so bat ky, nhap -1 de ket thuc'));
                 t = t+ a;
-                document.write(t);
+                alert(t);
+                console.log(t);
             }
+    }
+    function bai2() {
+        let i = 1;
+        while (i<= 100) {
+            document.write("<hr width ="+i+"%>");
+            i++;
+        }
     }
 </script>
 </body>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hien thi cac so nguyen to dau tien</title>
+</head>
+<body>
+<script>
+    let a=1;
+    let N;
+    for (i=0;i<6; a++) {
+        N = false;
+        for (b=2;b<a;b++) {
+            console.log(b);
+            if (a%b == 0) {
+                N=true;;
+            }
+        };
+        if (N === false) {
+            document.write(a+"<br>");
+            i++;
+            console.log(a,i);
+        }
+    }
+</script>
+</body>
+</html>
