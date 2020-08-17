@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap vong lap 1</title>
+</head>
+<body>
+    <button type="button" onclick="bai1()">Task 1</button>
+    <button type="button" onclick="bai2()">Task 2</button>
+    <button type="button" onclick="bai3()">Task 3 va 5</button>
+    <button type="button" onclick="bai4()">Task  4</button>
+    <button type="button" onclick="bai6()">Task  6</button>
+    <button type="button" onclick="bai7()">Task  7</button>
+    <button type="button" onclick="bai8()">Task  8</button>
+<script>
+    // function bai1() {
+    //     for (i=1;i <=100 ; i++) {
+    //         console.log(i);
+    //         document.write(i + "  ");
+    //         if (i == 99) {
+    //             alert("Da hoan thanh")
+    //         }
+    //     }
+    // }
+
+    function bai1() {
+    let i = 1;
+    let interval = setInterval(function () {
+        document.write(i + "  ");
+        i++;
+        console.log(i);
+        if (i == 100) {
+            document.write("Da hoan thanh");
+            }
+        if (i == 101) {
+            clearInterval(interval);
+        }
+    }, 100);
+    }
+function bai2() {
+        for (;;) {
+            let a = parseInt(prompt("vui long nhap nhiet do hien tai"));
+            if (a < 20) {
+                alert("vui long tang nhiet do");
+                break;
+            }
+            if  (a>100) {
+                alert("vui long giam nhiet do");
+                break;
+            }
+        }
+}
+function bai3() {
+    let a = 0;
+    let b = 1;
+    let d = a + b;
+    document.write(a + "  " + b + "   ")
+    for (i = 1; i <= 18; i++) {
+        let c = a + b;
+        d = d + c;
+        document.write(c + "  ");
+        a = b;
+        b = c;
+    }
+    document.write("<br>tong day 20 so la : " + d);
+}
+function bai4() {
+    let a = 1;
+    let b = 1;
+    for (i=0;i<1;)  {
+        let c = a+b;
+        if (c%5===0) {
+            document.write("so dau tien chia het cho 5 la "+c);
+            i++;
+        };
+        a = b;
+        b = c;
+    }
+}
+function bai6() {
+    let a= 0;
+    let t = 0;
+    for (i=0;i<=30;a++) {
+        if (a % 7 === 0) {
+            t += a;
+            i++
+        };
+    }
+    document.write("tong 30 so dau tien chia het cho 7 = "+t);
+}
+    function bai7() {
+        let i = 1;
+        let interval = setInterval(function () {
+            if ((i%3==0) && (i%5==0)) {
+                document.write("FizzBuzz <br>");
+            }
+            if (i%3===0){
+                document.write("Fizz <br>");
+            }
+            if (i%5===0) {
+                document.write("Buzz<br>");
+            }
+            if ((i%3!=0) && (i%5!=0)) {
+                document.write(i + "<br>");
+            }
+            i++;
+            if (i == 101) {
+                clearInterval(interval);
+            }
+        }, 100);
+    }
+function bai8() {
+    let a =  parseInt(prompt("nhap so lon nhat trong khoang ban muon doan"));
+    let b =  parseInt(prompt("nhap so nho nhat trong khoang ban muon doan"));
+    let c = Math.floor(Math.random()*a) +1;
+    let flag = false;
+    console.log(c);
+        for (i=0;i<3;i++) {
+            let d = parseInt(prompt("nhap so ban muon doan"));
+            if (d<c) {
+                alert("a little bit more!");
+            };
+            if (d>c) {
+                alert("a little lower!");
+            };
+            if (d===c) {
+                alert("Congratulation!");
+                flag = true;
+                break;
+            };
+        }
+        if (flag==false) {
+            alert("sorry, you lost the game")
+        }
+
+}
+</script>
+</body>
+</html>
