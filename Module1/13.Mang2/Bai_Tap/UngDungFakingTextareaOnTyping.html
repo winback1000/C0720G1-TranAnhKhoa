@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faking Textarea</title>
+</head>
+<body>
+    <h1>Type something slowly</h1>
+<textarea id="fakeText" oninput="fakeMessage()" value=""></textarea>;
+<script>
+    let i = 0;
+    let m = [];
+    function fakeMessage() {
+        let n = 'I am a stupid guy!!!'
+            m.push(n[i])
+            document.getElementById('fakeText'). value = (m.join(""));
+        if (i >= n.length) {
+            i = 0;
+            m = [];
+        } else {
+            i++;
+        }
+    }
+
+</script>
+</body>
+</html>

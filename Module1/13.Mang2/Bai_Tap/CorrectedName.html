@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Corrected Name</title>
+</head>
+<body>
+<script>
+
+    let str = window.prompt('xin vui long nhap ten');
+    console.log(str);
+    let name = [];
+    for (i=0; i<str.length; i++) {
+        if (((str[i] ==" ") && (str[i-1] == " ")) || (str[i]>0)) {
+        } else if ((str[i-1] == " ") || (i==0)) {
+            name.push(str[i].toUpperCase());
+        }
+          else {
+            name.push(str[i].toLowerCase());
+        }
+    }
+    console.log(name.join(""));
+</script>
+
+</body>
+</html>

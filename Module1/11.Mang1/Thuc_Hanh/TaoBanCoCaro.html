@@ -7,12 +7,13 @@
 <body>
 <button type="button" style="position: absolute; left: 225px; top: 550px">Start</button>
 <script>
-    let m = [];
+    let m = new Array(20).fill((new Array(20)));
     for (a=0;a<20;a++) {
-        for (b=0;b<20;b++) {
-            m.push("0");
+        for (b = 0; b < 20; b++) {
+            m[a][b] = '';
         }
     }
+    console.log(m);
     document.write('<table border="1">');
     for (i=0;i<=20;i++) {
         document.write('<tr>');
@@ -21,7 +22,7 @@
             if (i===0) {
                 document.write('<th style="width: 20px">'+j+'</th>');
             } else {
-                document.write('<td>'+m[i-1][j-1]+'</td>');
+                document.write('<td align="center" onclick="playingchess()">'+m[i-1][j-1]+'</td>');
             }
         };
         document.write('</tr>');

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chen ky tu vao giua mang</title>
+</head>
+<body>
+    <h2>Please input a message</h2>
+<input type="text" id="array1" value="">
+<br><br>
+<h4>Input the message you want to push in</h4>
+    <input type="text" id="array2" value="">
+<h4>and the position</h4>
+<input type="number" id="num" value="">
+<button type="button" onclick="pushin()">Execute</button>
+<script>
+    function pushin() {
+        let farr = [];
+        farr = (document.getElementById("array1").value).toString();
+        let sarr = [];
+        sarr = (document.getElementById("array2").value).toString();
+        let i = parseInt(document.getElementById('num').value);
+        let tarr = [];
+        for (j=0;j<farr.length;j++) {
+            if (j===(i)) {
+                for (n=0;n<sarr.length;n++) {
+                    tarr.push(sarr[n]);
+                };
+                tarr.push(farr[j]);
+            } else {
+                tarr.push(farr[j]);
+            }
+        };
+        console.log(tarr);
+        document.getElementById("array1").value =(tarr.join(""));
+    }
+</script>
+</body>
+</html>

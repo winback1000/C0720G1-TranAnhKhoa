@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tu dien</title>
+</head>
+<body>
+    <table width="800px">
+        <tr>
+            <th>Please input an English word</th>
+            <th></th>
+            <th>Meaning in Vietnamese</th>
+        </tr>
+        <tr>
+            <td align="center"><input type="text" id="english" value="" onfocus="this,value=''"></td>
+            <td align="center"><button type="button" onclick="trans()">Translate</button></td>
+            <td align="center"><input type="text" id ="vietnamese" value=""></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td align="center"><button type="button" onclick="addword()">Add new word</button></td>
+            <td></td>
+        </tr>
+    </table>
+<script>
+    let e = ["apple","orange","lemon","watermelon","mango","grapefruit","dragon fruit"];
+    let v = ["Quả táo","Quả cam","Quả Chanh","Quả dưa hấu","Quả soài","Quả nho","Quả thanh long"];
+function trans() {
+    let str = [];
+    str = (document.getElementById("english").value).toString();
+    console.log(str);
+    document.getElementById("vietnamese").value = (v[e.indexOf(str)]);
+}
+function addword() {
+    e.push((document.getElementById("english").value).toString());
+    v.push((document.getElementById("vietnamese").value).toString());
+}
+</script>
+</body>
+</html>
