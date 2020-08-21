@@ -5,6 +5,36 @@
     <title>Feet - Meters converter</title>
 </head>
 <body>
+<table>
+    <tr>
+        <th>Foot</th>
+        <td></td>
+        <th>Meter</th>
+    </tr>
+    <tr>
+        <td><label for="footNum"></label><input type="number" id="footNum" onfocus="this.value = ''"></td>
+        <td><button type="button" onclick="checkInput()"> <=> </button></td>
+        <td><label for="meterNum"></label><input type="number" id="meterNum" onfocus="this.value = ''"></td>
+    </tr>
+</table>
+<script>
+    function checkInput() {
+        let a = document.getElementById("footNum").value;
+        let b = document.getElementById("meterNum").value;
+        if (a !== "") {
+            document.getElementById("meterNum").value = footToMeter(a);
+        }
+        if (b !== "") {
+            document.getElementById("footNum").value = meterToFoot(b);
+        }
+    }
+    function footToMeter(foot) {
+        return 0.305 * foot;
+    }
+    function meterToFoot(meter) {
+        return 3.279 * meter;
+    }
 
+</script>
 </body>
 </html>
