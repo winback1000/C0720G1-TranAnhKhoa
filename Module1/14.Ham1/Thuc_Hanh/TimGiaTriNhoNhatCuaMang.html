@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm giá trị nhỏ nhất của mảng</title>
+</head>
+<body>
+<span>arr1: [3, 5, 1, 8, -3, 7, 8]</span> <button type="button" onclick="timGiaTriNhoNhat(arr1)">Tim gia tri nho nhat</button>
+<br>
+<span>arr2: [7, 12, 6, 9, 20, 56, 89]</span> <button type="button" onclick="timGiaTriNhoNhat(arr2)">Tim gia tri nho nhat</button>
+<br>
+<span>arr3: []</span> <button type="button" onclick="timGiaTriNhoNhat(arr3)">Tim gia tri nho nhat</button>
+<br>
+<span>arr4: [0, 0, 0, 0, 0, 0]</span> <button type="button" onclick="timGiaTriNhoNhat(arr4)">Tim gia tri nho nhat</button>
+<script>
+        let arr1 = [3, 5, 1, 8, -3, 7, 8];
+        let arr2 = [7, 12, 6, 9, 20, 56, 89];
+        let arr3 = [];
+        let arr4 = [0, 0, 0, 0, 0, 0];
+        function timGiaTriNhoNhat(array) {
+            if (array.length>0) {
+                let lowest = array[0];
+                for (let i = 0; i < array.length; i++) {
+                    if (array[i] <= lowest) {
+                        lowest = array[i];
+                    }
+                }
+                console.log('gia tri nho nhat trong mang la:' + lowest);
+                alert('gia tri nho nhat trong mang la:' + lowest);
+            } else {
+                console.log('mang rong');
+                alert('mang rong');
+            }
+        }
+</script>
+</body>
+</html>

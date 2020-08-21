@@ -103,19 +103,17 @@
     }
     function bai7() {
         let array7 = new Array(10);
-        for (i=0; i<10;i++) {
-            array7[i] = parseInt(prompt("vui long nhap so thu "+(i+1)));
-        };
-        console.log(array7)
+        for (i = 0; i < 10; i++) {
+            array7[i] = parseInt(prompt("vui long nhap so thu " + (i + 1)));
+        }
+        console.log(array7);
         let a = parseInt(prompt('vui long nhap 1 so de kiem tra'));
-        if (array7.indexOf(a) !== -1) {
-            for (i=array7.indexOf(a);i<array7.length;i++) {
-                array7[i] = array7[i+1];
-                };
-            array7[array7.length-1] = 0;
-            } else{
-            console.log('V is not in the array')
-    }
+        while (array7.indexOf(a) !== -1) {
+            for (i = array7.indexOf(a); i < array7.length; i++) {
+                array7[i] = array7[i + 1];
+            }
+            array7[array7.length - 1] = 0;
+        }
         console.log(array7)
     }
     function bai8() {

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tao va goi Ham</title>
+</head>
+<body>
+    <script>
+        let a = processConfirm(confirm("will we play a chess game?"));
+        alert(a);
+        function processConfirm(answer) {
+            let message ;
+            if (answer) {
+                message = "Ok! we will play a nice chess game."
+            } else {
+                message = "Maybe later then."
+            }
+            return message;
+        }
+    </script>
+</body>
+</html>

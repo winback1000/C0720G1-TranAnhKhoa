@@ -5,29 +5,89 @@
     <title>Tao ban co caro</title>
 </head>
 <body>
-<button type="button" style="position: absolute; left: 225px; top: 550px">Start</button>
+<p id="chessTable"></p>
 <script>
-    let m = new Array(20).fill((new Array(20)));
-    for (a=0;a<20;a++) {
-        for (b = 0; b < 20; b++) {
-            m[a][b] = '';
+    let m = new Array(25);
+    for (let i=0;i<25;i++) {
+        m[i] = new Array(25);
+        for (let j = 0; j < 25; j++) {
+            m[i][j] = ""
         }
     }
     console.log(m);
-    document.write('<table border="1">');
-    for (i=0;i<=20;i++) {
-        document.write('<tr>');
-        document.write('<th style="width: 20px">'+i+'</th>');
-        for (j=1;j<=20;j++) {
-            if (i===0) {
-                document.write('<th style="width: 20px">'+j+'</th>');
-            } else {
-                document.write('<td align="center" onclick="playingchess()">'+m[i-1][j-1]+'</td>');
+    let flag = "player1";
+    display();
+    function display() {
+        let table = '<table border="1">';
+        for (let i = 0; i <= 20; i++) {
+            table += '<tr>';
+            for (let j = 0; j <= 20; j++) {
+               table += '<td align="center" height="20" width="20" onclick="playingChess('+i+','+j+')">'+m[i][j]+'</td>';
+                }
+                table +='</tr>';
             }
-        };
-        document.write('</tr>');
-    };
-    document.write('</table>');
+            table += '</table>';
+        document.getElementById('chessTable').innerHTML = table;
+        if (winCondition()) {
+            if (flag == "player1") {
+                document.write("player 2 won")
+            } else {
+                document.write("player 1 won")
+            }
+        }
+        }
+    function playingChess(i,j) {
+        if (flag === "player1") {
+                m[i][j] = "X";
+                flag = "player2";
+            } else if (flag === "player2"){
+                m[i][j] = "O";
+                flag = "player1";
+            }
+        display();
+        }
+    function checkingPlayedCell(i,j) {
+        if (m[i][j] == "X" || m[i][j] == "O") {
+            alert('this cell is already filled');
+            return false;
+        } else {
+            return true;
+        }
+    }
+    function winCondition() {
+        for (let i = 0; i < m.length; i++) {
+            for (let j = 0; j < m[i].length; j++) {
+                if (m[i][j] ==="X") {
+                    if (m[i][j] === "X" && m[i + 1][j + 1] === "X" && m[i + 2][j + 2] === "X" && m[i + 3][j + 3] === "X" && m[i + 4][j + 4] === "X") {
+                        return true;
+                    }
+                    if (m[i][j] === "X" && m[i][j + 1] === "X" && m[i][j + 2] === "X" && m[i][j + 3] === "X" && m[i][j + 4] === "X") {
+                        return true;
+                    }
+                    if (m[i][j] === "X" && m[i + 1][j] === "X" && m[i + 2][j] === "X" && m[i + 3][j] === "X" && m[i + 4][j] === "X") {
+                        return true;
+                    }
+                    if (m[i][j] === "X" && m[i + 1][j - 1] === "X" && m[i + 2][j - 2] === "X" && m[i + 3][j - 3] === "X" && m[i + 4][j - 4] === "X") {
+                        return true;
+                    }
+                } else {
+                    if (m[i][j] === "O" && m[i + 1][j + 1] === "O" && m[i + 2][j + 2] === "O" && m[i + 3][j + 3] === "O" && m[i + 4][j + 4] === "O") {
+                        return true;
+                    }
+                    if (m[i][j] === "O" && m[i][j + 1] === "O" && m[i][j + 2] === "O" && m[i][j + 3] === "O" && m[i][j + 4] === "O") {
+                        return true;
+                    }
+                    if (m[i][j] === "O" && m[i + 1][j] === "O" && m[i + 2][j] === "O" && m[i + 3][j] === "O" && m[i + 4][j] === "O") {
+                        return true;
+                    }
+                    if (m[i][j] === "O" && m[i + 1][j - 1] === "O" && m[i + 2][j - 2] === "O" && m[i + 3][j - 3] === "O" && m[i + 4][j - 4] === "O") {
+                        return true;
+                    }
+                }
+            }
+        }
+    }
+
 </script>
 </body>
 </html>
