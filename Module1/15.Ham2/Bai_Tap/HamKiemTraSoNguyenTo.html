@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm kiểm tra số nguên tố</title>
+</head>
+<body>
+    <script>
+        let a = parseInt(prompt('please input a number for checking'));
+        alert(isPrime(a));
+        function isPrime(number) {
+            let p;
+            if ((number === 0)|| (number === 1)) {
+                p = false;
+            } else if (number === 2) {
+                p = true;
+            }
+            for (let i = 2; i<number; i++) {
+                if (number % i === 0) {
+                    p = false;
+                    break;
+                } else {
+                    p = true;
+                }
+            }
+                return p;
+        }
+    </script>
+</body>
+</html>
