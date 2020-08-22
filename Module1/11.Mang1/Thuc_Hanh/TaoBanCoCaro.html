@@ -22,32 +22,32 @@
         for (let i = 0; i <= 20; i++) {
             table += '<tr>';
             for (let j = 0; j <= 20; j++) {
-               table += '<td align="center" height="20" width="20" onclick="playingChess('+i+','+j+')">'+m[i][j]+'</td>';
+               table += `<td align="center" height="20" onclick="playingChess(i,j)" width="20"${i}${j}>${m[i][j]}</td>`;
                 }
                 table +='</tr>';
             }
             table += '</table>';
         document.getElementById('chessTable').innerHTML = table;
         if (winCondition()) {
-            if (flag == "player1") {
+            if (flag === "player1") {
                 document.write("player 2 won")
             } else {
                 document.write("player 1 won")
             }
         }
-        }
+    }
     function playingChess(i,j) {
-        if (flag === "player1") {
+        if ((flag === "player1")&& checkingPlayedCell(i,j)) {
                 m[i][j] = "X";
                 flag = "player2";
-            } else if (flag === "player2"){
+        } else if ((flag === "player2")&&checkingPlayedCell(i,j)) {
                 m[i][j] = "O";
                 flag = "player1";
-            }
-        display();
         }
+        display();
+    }
     function checkingPlayedCell(i,j) {
-        if (m[i][j] == "X" || m[i][j] == "O") {
+        if (m[i][j] === "X" || m[i][j] === "O") {
             alert('this cell is already filled');
             return false;
         } else {
@@ -87,7 +87,6 @@
             }
         }
     }
-
 </script>
 </body>
 </html>
