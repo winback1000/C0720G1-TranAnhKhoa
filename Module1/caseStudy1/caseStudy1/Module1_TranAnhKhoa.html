@@ -8,10 +8,32 @@
     div.ex1 {
         width: 500px;
         margin: auto;
+        border: 3px solid #73AD21;
     }
     div.ex2 {
+        width: 500px;
         margin: auto;
         border: 3px solid #73AD21;
+    }
+    #table {
+        border-style: solid;
+        border-width: 1px;
+        padding: 5px;
+    }
+    #table td, #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+    #table tr:nth-child(even){background-color: #f2f2f2;}
+
+    #table tr:hover {background-color: #ddd;}
+
+    #table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4CAF50;
+        color: white;
     }
 </style>
 <body>
@@ -19,24 +41,24 @@
 <h2>Please tell us some information about you</h2>
     <table>
         <tr>
-            <th align="right">Full name</th>
-            <td align="left"><input id="name" type="text" ></td>
+            <th style="text-align: right"><label for="name">Full name</label></th>
+            <td style="text-align: left"><input id="name" type="text" ></td>
         </tr>
         <tr>
-            <th align="right">Identity number</th>
-            <td align="left"><input id="identityNumber" type="text" ></td>
+            <th style="text-align: right"><label for="identityNumber">Identity number</label></th>
+            <td style="text-align: left"><input id="identityNumber" type="text"></td>
         </tr>
         <tr>
-            <th align="right">Date of birth</th>
-            <td align="left"><input id="dateOfBirth" type="date" ></td>
+            <th style="text-align: right"><label for="dateOfBirth">Date of birth</label></th>
+            <td style="text-align: left"><input id="dateOfBirth" type="date" ></td>
         </tr>
         <tr>
-            <th align="right">Email</th>
-            <td align="left"><input id="email" type="text" ></td>
+            <th style="text-align: right"><label for="email">Email</label></th>
+            <td style="text-align: left"><input id="email" type="text" ></td>
         </tr>
         <tr>
-            <th align="right">Address</th>
-            <td align="left">
+            <th style="text-align: right"><label for="address">Address</label></th>
+            <td style="text-align: left">
                 <select id="address">
                     <option value = "Da Nang">Da Nang</option>
                     <option value = "Hue">Hue</option>
@@ -46,9 +68,9 @@
             </td>
         </tr>
         <tr>
-            <th align="right">Vip type</th>
-            <td align="left">
-                <select id="vipType">
+            <th style="text-align: right"> <label for="vipType">Vip type</label></th>
+            <td style="text-align: left">
+               <select id="vipType">
                     <option value="Member">Member</option>
                     <option value="Silver">Silver</option>
                     <option value="Gold">Gold</option>
@@ -58,20 +80,20 @@
             </td>
         </tr>
         <tr>
-            <th align="right">Discount</th>
-            <td align="left"><input id="discount" type="number" >%</td>
+            <th style="text-align: right"><label for="discount">Discount</label></th>
+            <td style="text-align: left"><input id="discount" type="number" >%</td>
         </tr>
         <tr>
-            <th align="right">How many people<br>will stay in our resort?</th>
-            <td align="left"><input id="people" type="number" ></td>
+            <th style="text-align: right"><label for="people">How many people<br>will stay in our resort?</label></th>
+            <td style="text-align: left"><input id="people" type="number" ></td>
         </tr>
         <tr>
-            <th align="right">Rent day</th>
-            <td align="left"><input id="rentDay" type="number" ></td>
+            <th style="text-align: right"><label for="rentDay">Rent day</label></th>
+            <td style="text-align: left"><input id="rentDay" type="number" ></td>
         </tr>
         <tr>
-            <th align="right">Service type</th>
-            <td align="left">
+            <th style="text-align: right"><label for="serviceType">Service type</label></th>
+            <td style="text-align: left">
                 <select id="serviceType">
                     <option value="500">Villa</option>
                     <option value="300">House</option>
@@ -80,9 +102,9 @@
             </td>
         </tr>
         <tr>
-            <th align="right">Room Type</th>
-            <td align="left">
-                <select id="roomType">
+            <th style="text-align: right"> <label for="roomType">Room Type</label></th>
+            <td style="text-align: left">
+               <select id="roomType">
                     <option value="500">Vip</option>
                     <option value="300">Business</option>
                     <option value="100">Normal</option>
@@ -90,61 +112,61 @@
             </td>
         </tr>
     </table>
-<button onclick="getinfo()"; style="position: absolute;left: 500px; top: 400px">Submit</button>
+<button onclick="submit()" ; style="position: absolute;left: 500px; top: 400px">Submit</button>
 </div>
-<div class="ext2" id="div2" style="display: none">
+<div class="ex2" id="div2" style="display: none">
     <h2 id="greeting" value=""></h2>
-    <table border="1">
+    <table id="table">
         <tr>
-            <th align="right">Full name: </th>
-            <td align="left" id="profileName"></td>
+            <th style="text-align: right">Full name: </th>
+            <td style="text-align: left" id="profileName"></td>
         </tr>
         <tr>
-            <th align="right">Identity number: </th>
-            <td align="left" id="profileIdentityNumber"></td>
+            <th style="text-align: right">Identity number: </th>
+            <td style="text-align: left" id="profileIdentityNumber"></td>
         </tr>
         <tr>
-            <th align="right">Age: </th>
-            <td align="left" id="profileAge"></td>
+            <th style="text-align: right">Age: </th>
+            <td style="text-align: left" id="profileAge"></td>
         </tr>
         <tr>
-            <th align="right">Email: </th>
-            <td align="left" id="profileEmail"></td>
+            <th style="text-align: right">Email: </th>
+            <td style="text-align: left" id="profileEmail"></td>
         </tr>
         <tr>
-            <th align="right">Address: </th>
-            <td align="left" id="profileAddress"></td>
+            <th style="text-align: right">Address: </th>
+            <td style="text-align: left" id="profileAddress"></td>
         </tr>
         <tr>
-            <th align="right">Vip type: </th>
-            <td align="left" id="profileVipType"></td>
+            <th style="text-align: right">Vip type: </th>
+            <td style="text-align: left" id="profileVipType"></td>
         </tr>
         <tr>
-            <th align="right">Discount: </th>
-            <td align="left" id="profileDiscount">%</td>
+            <th style="text-align: right">Discount: </th>
+            <td style="text-align: left" id="profileDiscount">%</td>
         </tr>
         <tr>
-            <th align="right">How many people<br>will stay in our resort?: </th>
-            <td align="left" id="profileAmountPeople"></td>
+            <th style="text-align: right">How many people<br>will stay in our resort?: </th>
+            <td style="text-align: left" id="profileAmountPeople"></td>
         </tr>
         <tr>
-            <th align="right">Rent day: </th>
-            <td align="left" id="profileRentDay"></td>
+            <th style="text-align: right">Rent day: </th>
+            <td style="text-align: left" id="profileRentDay"></td>
         </tr>
         <tr>
-            <th align="right">Service type: </th>
-            <td align="left" id="profileServiceType"></td>
+            <th style="text-align: right">Service type: </th>
+            <td style="text-align: left" id="profileServiceType"></td>
         </tr>
         <tr>
-            <th align="right">Room Type: </th>
-            <td align="left" id="profileRoomType"></td>
+            <th style="text-align: right">Room Type: </th>
+            <td style="text-align: left" id="profileRoomType"></td>
         </tr>
         <tr>
-            <th align="right">Estimate price: </th>
-            <td align="left" id="ProfileEstimatePrice"></td>
+            <th style="text-align: right">Estimate price: </th>
+            <td style="text-align: left" id="ProfileEstimatePrice"></td>
         </tr>
     </table>
-    <button onclick="edit()"; style="position: absolute;left: 100px; top: 450px">Edit</button>
+    <button onclick="edit()" ; style="position: absolute;left: 500px; top: 720px">Edit</button>
 </div>
 <script src="Module1_TranAnhKhoa.js"></script>
 </body>
