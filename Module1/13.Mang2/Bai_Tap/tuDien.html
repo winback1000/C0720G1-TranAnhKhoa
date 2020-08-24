@@ -26,7 +26,7 @@
     let e = ["apple","orange","lemon","watermelon","mango","grapefruit","dragon fruit"];
     let v = ["Quả táo","Quả cam","Quả Chanh","Quả dưa hấu","Quả soài","Quả nho","Quả thanh long"];
 function trans() {
-    let str = [];
+    let str;
     str = (document.getElementById("english").value).toString();
     console.log(str);
     document.getElementById("vietnamese").value = (v[e.indexOf(str)]);

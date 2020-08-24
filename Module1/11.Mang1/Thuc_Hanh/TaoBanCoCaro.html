@@ -22,7 +22,7 @@
         for (let i = 0; i <= 20; i++) {
             table += '<tr>';
             for (let j = 0; j <= 20; j++) {
-               table += `<td align="center" height="20" onclick="playingChess(i,j)" width="20"${i}${j}>${m[i][j]}</td>`;
+               table += `<td align="center" height="20" onclick="playingChess(${i},${j})" width="20">${m[i][j]}</td>`;
                 }
                 table +='</tr>';
             }

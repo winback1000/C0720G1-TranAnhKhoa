@@ -39,13 +39,12 @@ function getInfo() {
     identityNumbervar = document.getElementById("identityNumber").value;
     dateOfBirthvar = document.getElementById("dateOfBirth").value;
     customerAge = (new Date().getFullYear() - new Date(dateOfBirthvar).getFullYear());
-    console.log(customerAge);
     emailvar = document.getElementById("email").value;
     addressvar = document.getElementById("address").value;
     vipTypevar = document.getElementById("vipType").value;
-    discountvar = parseFloat(document.getElementById("discount").value);
+    discountvar = document.getElementById("discount").value;
     peoplevar = document.getElementById("people").value;
-    rentDayvar = parseInt(document.getElementById("rentDay").value);
+    rentDayvar = document.getElementById("rentDay").value;
     serviceTypevar = parseFloat(document.getElementById("serviceType").value);
     roomTypevar = document.getElementById("roomType").value;
 }
@@ -82,8 +81,6 @@ function vipCaculate (vipType) {
     }
     return vipDiscount;
 }
-
-        // console.log('vip discount = '+vipDiscount);
 function rentDayCaculate(day) {
     let rentDayDiscount;
     if (day <2) {

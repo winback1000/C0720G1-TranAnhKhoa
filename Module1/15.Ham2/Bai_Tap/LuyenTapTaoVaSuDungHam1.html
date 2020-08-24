@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap tao va su dung ham 1</title>
+</head>
+<body>
+<button type="button" onclick="task1()">Task 1</button><br>
+<button type="button" onclick="task2()">Task 2</button>
+<input type="text" onfocus="this.value=''" placeholder="please input a number" id = "input2">
+<input type="text" placeholder="result" id = "result2" readonly><br>
+<button type="button" onclick="task3()">Task 3</button>
+<input type="text" onfocus="this.value=''" placeholder="please input a number" id = "input31">
+<input type="text" onfocus="this.value=''" placeholder="please input a number" id = "input32">
+<input style="width: 300px" type="text" placeholder="result" id = "result3" readonly>
+<br>
+<button type="button" onclick="task4()">Task 4</button><br>
+<button type="button" onclick="task5()">Task 5</button>
+<input type="text" onfocus="this.value=''" placeholder="please input a star's name" id = "input5">
+<input style="width: 300px" type="text" placeholder="result" id = "result5" readonly>
+<script>
+function task1() {
+    alert('xin chao')
+}
+
+function task2() {
+    let i = document.getElementById("input").value;
+    function increase(number) {
+        return parseFloat(number)+1;
+    }
+    document.getElementById("result").value = increase(i);
+}
+function task3() {
+    let a = parseFloat(document.getElementById("input31").value);
+    let b = parseFloat(document.getElementById("input32").value);
+    document.getElementById("result3").value = (swap(a,b));
+    function swap(number1,number2) {
+        if (number1 > number2) {
+            return "First number is greater than the 2nd one";
+        } else {
+            return number1+number2;
+        }
+    }
+}
+function task4() {
+    function addNumbers() {
+        firstNum = 4;
+        secondNum = 8;
+        result = firstNum + secondNum;
+        return result;
+    }
+    let result = 0;
+    alert(result);
+    result = addNumbers();
+    alert(result);
+}
+function task5() {
+    let name = document.getElementById("input5").value;
+    document.getElementById("result5").value = starLookUp(name);
+    function starLookUp(string) {
+        let arr1 = ["Polaris","Aldebaran","Deneb","Vega","Altair","Dubhe","Regulus"];
+        let arr2 = ["Ursa Minor","Tarurus","Cygnus","Lyra","Aquila","Ursa Major","Leo"];
+        if (arr1.indexOf(string) !== -1 ) {
+            return arr2[arr1.indexOf(string)];
+        } else {
+            return "There is no data about this star";
+        }
+    }
+
+}
+</script>
+</body>
+</html>

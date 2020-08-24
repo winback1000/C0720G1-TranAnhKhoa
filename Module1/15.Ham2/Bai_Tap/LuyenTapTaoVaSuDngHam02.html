@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap tao va su dung ham 02</title>
+</head>
+<body>
+<h2>Task 01</h2>
+<input type="number" style="width: 50px" id ="input1"><span> ^2 </span><button type="button" onclick="task1()">=</button>
+<input type="text" style="width: 50px" id = "result1" readonly><hr>
+<h2>Task 02</h2>
+<input type="number" onfocus="this.value=''" oninput="task2()" placeholder="please input the circle radius" id = "input2">
+<input type="text" placeholder="area" id = "result21" readonly>
+<input type="text" placeholder="perimeter" id = "result22" readonly>
+<hr>
+<button type="button" onclick="task3()">Task 3</button>
+<input type="text" onfocus="this.value=''" placeholder="please input a number" id = "input31">
+<input type="text" onfocus="this.value=''" placeholder="please input a number" id = "input32">
+<input style="width: 300px" type="text" placeholder="result" id = "result3" readonly>
+<br>
+<button type="button" onclick="task4()">Task 4</button><br>
+<button type="button" onclick="task5()">Task 5</button>
+<input type="text" onfocus="this.value=''" placeholder="please input a star's name" id = "input5">
+<input style="width: 300px" type="text" placeholder="result" id = "result5" readonly>
+<script>
+    function task1() {
+        let a = document.getElementById("input1").value;
+        document.getElementById("result1").value = pow(a);
+        function pow(number) {
+            return number*number;
+        }
+    }
+    function task2() {
+        let a = document.getElementById("input2").value;
+        document.getElementById("result21").value = areaCaculate(a);
+        document.getElementById("result22").value = perimeterCaculate(a);
+        function areaCaculate(radius) {
+            return Math.PI*radius*radius;
+        }
+        function perimeterCaculate(radius) {
+            return Math.PI*2*radius;
+        }
+    }
+</script>
+</body>
+</html>
