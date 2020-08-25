@@ -13,15 +13,17 @@
 <input type="text" placeholder="area" id = "result21" readonly>
 <input type="text" placeholder="perimeter" id = "result22" readonly>
 <hr>
-<button type="button" onclick="task3()">Task 3</button>
-<input type="text" onfocus="this.value=''" placeholder="please input a number" id = "input31">
-<input type="text" onfocus="this.value=''" placeholder="please input a number" id = "input32">
-<input style="width: 300px" type="text" placeholder="result" id = "result3" readonly>
-<br>
+<h2>Task 03</h2>
+<input type="number" style="width: 50px" id ="input3" oninput="task3()"><span> ! = </span>
+<input type="text" style="width: 500px" id = "result3" readonly><hr>
+
 <button type="button" onclick="task4()">Task 4</button><br>
-<button type="button" onclick="task5()">Task 5</button>
-<input type="text" onfocus="this.value=''" placeholder="please input a star's name" id = "input5">
-<input style="width: 300px" type="text" placeholder="result" id = "result5" readonly>
+<button type="button" onclick="task5()">Task 5</button><br>
+<button type="button" onclick="task6()">Task 6</button><br>
+<button type="button" onclick="task7()">Task 7</button><br>
+<button type="button" onclick="task8()">Task 8</button><br>
+<button type="button" onclick="task9()">Task 9</button><br>
+
 <script>
     function task1() {
         let a = document.getElementById("input1").value;
@@ -39,6 +41,108 @@
         }
         function perimeterCaculate(radius) {
             return Math.PI*2*radius;
+        }
+    }
+    function task3() {
+        let a = parseInt(document.getElementById("input3").value);
+        document.getElementById("result3").value = tinhGiaiThua(a);
+
+
+
+        function tinhGiaiThua(number) {
+            let j = 1;
+            for (let i = 1;i<number; i++) {
+                j = j*(i+1)
+            }
+            return j;
+        }
+        // function in function in function
+        //
+        // function tinhGiaiThua2(number) {
+        //         let t;
+        //         if (number === 0) {
+        //             return 0;
+        //         } else if (number === 1) {
+        //             return 1;
+        //         } else if (number>1) {
+        //             t = number*(number-1);
+        //             number --;
+        //             alert(t);
+        //             return tinhGiaiThua(number)*t;
+        //         }
+        //     }
+    }
+    function task6() {
+        let a = prompt('please input a number');
+        alert(kiemTraSoNguyenDuong(a));
+        function kiemTraSoNguyenDuong(number) {
+            if (!isNaN(number)) {
+                return Number.isInteger(parseFloat(number)) && (parseFloat(number) >= 0);
+            } else
+                return false;
+        }
+    }
+    function task5() {
+        let a = parseInt(prompt('How many numbers you need to compare: '));
+        alert('the smallest number is '+theSmallest(a));
+        function theSmallest(number) {
+            let j = null;
+            for (let i = 1; i<=number; i++) {
+                let b = parseFloat(prompt("Please input a numer"));
+                if (j === null) {
+                    j = b;
+                } else if (j>=b) {
+                    j = b;
+                }
+            }
+            return j;
+        }
+    }
+    function task4() {
+        let a = prompt('please input a number');
+        alert(numberCheck(a));
+        function numberCheck(string) {
+            return !isNaN(string);
+        }
+    }
+    function task7() {
+        let a =  prompt("please input the first number");
+        let b = prompt("please input the second number");
+        alert(swap(a,b));
+        function swap(number1,number2) {
+            let arr = [];
+            arr.unshift(number1);
+            arr.unshift(number2);
+            return arr;
+        }
+    }
+    function task8() {
+        let n = parseInt(prompt('How many elements in the array?'));
+        alert(swapArray(n));
+        function swapArray(number) {
+            let arr = [];
+            for (let i = 0; i<number; i++) {
+                arr.unshift(parseInt(prompt('please input the number '+(i+1)+' element')));
+            }
+            return arr;
+        }
+    }
+    function task9() {
+        let str = prompt('please input a random string');
+        let letter = prompt('please input the letter to check');
+        alert(checkLetterInString(letter,str));
+        function checkLetterInString(letter,string) {
+            let count = 0;
+            if (string.indexOf(letter) === -1) {
+                return string.indexOf(letter)
+            } else {
+                for( let i = 0; i<string.length; i++) {
+                    if (string[i] === letter) {
+                        count++;
+                    }
+                }
+            }
+            return count;
         }
     }
 </script>

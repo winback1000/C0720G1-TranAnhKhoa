@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem tra tu doi xung</title>
+</head>
+<body>
+    <script>
+        let arr = (prompt('vui long nhap tu can kiem tra')).split("");
+
+        function isPalindrome(array) {
+            if (array[0] === array[array.length-1]) {
+                if (array.length <= 2) {
+                    return true;
+                } else {
+                    array.pop();
+                    array.shift();
+                    console.log(array);
+                    return isPalindrome(array);
+                }
+            } else
+            return false;
+        }
+        console.log(isPalindrome(arr));
+    </script>
+</body>
+</html>
