@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cong tac va bong den</title>
+</head>
+<body>
+    <script>
+        class Switch {
+            constructor(status,lamp) {
+                this.status = status;
+                this.lamp = null;
+            }
+            connectToLamp(lamp) {
+                this.lamp = lamp;
+            }
+            switchOff() {
+                this.status = "Off";
+                this.lamp = "Off";
+
+            }
+            switchOn() {
+                this.status = "On";
+                this.lamp = "On";
+            }
+        }
+        class Lamp {
+            constructor(status) {
+                this.status = status;
+            }
+
+        }
+    </script>
+</body>
+</html>

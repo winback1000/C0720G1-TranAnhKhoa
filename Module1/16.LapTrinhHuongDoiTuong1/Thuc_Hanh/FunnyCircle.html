@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Funny Circle</title>
+</head>
+<body>
+<canvas id="myCanvas" width="800" height="800" style="border:1px solid #d3d3d3;"></canvas>
+<br>
+<label for="coordinatesX">Please input Coordinates of the circle</label><br>
+<input type="number" id="coordinatesX" placeholder="<800" onfocus="this.value=''">,
+<label for="coordinatesY"></label><input type="number" id="coordinatesY" placeholder="<800" onfocus="this.value=''"><br>
+<label for="radius">Please input Radius of the circle</label><br>
+<input type="number" id="radius" onfocus="this.value=''"><br>
+<label for="color">Please input color of the circle</label><br>
+<input type="color" id="color" onfocus="this.value=''"><br>
+<button type="button" onclick="myCircle.getCircleFromInput(); myCircle.drawCircle()">Draw</button>
+<button type="button" onclick="myCircle.randomCircle(); myCircle.drawCircle()">Draw random circle</button><br>
+<button type="button" onclick="myCircle.clearCanvas()">Clear Canvas</button>
+
+<script>
+    class circle {
+        constructor(x,y,radius,color) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+            this.color = color;
+        }
+        getX() {
+            return this.x;
+        }
+        getY() {
+            return this.y;
+        }
+        getColor() {
+            return this.color;
+        }
+        getRadius() {
+            return this.radius;
+        }
+        setX(x) {
+            this.x = x;
+        }
+        setY(y) {
+            this.y = y;
+        }
+        setColor(color) {
+            this.color = color;
+        }
+        setRadius(radius) {
+            this.radius = radius;
+        }
+        getCircleFromInput () {
+            myCircle.setRadius(document.getElementById("radius").value);
+            myCircle.setX(document.getElementById("coordinatesX").value);
+            myCircle.setY(document.getElementById("coordinatesY").value);
+            myCircle.setColor(document.getElementById("color").value);
+            myCircle.getRadius();
+            myCircle.getColor();
+            myCircle.getX();
+            myCircle.getY();
+        }
+        randomCircle() {
+            myCircle.setRadius(Math.floor(Math.random()*100));
+            myCircle.setX(Math.floor(Math.random()*800));
+            myCircle.setY(Math.floor(Math.random()*800));
+            myCircle.setColor(myCircle.randomColor());
+            myCircle.getRadius();
+            myCircle.getColor();
+            myCircle.getX();
+            myCircle.getY();
+        }
+        randomColor(){
+            let red = Math.floor(Math.random()*255);
+            let green = Math.floor(Math.random()*255);
+            let blue = Math.floor(Math.random()*255);
+            return "rgb(" + red + "," + blue + "," + green +")";
+        }
+        drawCircle() {
+            let c = document.getElementById("myCanvas");
+            let ctx = c.getContext("2d");
+            ctx.beginPath();
+            ctx.arc(myCircle.x,myCircle.y,myCircle.getRadius(),0,2*Math.PI);
+            ctx.stroke();
+            ctx.fillStyle = myCircle.color;
+            ctx.fill();
+        }
+        clearCanvas() {
+            let c = document.getElementById("myCanvas");
+            let ctx = c.getContext("2d");
+            ctx.clearRect(0, 0, c.width, c.height) ;
+        }
+    }
+    let myCircle = new circle(0,0,0,0);
+</script>
+</body>
+</html>

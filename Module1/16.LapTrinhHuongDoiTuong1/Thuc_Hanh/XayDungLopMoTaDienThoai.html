@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xay dung lop mo ta dien thoai</title>
+<style>
+    div.mainMenu {
+        width: 300px;
+        height: 400px;
+        position: absolute;
+        left: 0;
+        top: 42px;
+        margin: auto;
+        border: 3px solid #73AD21;
+    }
+    div.subMenu {
+        width: 300px;
+        height: 30px;
+        position: absolute;
+        left: 0;
+        top: 445px;
+        border: 3px solid #73AD21;
+    }
+    div.functions {
+        width: 300px;
+        height: 400px;
+        position: absolute;
+        left: 0;
+        top: 50px;
+        margin: auto;
+        border: 3px solid #73AD21;
+    }
+    div.status {
+        width: 300px;
+        height: 30px;
+        position: absolute;
+        left: 0;
+        margin: auto;
+        border: 3px solid #73AD21;
+    }
+</style>
+</head>
+<body>
+<div class = "status" id="statusBar">
+    <table border="1" width="300px">
+        <tr>
+            <td width="40px" height="20px"><input style="width: 30px" type="text" id="status1"  value="" readonly></td>
+            <td width="200px"></td>
+            <td width="40px"><input style="width: 30px" type="text" id="battery1" value="" readonly></td>
+        </tr>
+    </table>
+</div>
+<div class = "subMenu" id = "mainMenuSub">
+    <table>
+        <tr>
+            <td width="40px" height="20px"><button type="button" onclick="android.onOff()">On/Off</button></td>
+            <td width="200px" align="center"><button type="button" onclick="android.mainMenu()">Main Menu</button></td>
+            <td value="" width="40px"><button type="button" onclick="android.recharge(android.battery)">Recharge</button></td>
+        </tr>
+    </table>
+</div>
+<div class="mainMenu" id ="mainDisplay1">
+    <table border="1" width="300px">
+        <tr>
+            <td width="40px" height="20px">1.</td>
+            <th id="inbox1" onclick="android.readInbox()">Inbox</th>
+            <td id ="inboxNum" width="40px" height="20px"></td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <th id="outbox1" onclick="android.readOutbox()">Outbox</th>
+            <td id ="outboxNum"></td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <th id="draftMess" onclick="android.draftMessage()">Write Message</th>
+            <td></td>
+        </tr>
+        <tr>
+            <td>4.</td>
+            <th id="draftMemory" onclick="android.readDraft()">Draft Messages</th>
+            <td></td>
+        </tr>
+    </table>
+</div>
+<div class="functions" id="inbox1Display" style="display: none">
+
+</div>
+<script>
+    class Mobile {
+        constructor(battery,status) {
+            this.battery = battery;
+            this.status = status;
+            this.draftMemory = [];
+            this.inboxMemory = [];
+            this.outboxMemory = [];
+        }
+        setStatus(status) {
+            this.status = status;
+        }
+        checkStatus() {
+            return document.getElementById("status1").value = this.status;
+        }
+        getBattery() {
+            return this.battery;
+        }
+        onOff() {
+            this.getBattery();
+            if (this.status == "On") {
+                this.setStatus("Off");
+                document.getElementById("battery1").value = (this.battery+"%")
+            } else {
+                this.setStatus("On");
+                document.getElementById("battery1").value = (this.battery+"%")
+            }
+            console.log(this.status);
+            this.checkStatus();
+        }
+        recharge (battery) {
+            if (battery < 100) {
+                let interval = setInterval(function () {
+                    battery++;
+                    this.battery = battery;
+                    document.getElementById("battery1").value = (this.battery+"%");
+                    console.log(battery);
+                    console.log(this.battery);
+
+                    if (battery === 100) {
+                        clearInterval(interval)
+                    }
+                }, 2000);
+            }
+        }
+        draftMessage() {
+
+        }
+        saveDraft(string) {
+            this.draftMemory.push(string);
+            this.battery--;
+        }
+        readDraft() {
+
+        }
+        receiveMessage(string) {
+            this.inboxMemory.push(string);
+            this.battery--;
+        }
+        sendMessage(string,object){
+            this.outboxMemory.push(string);
+            object.receiveMessage(string);
+            this.battery--;
+        }
+        readInbox() {
+            this.battery--;
+            return console.log(this.inboxMemory);
+        }
+        readOutbox() {
+            this.battery--;
+            return console.log(this.outboxMemory);
+        }
+        sumInbox() {
+            return this.inboxMemory.length+1;
+        }
+        sumOutbox() {
+            return this.outboxMemory.length+1;
+        }
+        sumDraft() {
+            return this.draftMemory.length+1;
+        }
+
+    }
+    let android = new Mobile(30,"On");
+    let iOS = new Mobile(70,"On");
+    android.sendMessage("abcdefg",iOS);
+    console.log(android.outboxMemory);
+    console.log(iOS.inboxMemory);
+</script>
+</body>
+</html>

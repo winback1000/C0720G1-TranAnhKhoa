@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xay dung lop date</title>
+</head>
+<body>
+    <script>
+        class date {
+            constructor(day, month, year) {
+                this.day = day;
+                this.month = month;
+                this.year = year;
+            }
+            getDay() {
+                return this.day
+            }
+            getMonth() {
+                return this.month
+            }
+            getYear() {
+                return this.year
+            }
+            setDay (day) {
+                this.day = day;
+            }
+            setMonth(month) {
+                this.month = month
+            }
+            setYear(year) {
+                this.year = year
+            }
+            getFullDate() {
+                this.getDay();
+                this.getMonth();
+                this.getYear();
+                console.log(this.day+"/"+this.month+"/"+this.year);
+            }
+            setFullDate(day,month,year) {
+                this.setDay(day);
+                this.setMonth(month);
+                this.setYear(year);
+            }
+        }
+        let myDate = new date(22,2,2022);
+        console.log(myDate);
+        myDate.getFullDate();
+        myDate.setFullDate(14,2,1985);
+        myDate.getFullDate();
+
+    </script>
+</body>
+</html>

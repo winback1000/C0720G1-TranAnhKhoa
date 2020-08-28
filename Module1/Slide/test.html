@@ -6,11 +6,16 @@
 </head>
 <body>
 <script>
-   console.log (func1(5));
-    function func1(a){
-        if(a == 2)
-            return 2;
-        return a * func1(a - 1);
+    let battery = 10;
+
+    if (battery < 100) {
+        let interval = setInterval(function () {
+            battery++;
+            console.log(battery);
+            if (battery === 100) {
+                clearInterval(interval)
+            }
+        }, 100);
     }
 </script>
 </body>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xay dung lop mo ta temperature</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(temp) {
+            this.tempC = temp;
+        }
+        convertF() {
+            return this.tempC*1.8 + 32;
+        }
+        convertK() {
+            return this.tempC + 273.15;
+        }
+    }
+    let myTemp = new Temperature(50);
+    console.log(myTemp.tempC +'*C = '+myTemp.convertF()+'*F');
+    console.log(myTemp.tempC +'*C = '+myTemp.convertK()+'*K');
+</script>
+</body>
+</html>
