@@ -106,7 +106,7 @@
         }
         onOff() {
             this.getBattery();
-            if (this.status == "On") {
+            if (this.status === "On") {
                 this.setStatus("Off");
                 document.getElementById("battery1").value = (this.battery+"%")
             } else {

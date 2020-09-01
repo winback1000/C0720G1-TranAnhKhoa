@@ -7,29 +7,42 @@
 <body>
     <script>
         class Switch {
-            constructor(status,lamp) {
+            constructor(status) {
                 this.status = status;
                 this.lamp = null;
             }
             connectToLamp(lamp) {
                 this.lamp = lamp;
+                lamp.status = "Connected";
             }
-            switchOff() {
+            switchOff(lamp) {
                 this.status = "Off";
-                this.lamp = "Off";
+                lamp.turnOff();
 
             }
-            switchOn() {
+            switchOn(lamp) {
                 this.status = "On";
-                this.lamp = "On";
+                lamp.turnOn();
             }
         }
         class Lamp {
             constructor(status) {
                 this.status = status;
             }
-
+            turnOn(){
+                return console.log("the lamp is on");
+            }
+            turnOff(){
+                return console.log("the lamp is off");
+            }
         }
+        let switch1 = new Switch("Off");
+        let lamp1 = new Lamp("disconnect");
+        console.log(switch1.status);
+        switch1.connectToLamp(lamp1);
+        switch1.switchOn(lamp1);
+        console.log(switch1.status);
+
     </script>
 </body>
 </html>

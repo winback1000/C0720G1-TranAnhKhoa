@@ -5,30 +5,47 @@
     <title>Module 1 - Tran Anh Khoa</title>
 </head>
 <style>
+    .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+    }
+    div.mainMenu {
+        width: 1500px;
+        margin: auto;
+        position: absolute;
+    }
     div.ex1 {
-        width: 500px;
+        position: fixed;
+        top: 70px;
+        width: 700px;
         margin: auto;
         border: 3px solid #73AD21;
     }
-    div.ex2 {
-        width: 500px;
-        margin: auto;
-        border: 3px solid #73AD21;
-    }
-    #table {
+    .table1 {
         border-style: solid;
-        border-width: 1px;
+        border-width: 10px;
         padding: 5px;
     }
-    #table td, #customers th {
+    .table {
+        border-style: solid;
+        border-width: 2px;
+        padding: 5px;
+    }
+    .table td, #customers th {
         border: 1px solid #ddd;
         padding: 8px;
     }
-    #table tr:nth-child(even){background-color: #f2f2f2;}
+    .table tr:nth-child(even){background-color: #f2f2f2;}
 
-    #table tr:hover {background-color: #ddd;}
+    .table tr:hover {background-color: #ddd;}
 
-    #table th {
+    .table th {
         padding-top: 12px;
         padding-bottom: 12px;
         text-align: left;
@@ -37,136 +54,49 @@
     }
 </style>
 <body>
-<div class="ex1" id="div1">
-<h2>Please tell us some information about you</h2>
-    <table>
-        <tr>
-            <th style="text-align: right"><label for="name">Full name</label></th>
-            <td style="text-align: left"><input id="name" type="text" ></td>
-        </tr>
-        <tr>
-            <th style="text-align: right"><label for="identityNumber">Identity number</label></th>
-            <td style="text-align: left"><input id="identityNumber" type="text"></td>
-        </tr>
-        <tr>
-            <th style="text-align: right"><label for="dateOfBirth">Date of birth</label></th>
-            <td style="text-align: left"><input id="dateOfBirth" type="date" ></td>
-        </tr>
-        <tr>
-            <th style="text-align: right"><label for="email">Email</label></th>
-            <td style="text-align: left"><input id="email" type="text" ></td>
-        </tr>
-        <tr>
-            <th style="text-align: right"><label for="address">Address</label></th>
-            <td style="text-align: left">
-                <select id="address">
-                    <option value = "Da Nang">Da Nang</option>
-                    <option value = "Hue">Hue</option>
-                    <option value = "Quang Nam">Quang Nam</option>
-                    <option value = "Other">Other</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <th style="text-align: right"> <label for="vipType">Vip type</label></th>
-            <td style="text-align: left">
-               <select id="vipType">
-                    <option value="Member">Member</option>
-                    <option value="Silver">Silver</option>
-                    <option value="Gold">Gold</option>
-                    <option value="Platinum">Platinum</option>
-                    <option value="Diamond">Diamond</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <th style="text-align: right"><label for="discount">Discount</label></th>
-            <td style="text-align: left"><input id="discount" type="number" >%</td>
-        </tr>
-        <tr>
-            <th style="text-align: right"><label for="people">How many people<br>will stay in our resort?</label></th>
-            <td style="text-align: left"><input id="people" type="number" ></td>
-        </tr>
-        <tr>
-            <th style="text-align: right"><label for="rentDay">Rent day</label></th>
-            <td style="text-align: left"><input id="rentDay" type="number" ></td>
-        </tr>
-        <tr>
-            <th style="text-align: right"><label for="serviceType">Service type</label></th>
-            <td style="text-align: left">
-                <select id="serviceType">
-                    <option value="500">Villa</option>
-                    <option value="300">House</option>
-                    <option value="100">Room</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <th style="text-align: right"> <label for="roomType">Room Type</label></th>
-            <td style="text-align: left">
-               <select id="roomType">
-                    <option value="500">Vip</option>
-                    <option value="300">Business</option>
-                    <option value="100">Normal</option>
-                </select>
-            </td>
-        </tr>
-    </table>
-<button onclick="submit()" ; style="position: absolute;left: 500px; top: 400px">Submit</button>
+<div class="mainMenu" id="mainMenu">
+    <button class="button" type="button" onclick="showAddNewCustomer(); displayAddNewCustomer()">Main Menu</button>
+    <button class="button" type="button" onclick="showAddEmployee(); displayAddNewEmployee()">Add Employee</button>
 </div>
-<div class="ex2" id="div2" style="display: none">
-    <h2 id="greeting" value=""></h2>
-    <table id="table">
+<div class="ex1" id = "addNewCustomers" style="display: none">
+    <h2>Add New Customer</h2>
+    <table class="table1">
         <tr>
-            <th style="text-align: right">Full name: </th>
-            <td style="text-align: left" id="profileName"></td>
-        </tr>
-        <tr>
-            <th style="text-align: right">Identity number: </th>
-            <td style="text-align: left" id="profileIdentityNumber"></td>
-        </tr>
-        <tr>
-            <th style="text-align: right">Age: </th>
-            <td style="text-align: left" id="profileAge"></td>
-        </tr>
-        <tr>
-            <th style="text-align: right">Email: </th>
-            <td style="text-align: left" id="profileEmail"></td>
-        </tr>
-        <tr>
-            <th style="text-align: right">Address: </th>
-            <td style="text-align: left" id="profileAddress"></td>
-        </tr>
-        <tr>
-            <th style="text-align: right">Vip type: </th>
-            <td style="text-align: left" id="profileVipType"></td>
-        </tr>
-        <tr>
-            <th style="text-align: right">Discount: </th>
-            <td style="text-align: left" id="profileDiscount">%</td>
-        </tr>
-        <tr>
-            <th style="text-align: right">How many people<br>will stay in our resort?: </th>
-            <td style="text-align: left" id="profileAmountPeople"></td>
-        </tr>
-        <tr>
-            <th style="text-align: right">Rent day: </th>
-            <td style="text-align: left" id="profileRentDay"></td>
-        </tr>
-        <tr>
-            <th style="text-align: right">Service type: </th>
-            <td style="text-align: left" id="profileServiceType"></td>
-        </tr>
-        <tr>
-            <th style="text-align: right">Room Type: </th>
-            <td style="text-align: left" id="profileRoomType"></td>
-        </tr>
-        <tr>
-            <th style="text-align: right">Estimate price: </th>
-            <td style="text-align: left" id="ProfileEstimatePrice"></td>
+            <td><label>
+                <input type="text" id = "newCustomer" style="font-size: 20px;height: 35px" onfocus="this.value = ''" placeholder="New Customer Name">
+            </label></td>
+            <td><button class="button" type="button" onclick="addOneCustomer()">Add</button></td>
+            <td><button class="button" type="button" onclick="addSeveralCustomers()">Add Several Customers</button> </td>
         </tr>
     </table>
-    <button onclick="edit()" ; style="position: absolute;left: 500px; top: 720px">Edit</button>
+    <h2>Display All Customers</h2>
+    <p id ="customersList"></p>
+</div>
+<div class="ex1" id = "addNewEmployee" style="display: none">
+    <h2>Add New Employee</h2>
+    <table class="table1">
+        <tr>
+            <td><label>
+                <input type="text" id = "newEmployee" style="font-size: 20px;height: 35px" onfocus="this.value = ''" placeholder="New Employee Name">
+            </label></td>
+            <td><button class="button" type="button" onclick="addOneEmployee()">Add</button></td>
+            <td><button class="button" type="button" onclick="addSeveralEmployees()">Add Several Employees</button> </td>
+        </tr>
+    </table>
+    <h2>Display All Customers</h2>
+    <p id ="employeeList"></p>
+</div>
+<div class="ex1" id="editCustomerInfo" style="display: none">
+    <p id ="containOfEditCustomerInfo"></p>
+</div>
+<div class="ex1" id="displayCustomerInfo" style="display: none">
+    <p id ="containOfDisplayCustomerInfo"></p>
+</div>
+<div class="ex1" id="editEmployeeInfo" style="display: none">
+    <p id ="containOfEditEmployeeInfo"></p>
+</div>
+<div class="ex1" id="displayEmployeeInfo" style="display: none">
+    <p id ="containOfDisplayEmployeeInfo"></p>
 </div>
 <script src="Module1_TranAnhKhoa.js"></script>
 </body>
