@@ -6,11 +6,15 @@
 </head>
 <body>
     <script>
-        let a = parseInt(prompt("vui long nhap so nam"))
-        if (((a % 4 == 0)&&(a % 100 != 0)) || (a % 400 == 0))
-            alert(a + " is a leap year");
-        else
-            alert(a + " is NOT a leap year");
+        function checkLeapYear(year) {
+            return ((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0);
+        }
+        let a = parseInt(prompt("vui long nhap so nam"));
+        if (checkLeapYear(a)) {
+            console.log("this is a leap year");
+        } else {
+            console.log("this is not a leap year")
+        }
     </script>
 </body>
 </html>

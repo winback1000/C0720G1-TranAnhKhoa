@@ -46,17 +46,19 @@
     </tr>
     <tr>
         <td>
-            <select>
-                <option>Nguyen Van A</option>
-                <option>Nguyen Van B</option>
-                <option>Nguyen Van C</option>
-            </select>
+            <label>
+                <select>
+                    <option>Nguyen Van A</option>
+                    <option>Nguyen Van B</option>
+                    <option>Nguyen Van C</option>
+                </select>
+            </label>
         </td>
         <td>
-            <input type="text" id="soDien" value="">
+            <label for="soDien"></label><input type="text" id="soDien" value="">
         </td>
         <td>
-            <input type="text" id="soTien" value="">
+            <label for="soTien"></label><input type="text" id="soTien" value="">
         </td>
     </tr>
 
@@ -91,7 +93,8 @@
     function money() {
         let m;
         if (flagBai10 === true) {
-        let interval = setInterval(function () {
+        // let interval =
+            setInterval(function () {
         if (p<=50) {
             m = p*1549;
         } else if (p<=100) {

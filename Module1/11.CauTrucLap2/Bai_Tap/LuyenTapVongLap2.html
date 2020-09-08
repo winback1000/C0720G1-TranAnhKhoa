@@ -16,14 +16,14 @@
         let b = 1;
         let d = parseInt(prompt("ban muon in bao nhieu so trong day finonaci?"));
         if (d === 1){
-            document.write(a);
-        };
+            document.write();
+        }
         if (d === 2) {
             document.write(a + "  " + b + "   ")
-        };
+        }
         if (d>2) {
             document.write(a + "  " + b + "   ");
-            for (i = 1; i <= (d-2); i++) {
+            for (let i = 1; i <= (d-2); i++) {
                 let c = a + b;
                 document.write(c + "  ");
                 a = b;
@@ -34,60 +34,59 @@
     function bai2() {
         let a = parseInt(prompt("nhap mot so nguyen duong"));
         let b;
-        for (i=1;i<=a;i++) {
+        for (let i=1;i<=a;i++) {
             b=i*a;
         }
         document.write(a+"! = "+b)
     }
     function bai3() {
-        for (i = 1; i <= 5; i++) {
-            for (j = 1; j <= i; j++) {
+        for (let i = 1; i <= 5; i++) {
+            for (let j = 1; j <= i; j++) {
                 document.write('*')
             }
             document.write("<br>");
         }
         document.write("<br>");
-        for (i = 0; i <= 5; i++) {
-            for (k = (5 - i); k > 0; k--) {
+        for (let i = 0; i <= 5; i++) {
+            for (let k = (5 - i); k > 0; k--) {
                 document.write("*")
             }
             document.write("<br>");
         }
-        for (i = 0; i <= 5; i++) {
-            for (k = (5 - i); k > 0; k--) {
+        for (let i = 0; i <= 5; i++) {
+            for (let k = (5 - i); k > 0; k--) {
                 document.write('&nbsp;&nbsp;')
             }
-            for (j = 1; j <= i; j++) {
+            for (let j = 1; j <= i; j++) {
                 document.write('*')
             }
             document.write("<br>");
         }
         document.write("<br>");
-        for (i = 0; i <= 5; i++) {
-            for (j = 1; j <= i; j++) {
+        for (let i = 0; i <= 5; i++) {
+            for (let j = 1; j <= i; j++) {
                 document.write('&nbsp;&nbsp;')
             }
-            for (k = (5 - i); k > 0; k--) {
+            for (let k = (5 - i); k > 0; k--) {
                 document.write('*')
             }
             document.write("<br>");
         }
     }
     function bai4() {
-        let a;
         let b;
-        for (i=1;i<=7;i++) {
+        for (let i=1;i<=7;i++) {
             if ((i===1)||(i===7)) {
-                for (a=1;a<=17;a++) {
+                for (let a=1;a<=17;a++) {
                     document.write("*");
                 }
             } else {
                 document.write("*");
                 for (b=1;b<=15;b++) {
                     document.write("&nbsp;&nbsp;");
-                };
+                }
                 document.write("*");
-            };
+            }
             document.write("<br>");
         }
     }
@@ -96,7 +95,7 @@
         let b= parseInt(prompt('nhap so thang gui vao'));
         let c= parseInt(prompt('nhap  % lai suat hang thang'));
         let d= a*Math.pow(((100+c)/100),b);
-        document.write('so tien co duoc sau '+b+' thang la: '+d)
+        document.write('so tien co duoc sau '+b+' thang la: '+d);
     }
 </script>
 

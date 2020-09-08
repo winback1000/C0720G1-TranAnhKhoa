@@ -10,9 +10,10 @@
     <br>
     <input type="text" id="ketqua" value="">
 <script>
-    function count() {
     let a = parseInt(document.getElementById('month').value);
-    switch (a) {
+    function count(month) {
+    let day;
+    switch (month) {
         case 1:
         case 3:
         case 5:
@@ -20,13 +21,15 @@
         case 8:
         case 10:
         case 12: {
-            document.getElementById('ketqua').value= ("thang "+a+" co 30 ngay");
+            day = 30;
+            document.getElementById('ketqua').value= ("thang "+month+" co 30 ngay");
             break;}
         case 4:
         case 6:
         case 9:
         case 11: {
-            document.getElementById('ketqua').value= ("thang "+a+" co 31 ngay");
+            day = 31;
+            document.getElementById('ketqua').value= ("thang "+month+" co 31 ngay");
             break;}
         case 2: {
             document.getElementById('ketqua').value= ("thang 2 co 28 hoac 29 ngay");
