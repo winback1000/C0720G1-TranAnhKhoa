@@ -27,7 +27,7 @@ public class ThemPhanTuVaoMang {
         int[] arr = {10,4,6,7,8,0,0,0,0,0};
         addElementToArray(5,3,arr);
         System.out.println(Arrays.toString(arr));
-        int[] newArr = pushElementToArray(9,arr.length-1,arr);
+        int[] newArr = pushElementToArray(9,arr.length,arr);
         System.out.println(Arrays.toString(newArr));
     }
 }
