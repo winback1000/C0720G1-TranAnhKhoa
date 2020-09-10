@@ -16,11 +16,13 @@ public class TimPhanTuLonNhatTrongMang2Chieu {
     }
     public static int[] findArrayIndex(int num, int[][] arr) {
         int[] index = new int[2];
+        loop_i:
             for (int i = 0; i<arr.length;i++) {
                 for(int j = 0; j < arr[i].length; j++) {
                 if (arr[i][j] == num) {
                     index[0] = i;
                     index[1] = j;
+                    break loop_i;
                 }
             }
         }

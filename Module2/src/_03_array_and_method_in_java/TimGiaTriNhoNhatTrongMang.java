@@ -4,9 +4,19 @@ public class TimGiaTriNhoNhatTrongMang {
     public static int minValue (int[] array) {
         int min = array [0];
         for (int value : array) {
-            if (min <= value) {
+            if (min > value) {
                 min = value;
             }
+        }
+        return min;
+    }
+    public static int minValue2dArray (int[][] array) {
+        int min = array [0][0];
+        for (int[] ints : array) {
+            for (int anInt : ints)
+                if (min > anInt) {
+                    min = anInt;
+                }
         }
         return min;
     }
