@@ -5,8 +5,9 @@ import java.util.Scanner;
 public class HienThiCacLoaiHinh {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        loop_menu:
-        while (true) {
+        boolean menu = true;
+//        loop_menu:
+        while (menu) {
             System.out.println("Menu");
             System.out.println("1. Print the rectangle");
             System.out.println("2. Print the square triangle");
@@ -46,7 +47,8 @@ public class HienThiCacLoaiHinh {
                     }
                     break;
                 case 0:
-                    break loop_menu;
+                    menu = false;
+                    break;
                 default:
                     System.out.println("invalid number!");
             }
