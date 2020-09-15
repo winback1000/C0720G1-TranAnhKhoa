@@ -29,4 +29,8 @@ public class Circle {
     protected double getPerimeter() {
         return 2*getRadius()*Math.PI;
     }
+    @Override
+    public String toString() {
+        return "This is a circle with r= "+getRadius()+"\n P = " +getPerimeter()+"\n S = "+getArea();
+    }
 }

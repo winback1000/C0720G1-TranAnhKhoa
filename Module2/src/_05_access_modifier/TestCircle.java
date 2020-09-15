@@ -6,5 +6,7 @@ public class TestCircle {
         System.out.println(c1.getArea());
         System.out.println(c1.getPerimeter());
         c1.setRadius(9);
+        System.out.println(c1.toString());
     }
+
 }
