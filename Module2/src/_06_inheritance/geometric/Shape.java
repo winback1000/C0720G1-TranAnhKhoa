@@ -1,11 +1,9 @@
 package _06_inheritance.geometric;
 
 public class Shape {
-    public String color;
-    public boolean filled;
+    public String color = "green";
+    public boolean filled = true;
     public Shape () {
-        this.color = "green";
-        this.filled = true;
     }
     public Shape (String color, boolean filled) {
         this.color = color;

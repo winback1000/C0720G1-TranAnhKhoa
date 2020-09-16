@@ -3,8 +3,8 @@ package _06_inheritance.point2d_point3d;
 import java.util.Scanner;
 
 public class Point2D {
-    float x = 0;
-    float y = 0;
+    public float x = 0;
+    public float y = 0;
     public Point2D(){}
     public Point2D(float x, float y) {
         this.x = x;
