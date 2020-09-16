@@ -1,11 +1,9 @@
 package _06_inheritance.geometric;
 
-public class Square extends Rectangle {
-    double side;
+public class Square extends Rectangle implements Resizeable{
+    double side = 1;
 
     public Square() {
-        this.width = 1;
-        this.length = 1;
     }
     public Square (double side) {
         this.width = side;
@@ -39,5 +37,11 @@ public class Square extends Rectangle {
     @Override
     public String toString() {
         return "A Square with side = "+getWidth()+", which is a subclass of "+super.toString();
+    }
+    @Override
+    public void resize(double percent) {
+        this.side*=percent/100;
+        this.width*= percent/100;
+        this.length*= percent/100;
     }
 }

@@ -1,6 +1,6 @@
 package _06_inheritance.geometric;
 
-public class Shape {
+public class Shape implements Resizeable {
     public String color = "green";
     public boolean filled = true;
     public Shape () {
@@ -28,5 +28,10 @@ public class Shape {
     @Override
     public String toString() {
         return "A shape with color "+getColor()+" and " +(filled? "filled" : "not filled");
+    }
+
+    @Override
+    public void resize(double percent) {
+
     }
 }

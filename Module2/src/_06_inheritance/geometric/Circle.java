@@ -1,13 +1,10 @@
 package _06_inheritance.geometric;
 
-public class Circle extends Shape {
-    double radius;
+public class Circle extends Shape implements Resizeable {
+    double radius =1;
     public Circle () {
-        super();
-        this.radius = 1;
     }
     public Circle (double radius) {
-        super();
         this.radius = radius;
     }
     public Circle (double radius,String color, boolean filled) {
@@ -31,5 +28,10 @@ public class Circle extends Shape {
     @Override
     public String toString() {
         return "A Circle with radius = "+getRadius()+", which is a subclass of "+super.toString();
+    }
+
+    @Override
+    public void resize(double percent) {
+        this.radius *= percent/100;
     }
 }
