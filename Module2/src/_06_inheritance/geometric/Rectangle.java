@@ -33,6 +33,7 @@ public class Rectangle extends Shape implements Resizeable {
     public double getPerimeter() {
         return 2*(getLength()+getWidth());
     }
+    @Override
     public double getArea() {
         return getLength()*getWidth();
     }

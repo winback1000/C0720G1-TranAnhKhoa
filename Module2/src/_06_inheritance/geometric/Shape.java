@@ -1,6 +1,6 @@
 package _06_inheritance.geometric;
 
-public class Shape implements Resizeable {
+public abstract class Shape implements Resizeable {
     public String color = "green";
     public boolean filled = true;
     public Shape () {
@@ -32,6 +32,7 @@ public class Shape implements Resizeable {
 
     @Override
     public void resize(double percent) {
-
     }
+    public abstract double getArea();
+
 }

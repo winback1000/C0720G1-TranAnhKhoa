@@ -12,6 +12,10 @@ public class TestInterface {
         for (Shape elem: shapes) {
             elem.resize(Math.random()*100);
             System.out.println(elem);
+            System.out.println(elem.getArea());
+            if (elem instanceof Colorable) {
+                ((Colorable) elem).howToColor();
+            }
         }
     }
 }

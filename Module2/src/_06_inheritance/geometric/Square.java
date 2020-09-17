@@ -1,6 +1,6 @@
 package _06_inheritance.geometric;
 
-public class Square extends Rectangle implements Resizeable{
+public class Square extends Rectangle implements Resizeable, Colorable{
     double side = 1;
 
     public Square() {
@@ -43,5 +43,10 @@ public class Square extends Rectangle implements Resizeable{
         this.side*=percent/100;
         this.width*= percent/100;
         this.length*= percent/100;
+    }
+
+    @Override
+    public void howToColor() {
+        System.out.println("Color all four sides");
     }
 }
