@@ -1,6 +1,9 @@
 package _06_inheritance.geometric;
 
-public class Square extends Rectangle implements Resizeable, Colorable{
+import _07_abstract_class_n_interface.colorable.Colorable;
+import _07_abstract_class_n_interface.resizeable.Resizeable;
+
+public class Square extends Rectangle implements Resizeable, Colorable {
     double side = 1;
 
     public Square() {

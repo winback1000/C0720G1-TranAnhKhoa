@@ -1,5 +1,7 @@
 package _06_inheritance.geometric;
 
+import _07_abstract_class_n_interface.resizeable.Resizeable;
+
 public class Rectangle extends Shape implements Resizeable {
     double length = 1;
     double width = 1;

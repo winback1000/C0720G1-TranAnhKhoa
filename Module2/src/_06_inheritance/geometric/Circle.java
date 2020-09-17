@@ -1,5 +1,7 @@
 package _06_inheritance.geometric;
 
+import _07_abstract_class_n_interface.resizeable.Resizeable;
+
 public class Circle extends Shape implements Resizeable {
     double radius =1;
     public Circle () {

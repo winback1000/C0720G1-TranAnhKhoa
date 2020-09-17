@@ -1,4 +1,10 @@
-package _06_inheritance.geometric;
+package _07_abstract_class_n_interface.resizeable;
+
+import _06_inheritance.geometric.Circle;
+import _06_inheritance.geometric.Rectangle;
+import _06_inheritance.geometric.Shape;
+import _06_inheritance.geometric.Square;
+import _07_abstract_class_n_interface.colorable.Colorable;
 
 import java.util.Arrays;
 
