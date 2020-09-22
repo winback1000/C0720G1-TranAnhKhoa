@@ -1,4 +1,4 @@
-package _10_DSA_danh_sach.trien_khai_cac_phuong_thuc_cua_ArrayList;
+package _11_DSA_danh_sach.trien_khai_cac_phuong_thuc_cua_ArrayList;
 
 import java.util.Arrays;
 
@@ -67,15 +67,13 @@ public class MyList<E> {
         return index;
     }
     public void clear() {
-        for(int i = 0; i<elements.length; i++) {
-            elements[i] = null;
-        }
+        Arrays.fill(elements, null);
         this.size = 0;
     }
     public String toString() {
         StringBuilder result = new StringBuilder("[");
         for (int i = 0;i<this.size; i++) {
-            result.append(" "+elements[i]+" ");
+            result.append(" ").append(elements[i]).append(" ");
         }
         return result+"]";
     }

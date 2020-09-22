@@ -1,7 +1,4 @@
-package _10_DSA_danh_sach.trien_khai_cac_phuong_thuc_cua_ArrayList;
-
-import java.util.ArrayList;
-import java.util.List;
+package _11_DSA_danh_sach.trien_khai_cac_phuong_thuc_cua_ArrayList;
 
 public class MyListTest {
 

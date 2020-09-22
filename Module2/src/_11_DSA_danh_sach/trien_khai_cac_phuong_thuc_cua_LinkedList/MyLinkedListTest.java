@@ -1,4 +1,4 @@
-package _10_DSA_danh_sach.trien_khai_cac_phuong_thuc_cua_LinkedList;
+package _11_DSA_danh_sach.trien_khai_cac_phuong_thuc_cua_LinkedList;
 
 public class MyLinkedListTest {
     public static void main(String[] args) {

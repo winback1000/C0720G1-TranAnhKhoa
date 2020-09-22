@@ -1,4 +1,4 @@
-package _10_DSA_danh_sach.trien_khai_lop_list_don_gian;
+package _11_DSA_danh_sach.trien_khai_lop_list_don_gian;
 
 public class MyListTest {
     public static void main(String[] args) {

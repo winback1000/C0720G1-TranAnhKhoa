@@ -1,7 +1,5 @@
-package _10_DSA_danh_sach.trien_khai_lop_list_don_gian;
+package _11_DSA_danh_sach.trien_khai_lop_list_don_gian;
 
-import javax.lang.model.element.Element;
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class MyList<E> {
