@@ -56,6 +56,7 @@ public class MyLinkedList<E> {
         temp.next = temp.next.next;
         this.numNodes--;
         return deleted;
+
     }
     public MyLinkedList clone() {
         return this;
