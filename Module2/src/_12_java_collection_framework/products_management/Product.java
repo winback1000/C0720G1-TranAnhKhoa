@@ -2,22 +2,22 @@ package _12_java_collection_framework.products_management;
 
 public class Product implements Comparable<Product> {
     static Integer id = 0;
-    Integer idProduct;
+    String idProduct;
     String name;
     Float price;
     String manufacturer;
 
-    public Product() {
-        id++;
-        this.idProduct = id;
-    }
+//    public Product() {
+//        id++;
+//        this.idProduct = "Prd" + id;
+//    }
 
     public Product(String name, Float price, String manufacturer) {
         id++;
-        this.idProduct = id;
         this.name = name;
         this.price = price;
         this.manufacturer = manufacturer;
+        this.idProduct = ""+ manufacturer.charAt(0) + name.charAt(0) + + id;
     }
 
     public String getName() {
@@ -44,12 +44,23 @@ public class Product implements Comparable<Product> {
         this.manufacturer = manufacturer;
     }
 
-    public Integer getIdProduct() {
+    public String getIdProduct() {
         return idProduct;
     }
 
     @Override
     public int compareTo(Product o) {
-        return this.idProduct - o.getIdProduct();
+        return this.idProduct.compareTo(o.getIdProduct()) ;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id =" + idProduct +
+                ", name= " + name +
+                ", price= " + price +
+                ", manufacturer= " + manufacturer +
+                "}\n";
     }
 }
+
