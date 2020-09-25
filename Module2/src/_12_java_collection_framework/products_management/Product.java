@@ -7,17 +7,12 @@ public class Product implements Comparable<Product> {
     Float price;
     String manufacturer;
 
-//    public Product() {
-//        id++;
-//        this.idProduct = "Prd" + id;
-//    }
-
     public Product(String name, Float price, String manufacturer) {
         id++;
         this.name = name;
         this.price = price;
         this.manufacturer = manufacturer;
-        this.idProduct = ""+ manufacturer.charAt(0) + name.charAt(0) + + id;
+        this.idProduct = ""+ manufacturer.charAt(0) + name.charAt(0) + id;
     }
 
     public String getName() {
@@ -60,7 +55,7 @@ public class Product implements Comparable<Product> {
                 ", name= " + name +
                 ", price= " + price +
                 ", manufacturer= " + manufacturer +
-                "}\n";
+                "}";
     }
 }
 
