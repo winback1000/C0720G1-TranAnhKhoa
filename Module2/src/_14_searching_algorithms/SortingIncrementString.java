@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class IncrementString {
+public class SortingIncrementString {
     static List<String> arr = new ArrayList<>();
     static Integer left = 0;
     static int getRight() {
