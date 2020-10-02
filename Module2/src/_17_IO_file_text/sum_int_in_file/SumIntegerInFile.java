@@ -1,9 +1,7 @@
 package _17_IO_file_text.sum_int_in_file;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 
 public class SumIntegerInFile {
     public static int sum(String filePath) {
