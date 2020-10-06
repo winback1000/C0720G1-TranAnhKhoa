@@ -1,17 +1,22 @@
 package case_study.models;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Services {
+    public static List<Services> servicesList = new ArrayList<>();
     String id;
     String name;
     double usableArea;
     double rentCost;
     byte maxPeople;
     String rentType;
+    NumberFormat nf = new DecimalFormat("0000");
 
-    public Services() {}
-
-    public Services(String id, double usableArea, double rentCost, byte maxPeople, String rentType) {
-        this.id = id;
+    public Services(String name, double usableArea, double rentCost, byte maxPeople, String rentType) {
+        this.name = name;
         this.usableArea = usableArea;
         this.rentCost = rentCost;
         this.maxPeople = maxPeople;
@@ -20,10 +25,6 @@ public abstract class Services {
 
     public String getId() {
         return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getName() {

@@ -17,32 +17,38 @@ public class MainController {
         System.out.println("6.Show Information of Employee");
         System.out.println("7.Exit");
         System.out.println("Please input your selection");
-        switch (scanner.nextByte()) {
-            case 1:
-                addNewService();
-                break;
-            case 2:
-                showService();
-                break;
-            case 3:
-                addNewCustomer();
-                break;
-            case 4:
-                showInformationOfCustomer();
-                break;
-            case 5:
-                addNewBooking();
-                break;
-            case 6:
-                showInformationOfEmployee();
-                break;
-            case 7:
-                System.exit(0);
-            default:
-                System.out.println("invalid option");
-                mainMenu();
+        try {
+            switch (Byte.parseByte(scanner.nextLine())) {
+                case 1:
+                    addNewService();
+                    break;
+                case 2:
+                    showService();
+                    break;
+                case 3:
+                    addNewCustomer();
+                    break;
+                case 4:
+                    showInformationOfCustomer();
+                    break;
+                case 5:
+                    addNewBooking();
+                    break;
+                case 6:
+                    showInformationOfEmployee();
+                    break;
+                case 7:
+                    System.exit(0);
+                default:
+                    System.out.println("invalid option");
+                    mainMenu();
+            }
         }
-    }
+        catch(NumberFormatException e) {
+            System.out.println("invalid option");
+            mainMenu();
+            }
+        }
 
     public static void addNewService() {
         System.out.println("1.Add New Villa");
@@ -51,24 +57,30 @@ public class MainController {
         System.out.println("4.Back to Menu");
         System.out.println("5.Exit");
         System.out.println("Please input your selection");
-        switch (scanner.nextByte()) {
-            case 1:
-                addNewVilla();
-                break;
-            case 2:
-                addNewHouse();
-                break;
-            case 3:
-                addNewRoom();
-                break;
-            case 4:
-                mainMenu();
-                break;
-            case 5:
-                System.exit(0);
-            default:
-                System.out.println("invalid option");
-                addNewService();
+        try {
+            switch (Byte.parseByte(scanner.nextLine())) {
+                case 1:
+                    addNewVilla();
+                    break;
+                case 2:
+                    addNewHouse();
+                    break;
+                case 3:
+                    addNewRoom();
+                    break;
+                case 4:
+                    mainMenu();
+                    break;
+                case 5:
+                    System.exit(0);
+                default:
+                    System.out.println("invalid option");
+                    addNewService();
+            }
+        }
+        catch(NumberFormatException e) {
+            System.out.println("invalid option");
+            addNewService();
         }
     }
 
@@ -91,33 +103,39 @@ public class MainController {
         System.out.println("7. Back to Menu");
         System.out.println("8. Exit");
         System.out.println("Please input your selection");
-        switch (scanner.nextByte()) {
-            case 1:
-                showAllVilla();
-                break;
-            case 2:
-                showAllHouse();
-                break;
-            case 3:
-                showAllRoom();
-                break;
-            case 4:
-                showAllVillaNotDuplicate();
-                break;
-            case 5:
-                showAllHouseNotDuplicate();
-                break;
-            case 6:
-                showAllRoomNotDuplicate();
-                break;
-            case 7:
-                mainMenu();
-                break;
-            case 8:
-                System.exit(0);
-            default:
-                System.out.println("invalid option");
-                showService();
+        try {
+            switch (Byte.parseByte(scanner.nextLine())) {
+                case 1:
+                    showAllVilla();
+                    break;
+                case 2:
+                    showAllHouse();
+                    break;
+                case 3:
+                    showAllRoom();
+                    break;
+                case 4:
+                    showAllVillaNotDuplicate();
+                    break;
+                case 5:
+                    showAllHouseNotDuplicate();
+                    break;
+                case 6:
+                    showAllRoomNotDuplicate();
+                    break;
+                case 7:
+                    mainMenu();
+                    break;
+                case 8:
+                    System.exit(0);
+                default:
+                    System.out.println("invalid option");
+                    showService();
+            }
+        }
+        catch (NumberFormatException e) {
+            System.out.println("invalid option");
+            showService();
         }
     }
 
