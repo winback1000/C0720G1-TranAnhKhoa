@@ -1,26 +1,29 @@
 package case_study.models;
 
+import case_study.controllers.MainController;
+
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Services {
+public abstract class Services implements Comparable<Services>{
     public static List<Services> servicesList = new ArrayList<>();
-    String id;
+    String id = new String("SV");
     String name;
-    double usableArea;
+    double area;
     double rentCost;
     byte maxPeople;
     String rentType;
     NumberFormat nf = new DecimalFormat("0000");
+    final String COMMA = ",";
 
-    public Services(String name, double usableArea, double rentCost, byte maxPeople, String rentType) {
+    public Services(String name, double area, double rentCost, byte maxPeople) {
         this.name = name;
-        this.usableArea = usableArea;
+        this.area = area;
         this.rentCost = rentCost;
         this.maxPeople = maxPeople;
-        this.rentType = rentType;
+        setRentType();
     }
 
     public String getId() {
@@ -35,12 +38,12 @@ public abstract class Services {
         this.name = name;
     }
 
-    public double getUsableArea() {
-        return usableArea;
+    public double getArea() {
+        return area;
     }
 
-    public void setUsableArea(double usableArea) {
-        this.usableArea = usableArea;
+    public void setArea(double area) {
+        this.area = area;
     }
 
     public double getRentCost() {
@@ -63,10 +66,37 @@ public abstract class Services {
         return rentType;
     }
 
-    public void setRentType(String rentType) {
-        this.rentType = rentType;
+    public void setRentType() {
+        System.out.println("Please select the rent type");
+        System.out.println("1. Year\n2. Month\n3. Week\n4. Day\n5. Hour");
+        String selected = MainController.scanner.nextLine();
+        switch (selected) {
+            case "1":
+                this.rentType = "Year";
+                break;
+            case "2":
+                this.rentType = "Month";
+                break;
+            case "3":
+                this.rentType = "Week";
+                break;
+            case "4":
+                this.rentType = "Day";
+                break;
+            case "5":
+                this.rentType = "Hour";
+                break;
+            default:
+                System.out.println("Invalid option, please choose again!");
+                setRentType();
+                break;
+        }
     }
 
     public abstract String showInfo();
 
+    @Override
+    public int compareTo(Services s) {
+        return this.name.compareTo(s.getName());
+    }
 }

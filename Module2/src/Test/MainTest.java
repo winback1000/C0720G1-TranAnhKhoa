@@ -1,11 +1,16 @@
 package Test;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+
 public class MainTest {
+
+
     public static void main(String[] args) {
-        StringBuilder test = new StringBuilder();
-        String name = "abcd";
-        System.out.println(name.charAt(0));
-        test.append(name.charAt(0)).append(name.charAt(1)).append(4);
-        System.out.println(test);
+        String input = "0933123456";
+
+        String number = input.replaceFirst("(\\d{4})(\\d{3})(\\d+)", "$1-$2-$3");
+
+        System.out.println(number);
     }
 }
