@@ -9,23 +9,24 @@ import java.util.List;
 
 import static case_study.models.Customer.customerList;
 
-public class AddNewCustomer extends MainMenu implements Executor {
-    public static List<AddNewCustomer> addNewCustomerList = new ArrayList<>();
+public class AddNewCustomer extends MainMenu {
+    public static List<AddNewCustomer> menuList = new ArrayList<>();
 
     public AddNewCustomer() {
         this.name = "Add new customer";
-        mainMenuList.add(this);
+        menuList.add(this);
     }
 
     @Override
     public void displayList() {
-        for(int index =0; index < addNewCustomerList.size(); index++) {
-            System.out.println((index +1)+". "+addNewCustomerList.get(index).name);
+        for(int index = 0; index < menuList.size(); index++) {
+            System.out.println((index +1)+". "+ menuList.get(index).name);
         }
     }
 
     @Override
     public void execute() {
         customerList.add(new Customer());
+        displayList();
     }
 }

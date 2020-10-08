@@ -11,11 +11,11 @@ public class Villa extends Services {
     public static TreeSet<String> villaNameList = new TreeSet<>();
     String roomStandard;
     String otherUtilities;
-    float swimmingPoolArea;
+    double swimmingPoolArea;
     byte numberOfFloor;
 
-    public Villa(String name, double area, double rentCost, byte maxPeople, String roomStandard, String otherUtilities, float swimmingPoolArea, byte numberOfFloor) {
-        super(name, area, rentCost, maxPeople);
+    public Villa(String name, double area, double rentCost, byte maxPeople, String rentType, String roomStandard, String otherUtilities, double swimmingPoolArea, byte numberOfFloor) {
+        super(name, area, rentCost, maxPeople, rentType);
         villaNum++;
         this.id = this.id + "VL-" + nf.format(villaNum);
         this.roomStandard = roomStandard;
@@ -43,7 +43,7 @@ public class Villa extends Services {
         this.otherUtilities = otherUtilities;
     }
 
-    public float getSwimmingPoolArea() {
+    public double getSwimmingPoolArea() {
         return swimmingPoolArea;
     }
 

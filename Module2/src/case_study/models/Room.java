@@ -11,8 +11,8 @@ public class Room extends Services {
     public static TreeSet<String> roomNameList = new TreeSet<>();
     String freeServices;
 
-    public Room(String name, double area, double rentCost, byte maxPeople, String freeServices) {
-        super(name, area, rentCost, maxPeople);
+    public Room(String name, double area, double rentCost, byte maxPeople,String rentType, String freeServices) {
+        super(name, area, rentCost, maxPeople, rentType);
         roomNum++;
         this.id = this.id + "RO-" + nf.format(roomNum);
         this.freeServices = freeServices;
@@ -33,8 +33,8 @@ public class Room extends Services {
         return freeServices;
     }
 
-    public void setFreeServices(String freeServices) {
-        this.freeServices = freeServices;
+    public void setFreeServices(UtilitiesServices freeServices) {
+        this.freeServices = freeServices.getName();
     }
     @Override
     public String toString() {

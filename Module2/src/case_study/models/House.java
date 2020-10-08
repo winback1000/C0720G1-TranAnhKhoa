@@ -13,8 +13,8 @@ public class House extends Services {
     String otherUtilities;
     byte numberOfFloor;
 
-    public House(String name, double area, double rentCost, byte maxPeople, String roomStandard, String otherUtilities, byte numberOfFloor) {
-        super(name, area, rentCost, maxPeople);
+    public House(String name, double area, double rentCost, byte maxPeople, String rentType, String roomStandard, String otherUtilities, byte numberOfFloor) {
+        super(name, area, rentCost, maxPeople, rentType);
         houseNum++;
         this.id = this.id + "HO-" + nf.format(houseNum);
         this.roomStandard = roomStandard;

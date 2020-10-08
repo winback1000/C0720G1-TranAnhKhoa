@@ -7,7 +7,7 @@ import java.util.TreeMap;
 public class Employee extends Human {
 
     static int employeeNum = 0;
-    static TreeMap<String, Employee> employeeMap = new TreeMap<>();
+    public static TreeMap<String, Employee> employeeMap = new TreeMap<>();
     NumberFormat nf = new DecimalFormat("000000");
     private String employeeId;
     byte level;

@@ -107,7 +107,7 @@ public class Customer extends Human {
     public int compareTo(Human h) {
         int nameComparision = this.name.compareTo(h.getName());
         if (nameComparision == 0) {
-            return this.dateOfBirth.compareTo(h.getDateOfBirth());
+            return Integer.parseInt(this.dateOfBirth.substring(6)) - Integer.parseInt(h.getDateOfBirth().substring(6));
         }
         return nameComparision;
     }

@@ -9,18 +9,18 @@ import java.util.List;
 
 import static case_study.models.Customer.customerList;
 
-public class AddNewBooking extends MainMenu implements Executor {
-    public static List<AddNewBooking> addNewBookingList = new ArrayList<>();
+public class AddNewBooking extends MainMenu {
+    public static List<AddNewBooking> menuList = new ArrayList<>();
 
     public AddNewBooking() {
         this.name = "Add new booking";
-        mainMenuList.add(this);
+        MainMenu.menuList.add(this);
     }
 
     @Override
     public void displayList() {
-        for(int index = 0; index < addNewBookingList.size(); index++) {
-            System.out.println((index +1)+". "+ addNewBookingList.get(index).name);
+        for(int index = 0; index < menuList.size(); index++) {
+            System.out.println((index +1)+". "+ menuList.get(index).name);
         }
     }
 
@@ -29,5 +29,6 @@ public class AddNewBooking extends MainMenu implements Executor {
         for (Customer customer: customerList) {
             System.out.println(customer.showInfo());
         }
+        displayList();
     }
 }

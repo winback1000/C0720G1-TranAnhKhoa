@@ -18,12 +18,12 @@ public abstract class Services implements Comparable<Services>{
     NumberFormat nf = new DecimalFormat("0000");
     final String COMMA = ",";
 
-    public Services(String name, double area, double rentCost, byte maxPeople) {
+    public Services(String name, double area, double rentCost, byte maxPeople, String rentType) {
         this.name = name;
         this.area = area;
         this.rentCost = rentCost;
         this.maxPeople = maxPeople;
-        setRentType();
+        this.rentType = rentType;
     }
 
     public String getId() {
@@ -64,33 +64,6 @@ public abstract class Services implements Comparable<Services>{
 
     public String getRentType() {
         return rentType;
-    }
-
-    public void setRentType() {
-        System.out.println("Please select the rent type");
-        System.out.println("1. Year\n2. Month\n3. Week\n4. Day\n5. Hour");
-        String selected = MainController.scanner.nextLine();
-        switch (selected) {
-            case "1":
-                this.rentType = "Year";
-                break;
-            case "2":
-                this.rentType = "Month";
-                break;
-            case "3":
-                this.rentType = "Week";
-                break;
-            case "4":
-                this.rentType = "Day";
-                break;
-            case "5":
-                this.rentType = "Hour";
-                break;
-            default:
-                System.out.println("Invalid option, please choose again!");
-                setRentType();
-                break;
-        }
     }
 
     public abstract String showInfo();

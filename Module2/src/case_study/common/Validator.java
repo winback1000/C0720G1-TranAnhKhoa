@@ -71,21 +71,21 @@ public class Validator {
         } else throw new IdCardException();
     }
 
-    public static void main(String[] args) throws BirthdayException, DateFormatException, NameException, GenderException {
-//        System.out.println(isValidName("Tran A Bbc", NAME_CHECKING));
-//        System.out.println(isValidDate("31-12-2000", DOB_CHECKING));
-//        System.out.println(isValidName("Massage",UTILITIES_NAME_CHECKING));
-//        String a = Integer.toHexString(50);
-//        System.out.println(a);
-//        System.out.println(correctGender("fEmAle"));
-//        String identityNumber = "123456789".replaceFirst("(\\d{3})(\\d{3})(\\d{3})","$1 $2 $3");
-//        System.out.println(identityNumber);
-
-        try {
-            isValidEmail("asdf@ @.com");
-        } catch (EmailException e) {
-            System.out.println("please input the email with the right format");
-
-        }
-    }
+//    public static void main(String[] args) throws BirthdayException, DateFormatException, NameException, GenderException {
+////        System.out.println(isValidName("Tran A Bbc", NAME_CHECKING));
+////        System.out.println(isValidDate("31-12-2000", DOB_CHECKING));
+////        System.out.println(isValidName("Massage",UTILITIES_NAME_CHECKING));
+////        String a = Integer.toHexString(50);
+////        System.out.println(a);
+////        System.out.println(correctGender("fEmAle"));
+////        String identityNumber = "123456789".replaceFirst("(\\d{3})(\\d{3})(\\d{3})","$1 $2 $3");
+////        System.out.println(identityNumber);
+//
+//        try {
+//            isValidEmail("asdf@ @.com");
+//        } catch (EmailException e) {
+//            System.out.println("please input the email with the right format");
+//
+//        }
+//    }
 }

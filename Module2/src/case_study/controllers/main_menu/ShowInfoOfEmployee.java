@@ -1,15 +1,18 @@
 package case_study.controllers.main_menu;
 
+import case_study.controllers.Executor;
 import case_study.controllers.MainMenu;
+import case_study.models.Employee;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
-public class AddNewService extends MainMenu   {
-    public static List<AddNewService> menuList = new ArrayList<>();
+public class ShowInfoOfEmployee extends MainMenu {
+    public static List<ShowInfoOfEmployee> menuList = new ArrayList<>();
 
-    public AddNewService() {
-        this.name = "Add New Service";
+    public ShowInfoOfEmployee() {
+        this.name = "Show Employee info";
         MainMenu.menuList.add(this);
     }
 
@@ -22,6 +25,9 @@ public class AddNewService extends MainMenu   {
 
     @Override
     public void execute() {
+        for (Map.Entry<String, Employee> e: Employee.employeeMap.entrySet()) {
+            System.out.println(e.getValue().showInfo());
+        }
         displayList();
     }
 }
