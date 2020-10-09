@@ -15,6 +15,8 @@ public class Validator {
     public static final String UTILITIES_NAME_CHECKING = "(Massage|Karaoke|Food|Drink|Car)";
     public static final String EMAIL_CHECKING = "^[\\w-.]+[\\w-.]*@([\\w-]+\\.)+[\\w-]{2,4}$";
     public static final String ID_CARD_CHECKING = "\\d{9}";
+    public static final String PHONE_NUMBER_CHECKING = "\\d{10}";
+    public static final String CUSTOMER_TYPE_CHECKING = "(Member|Silver|Gold|Platinum|Diamond)";
 
     public static boolean isValidName(String name, String regex) throws NameException {
         pattern = Pattern.compile(regex);
@@ -56,7 +58,7 @@ public class Validator {
             return matcher.matches();
         } else throw new EmailException();
     }
-    public static String correctGender(String gender) throws GenderException {
+    public static String isValidGender(String gender) throws GenderException {
         String correctedGender = gender.toUpperCase();
         if ((gender.toLowerCase().equals("male"))||(gender.toLowerCase().equals("female"))||(gender.toLowerCase().equals("unknown"))) {
             correctedGender = gender.substring(0, 1).toUpperCase() + gender.substring(1).toLowerCase();
@@ -70,22 +72,19 @@ public class Validator {
             return matcher.matches();
         } else throw new IdCardException();
     }
+    public static boolean isValidPhoneNumber(String phoneNumber) throws Exception {
+        pattern = Pattern.compile(PHONE_NUMBER_CHECKING);
+        matcher = pattern.matcher(phoneNumber);
+        if(matcher.matches()) {
+            return matcher.matches();
+        } else throw new IdCardException();
+    }
+    public static boolean isValidCustomerType (String customerType) throws Exception {
+        pattern = Pattern.compile(CUSTOMER_TYPE_CHECKING);
+        matcher = pattern.matcher(customerType);
+        if (matcher.matches()) {
+            return matcher.matches();
+        } else throw new Exception();
+    }
 
-//    public static void main(String[] args) throws BirthdayException, DateFormatException, NameException, GenderException {
-////        System.out.println(isValidName("Tran A Bbc", NAME_CHECKING));
-////        System.out.println(isValidDate("31-12-2000", DOB_CHECKING));
-////        System.out.println(isValidName("Massage",UTILITIES_NAME_CHECKING));
-////        String a = Integer.toHexString(50);
-////        System.out.println(a);
-////        System.out.println(correctGender("fEmAle"));
-////        String identityNumber = "123456789".replaceFirst("(\\d{3})(\\d{3})(\\d{3})","$1 $2 $3");
-////        System.out.println(identityNumber);
-//
-//        try {
-//            isValidEmail("asdf@ @.com");
-//        } catch (EmailException e) {
-//            System.out.println("please input the email with the right format");
-//
-//        }
-//    }
 }

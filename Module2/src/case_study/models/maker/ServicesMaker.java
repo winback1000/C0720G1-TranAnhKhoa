@@ -1,4 +1,4 @@
-package case_study.models.services_maker;
+package case_study.models.maker;
 
 import case_study.common.Validator;
 import case_study.common.exception.NameException;

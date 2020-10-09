@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShowServices extends MainMenu {
-    public static List<ShowServices> menuList = new ArrayList<>();
+    public static List<MainMenu> menuList = new ArrayList<>();
 
     public ShowServices() {
         this.name = "Show service";
@@ -15,8 +15,6 @@ public class ShowServices extends MainMenu {
 
     @Override
     public void displayList() {
-        for(int index = 0; index < menuList.size(); index++) {
-            System.out.println((index +1)+". "+ menuList.get(index).name);
-        }
+        showMenu(menuList);
     }
 }
