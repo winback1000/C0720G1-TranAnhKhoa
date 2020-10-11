@@ -8,16 +8,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AddNewVilla extends AddNewService {
-    public static List<MainMenu> menuList = new ArrayList<>();
+    public static List<MainMenu> addNewVillaList = new ArrayList<>();
 
     public AddNewVilla() {
         this.name = "Add New Villa";
-        AddNewService.menuList.add(this);
     }
 
     @Override
     public void displayList() {
-        showMenu(menuList);
+        showMenu(addNewVillaList);
     }
 
     @Override

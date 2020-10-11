@@ -2,14 +2,17 @@ package case_study.models.maker;
 
 import case_study.common.Validator;
 import case_study.common.exception.*;
-import case_study.controllers.main_menu.ShowServices;
-import case_study.controllers.main_menu.show_services.ShowAllServices;
-import case_study.models.Services;
-import case_study.models.UtilitiesServices;
+import case_study.common.ShowList;
+import case_study.controllers.main_menu.add_new_customer.AddNewContract;
+import case_study.models.*;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
+
+import static case_study.models.Contract.contractList;
+import static case_study.models.UtilitiesServices.utilitiesServicesList;
 
 public class HumanMaker {
     static Scanner scr = new Scanner(System.in);
@@ -33,20 +36,47 @@ public class HumanMaker {
 
 
     public static void addNewCustomer() {
-        ServicesMaker.setName();
+        setName();
         setDateOfBirth();
         setPhoneNumber();
         setEmail();
         setGender();
         setAddress();
+        setIdentityNumber();
         setCustomerType();
         setRentType();
-
-
-
-
+        setOtherUtility();
+        setContract();
+        new Customer(name,dateOfBirth,phoneNumber,email,gender,address,identityNumber,rentType,customerType,otherUtility,contract);
     }
-
+    public static void addNewEmployee (){
+        setName();
+        setDateOfBirth();
+        setPhoneNumber();
+        setEmail();
+        setGender();
+        setAddress();
+        setEmployeeLevel();
+        setEmployeePosition();
+        setEmployeeSalary();
+        new Employee(name,dateOfBirth,phoneNumber,email,gender,address,identityNumber,level,position,salary);
+    }
+    public static void setName() {
+        String tempName = null;
+        boolean corrected;
+        do {
+            corrected = true;
+            try {
+                System.out.println("Please input name (example: Nguyen Van Hau)");
+                tempName = scr.nextLine();
+                corrected = Validator.isValidName(tempName, Validator.HUMAN_NAME_CHECKING);
+            } catch (NameException e) {
+                System.out.println("Incorrect format, please try again");
+                corrected = false;
+            }
+        } while (!corrected);
+        name = tempName;
+    }
     public static void setDateOfBirth() {
         String temp = null;
         boolean corrected = false;
@@ -54,7 +84,7 @@ public class HumanMaker {
             try {
                 System.out.println("Please input date of birth (example: mm-dd-yyyy), with age larger than 18");
                 temp = scr.nextLine();
-                corrected = Validator.isValidDate(temp, Validator.DOB_CHECKING);
+                corrected = Validator.isValidDateOfBirth(temp, Validator.DOB_CHECKING);
 
             } catch (BirthdayException e) {
                 System.out.println("Customer is too young, please input again");
@@ -84,7 +114,7 @@ public class HumanMaker {
         boolean corrected = false;
         do {
             try {
-                System.out.println("Please input the email address( example: ab.c@ab.c");
+                System.out.println("Please input the email address( example: ab.c@ab.c)");
                 tempEmail = scr.nextLine();
                 corrected = Validator.isValidEmail(tempEmail);
 
@@ -99,7 +129,7 @@ public class HumanMaker {
         boolean corrected = true;
         do {
             try {
-                System.out.println("Please input the email address( example: ab.c@ab.c");
+                System.out.println("Please input the gender( Male, Female, Unknown)");
                 temp = scr.nextLine();
                 gender = Validator.isValidGender(temp);
 
@@ -118,7 +148,7 @@ public class HumanMaker {
         boolean corrected = false;
         do {
             try {
-                System.out.println("Please input the phone number with 10 digital");
+                System.out.println("Please input the ID number with 9 digital");
                 temp = scr.nextLine();
                 corrected = Validator.isValidIdCard(temp);
 
@@ -144,7 +174,90 @@ public class HumanMaker {
         customerType = temp;
     }
     public static void setRentType() {
-        ShowAllServices.showList(Services.servicesList);
-        rentType = ShowAllServices.IdSelection(Services.servicesList);
+        ShowList.showServicesList(Services.servicesList);
+        rentType = ShowList.idSelection(Services.servicesList);
+    }
+    public static void setOtherUtility() {
+        boolean available;
+            while( utilitiesServicesList.size() == 0) {
+                System.out.println("There is not any available utility, please add new one");
+                ServicesMaker.newUtilityService();
+            }
+            do {
+                available = true;
+            try {
+                ShowList.showListUtilities(utilitiesServicesList);
+                ShowList.SelectFromList(Collections.singletonList(utilitiesServicesList));
+                otherUtility.add(utilitiesServicesList.get(ShowList.selection - 1));
+            } catch (IndexOutOfBoundsException e) {
+                System.out.println("Incorrect selection, please try again");
+                available = false;
+            }
+        } while (!available);
+    }
+    public static void setContract() {
+        boolean available;
+        while (contractList.size() == 0) {
+            System.out.println("There is not any available contract, please add new one");
+            AddNewContract.newContract();
+        }
+        do {
+            available = true;
+            try {
+                ShowList.showContractList(contractList);
+                ShowList.SelectFromList(Collections.singletonList(contractList));
+                contract = contractList.get(ShowList.selection - 1).getId();
+            } catch (IndexOutOfBoundsException e) {
+                System.out.println("Incorrect selection, please try again");
+                available = false;
+            }
+        } while (!available);
+    }
+    public static void setEmployeeLevel() {
+        boolean correct = true;
+        do {
+            try {
+                System.out.println("Please input the level of employee(1-4)");
+                level = Byte.parseByte(scr.nextLine());
+                if (level <0 || level > 4) {
+                    System.out.println("invalid input, please try again");
+                    correct = false;
+                }
+            } catch (Exception e) {
+                System.out.println("invalid input, please try again");
+                correct = false;
+            }
+        } while (!correct);
+    }
+    public static void setEmployeePosition() {
+        String temp = null;
+        boolean corrected = false;
+        do {
+            try {
+                System.out.println("Please input the position ( Junior|Senior|Supervisor|Leader|Manager )");
+                temp = scr.nextLine();
+                corrected = Validator.isValidNameType(temp,Validator.POSITION_CHECKING);
+
+            } catch (Exception e) {
+                System.out.println("Invalid input, please try again");
+            }
+        } while (!corrected);
+        position = temp;
+    }
+    public static void setEmployeeSalary() {
+        boolean correct = true;
+        do {
+            try {
+                System.out.println("Please input the salary of employee (larger than 0)");
+                salary = Double.parseDouble(scr.nextLine());
+                if (salary <0 ) {
+                    System.out.println("invalid input, please try again");
+                    correct = false;
+                }
+            } catch (Exception e) {
+                System.out.println("invalid input, please try again");
+                correct = false;
+            }
+        } while (!correct);
     }
 }

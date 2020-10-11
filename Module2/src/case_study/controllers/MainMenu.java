@@ -3,20 +3,19 @@ package case_study.controllers;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainMenu extends DisplayMenu implements DisplayList, Executor {
-    public static List<MainMenu> menuList = new ArrayList<>();
+public class MainMenu extends DisplayMenu {
+    public static List<MainMenu> mainMenuList = new ArrayList<>();
     public String name;
 
-    @Override
     public void displayList() {
-        showMenu(menuList);
+        showMenu(mainMenuList);
     }
 
     public String getName() {
         return name;
     }
 
-    @Override
+
     public void execute() {
         displayList();
     }

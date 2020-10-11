@@ -10,11 +10,10 @@ import java.util.List;
 import static case_study.models.Customer.customerList;
 
 public class ShowCustomerInfo extends MainMenu {
-    public static List<MainMenu> menuList = new ArrayList<>();
+    public static List<MainMenu> showCustomerInfoList = new ArrayList<>();
 
     public ShowCustomerInfo() {
         this.name = "Show customers info";
-        MainMenu.menuList.add(this);
     }
 
     @Override
@@ -28,6 +27,6 @@ public class ShowCustomerInfo extends MainMenu {
 
     @Override
     public void displayList() {
-        showMenu(menuList);
+        showMenu(showCustomerInfoList);
     }
 }

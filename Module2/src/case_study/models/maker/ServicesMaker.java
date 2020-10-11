@@ -23,6 +23,8 @@ public class ServicesMaker {
     public static byte numberOfFloor;
 
     public static String freeServices;
+    public static double price;
+    public static String unit;
 
     public static void newVilla() {
         setName();
@@ -47,7 +49,6 @@ public class ServicesMaker {
         setNumberOfFloor();
         new House(name,area,rentCost,maxPeople,rentType,roomStandard,otherUtilities,numberOfFloor);
     }
-
     public static void newRoom(){
         setName();
         setArea();
@@ -57,35 +58,44 @@ public class ServicesMaker {
         setFreeServices();
         new Room(name, area, rentCost,maxPeople,rentType,freeServices);
     }
+    public static void newUtilityService() {
+        setUtilityServiceName();
+        setUtilityServicePrice();
+        setUtilityServiceUnit();
+        new UtilitiesServices(name, price, unit);
 
+    }
     public static void setName() {
         String tempName = null;
-        boolean corrected = false;
+        boolean corrected;
         do {
             try {
-                System.out.println("Please input name (example: Nguyen Van Teo)");
+                System.out.println("Please input name (example: Summer)");
                 tempName = scr.nextLine();
-                corrected = Validator.isValidName(tempName, Validator.NAME_CHECKING);
+                corrected = Validator.isValidName(tempName, Validator.SERVICE_NAME_CHECKING);
             } catch (NameException e) {
                 System.out.println("Incorrect format, please try again");
+                corrected = false;
             }
         } while (!corrected);
         name = tempName;
     }
     public static void setArea() {
-        double temp;
-        do {
-            System.out.println("Please input area larger than 30:");
-            temp = Double.parseDouble(scr.nextLine());
-        } while (!Validator.isValidArea(temp));
-          area = temp;
+     area = Validator.getDoubleValue("Please input the area larger than 30 :",30);
     }
     public static void setRentCost() {
-        double temp;
+        boolean correct = true;
+        double temp = 0;
         do {
-            System.out.println("Please input rent cost larger than 0:");
-            temp = Double.parseDouble(scr.nextLine());
-        } while (!Validator.isValidRentCost(temp));
+            try {
+                System.out.println("Please input rent cost larger than 0:");
+                temp = Double.parseDouble(scr.nextLine());
+                if (temp <= 0) correct = false;
+            } catch (Exception e) {
+                System.out.println("Invalid input, please try again");
+                correct = false;
+            }
+        } while (!correct);
         rentCost = temp;
     }
     public static void setMaxPeople() {
@@ -154,12 +164,7 @@ public class ServicesMaker {
         otherUtilities = scr.nextLine();
     }
     public static void setSwimmingPoolArea() {
-        double temp;
-        do {
-            System.out.println("Please input swimming pool area larger than 30:");
-            temp = Double.parseDouble(scr.nextLine());
-        } while (!Validator.isValidArea(temp));
-        swimmingPoolArea = temp;
+        swimmingPoolArea = Validator.getDoubleValue("Please input the area of swimming pool larger than 30 :",30);
     }
     public static void setNumberOfFloor() {
         byte temp;
@@ -189,6 +194,28 @@ public class ServicesMaker {
             }
         } while(!correct);
         freeServices = UtilitiesServices.utilitiesServicesList.get(selected-1).getName();
+    }
+    public static void setUtilityServiceName() {
+        String temp = null;
+        boolean corrected = false;
+        do {
+            try {
+                System.out.println("Please input the name of the service ( Massage|Karaoke|Food|Drink|Car )");
+                temp = scr.nextLine();
+                corrected = Validator.isValidNameType(temp,Validator.UTILITIES_NAME_CHECKING);
+
+            } catch (Exception e) {
+                System.out.println("Invalid input, please try again");
+            }
+        } while (!corrected);
+        name = temp;
+    }
+    public static void setUtilityServicePrice() {
+        price = Validator.getDoubleValue("Please input the price of the utility servce :", 0);
+    }
+    public static void setUtilityServiceUnit() {
+        System.out.println("Please input the unit of this utility service");
+        unit = scr.nextLine();
     }
 }
 

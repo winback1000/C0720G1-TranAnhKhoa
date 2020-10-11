@@ -7,7 +7,7 @@ import java.util.TreeSet;
 public class House extends Services {
 
     public static int houseNum = 0;
-    public static List<House> houseList = new ArrayList<>();
+    public static List<Services> houseList = new ArrayList<>();
     public static TreeSet<String> houseNameList = new TreeSet<>();
     String roomStandard;
     String otherUtilities;

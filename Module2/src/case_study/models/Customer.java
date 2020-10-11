@@ -24,11 +24,14 @@ public class Customer extends Human {
         customerList.add(this);
     }
 
-    public Customer(String name, String dateOfBirth, String phoneNumber, String email, String gender, String address, String identityNumber, String rentType) {
+    public Customer(String name, String dateOfBirth, String phoneNumber, String email, String gender, String address, String identityNumber, String rentType,String customerType,List<UtilitiesServices> otherUtility,String contract) {
         super(name,dateOfBirth,phoneNumber,email,gender,address,identityNumber);
         customerNum++;
         this.customerId = "CT-"+nf.format(customerNum);
         this.rentType = rentType;
+        this.customerType = customerType;
+        this.otherUtility = otherUtility;
+        this.contract = contract;
         customerList.add(this);
     }
 
@@ -72,34 +75,34 @@ public class Customer extends Human {
         return customerList;
     }
 
-    public String otherUtilitiesInfo() {
+    public StringBuilder otherUtilitiesInfo() {
         StringBuilder utilitiesName= new StringBuilder();
         for (UtilitiesServices sv: otherUtility) {
-            utilitiesName.append(sv.getName()).append(COMMA);
+            utilitiesName.append(sv.getName()).append("+");
         }
-        return utilitiesName.toString();
+        return utilitiesName;
     }
 
     @Override
     public String toString() {
-        return this.getCustomerId() + COMMA + name + COMMA + dateOfBirth + COMMA + phoneNumber + COMMA  +email + COMMA + gender + COMMA + address + COMMA + rentType + COMMA + otherUtilitiesInfo() + contract;
+        return this.getCustomerId() + COMMA + name + COMMA + dateOfBirth + COMMA + phoneNumber + COMMA  +email + COMMA + gender + COMMA + address + COMMA + identityNumber + rentType + COMMA+ customerType+ COMMA + otherUtilitiesInfo() + contract;
     }
 
     @Override
     public String showInfo() {
         return "Customer{" +
-                "customerType='" + customerType + '\'' +
-                ", customerId='" + customerId + '\'' +
-                ", rentType=" + rentType +
-                ", otherUtility=" + otherUtilitiesInfo() +
-                ", contract=" + contract +
-                ", name='" + name + '\'' +
-                ", dateOfBirth=" + dateOfBirth +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", email='" + email + '\'' +
-                ", gender='" + gender + '\'' +
-                ", address='" + address + '\'' +
-                ", identityNumber='" + identityNumber + '\'' +
+                "CustomerId='" + customerId + '\'' +
+                ", Name='" + name + '\'' +
+                ", Date of birth=" + dateOfBirth +
+                ", Phone number='" + phoneNumber + '\'' +
+                ", Email='" + email + '\'' +
+                ", Gender='" + gender + '\'' +
+                ", Address='" + address + '\'' +
+                ", Identity Number='" + identityNumber + '\'' +
+                ", Rent Type=" + rentType +
+                ", Customer type =" + customerType +
+                ", Other Utility=" + otherUtilitiesInfo() +
+                ", Contract=" + contract +
                 '}';
     }
 

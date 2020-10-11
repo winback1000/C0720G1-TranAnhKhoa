@@ -6,18 +6,20 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+import static case_study.models.Human.COMMA;
+
 public class Contract implements Comparable<Contract> {
     NumberFormat nf = new DecimalFormat("000000");
     NumberFormat moneyFormat = NumberFormat.getCurrencyInstance();
     static int contractNum = 0;
     String id;
-    DateFormat startDate;
-    DateFormat endDate;
+    String startDate;
+    String endDate;
     String deposit;
     String totalCost;
-    static List<Contract> contractList = new ArrayList<>();
+    public static List<Contract> contractList = new ArrayList<>();
 
-    public Contract(DateFormat startDate, DateFormat endDate, double deposit, double totalCost) {
+    public Contract(String startDate, String endDate, double deposit, double totalCost) {
         contractNum++;
         this.id = nf.format(contractNum);
         this.startDate = startDate;
@@ -31,19 +33,19 @@ public class Contract implements Comparable<Contract> {
         return id;
     }
 
-    public DateFormat getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(DateFormat startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public DateFormat getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(DateFormat endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
@@ -65,6 +67,10 @@ public class Contract implements Comparable<Contract> {
 
     @Override
     public String toString() {
+        return id + COMMA + startDate + COMMA + endDate + COMMA + deposit + COMMA + totalCost;
+    }
+
+    public String showInfo() {
         return "Contract{" +
                 "id='" + id + '\'' +
                 ", startDate=" + startDate +

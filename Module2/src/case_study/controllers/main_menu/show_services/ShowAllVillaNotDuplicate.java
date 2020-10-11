@@ -1,19 +1,22 @@
 package case_study.controllers.main_menu.show_services;
 
+import case_study.controllers.MainMenu;
 import case_study.controllers.main_menu.ShowServices;
 
 import case_study.models.Villa;
 
-public class ShowAllVillaNotDuplicate extends ShowServices {
+import java.util.ArrayList;
+import java.util.List;
 
+public class ShowAllVillaNotDuplicate extends ShowServices {
+    public static List<MainMenu> showAllVillaNotDuplicateList = new ArrayList<>();
     public ShowAllVillaNotDuplicate() {
         this.name = "Show all villas not duplicate";
-        ShowServices.menuList.add(this);
     }
 
     @Override
     public void displayList() {
-        showMenu(ShowServices.menuList);
+        showMenu(showAllVillaNotDuplicateList);
     }
 
     @Override

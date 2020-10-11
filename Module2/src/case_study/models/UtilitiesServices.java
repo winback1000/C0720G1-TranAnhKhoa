@@ -48,4 +48,12 @@ public class UtilitiesServices {
     public String toString() {
         return name+COMMA+price+COMMA+unit;
     }
+
+    public String showInfo() {
+        return "UtilitiesServices{" +
+                "name='" + name + '\'' +
+                ", price='" + price + '\'' +
+                ", unit='" + unit + '\'' +
+                '}';
+    }
 }

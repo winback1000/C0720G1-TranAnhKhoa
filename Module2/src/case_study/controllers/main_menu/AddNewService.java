@@ -6,19 +6,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AddNewService extends MainMenu   {
-    public static List<MainMenu> menuList = new ArrayList<>();
+    public static List<MainMenu> addNewServiceList = new ArrayList<>();
+
 
     public AddNewService() {
         this.name = "Add New Service";
-        MainMenu.menuList.add(this);
     }
 
-    @Override
     public void displayList() {
-        showMenu(menuList);
+        showMenu(addNewServiceList);
     }
 
-    @Override
     public void execute() {
         displayList();
     }

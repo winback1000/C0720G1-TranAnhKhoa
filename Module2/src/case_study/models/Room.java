@@ -7,7 +7,7 @@ import java.util.TreeSet;
 public class Room extends Services {
 
     public static int roomNum = 0;
-    public static List<Room> roomList = new ArrayList<>();
+    public static List<Services> roomList = new ArrayList<>();
     public static TreeSet<String> roomNameList = new TreeSet<>();
     String freeServices;
 
@@ -21,13 +21,6 @@ public class Room extends Services {
         roomNameList.add(this.name);
     }
 
-    public static List<Room> getRoomList() {
-        return roomList;
-    }
-
-    public static void setRoomList(List<Room> roomList) {
-        Room.roomList = roomList;
-    }
 
     public String getFreeServices() {
         return freeServices;

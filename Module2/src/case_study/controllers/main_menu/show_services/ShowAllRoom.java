@@ -1,25 +1,30 @@
 package case_study.controllers.main_menu.show_services;
 
+import case_study.controllers.MainMenu;
 import case_study.controllers.main_menu.ShowServices;
 import case_study.models.Room;
+import case_study.models.Services;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ShowAllRoom extends ShowServices {
+    public static List<MainMenu> showAllRoomList = new ArrayList<>();
 
     public ShowAllRoom() {
         this.name = "Show all rooms";
-        ShowServices.menuList.add(this);
     }
 
     @Override
     public void displayList() {
-        showMenu(ShowServices.menuList);
+        showMenu(showAllRoomList);
     }
 
     @Override
     public void execute() {
-        for (Room ro: Room.roomList) {
-            System.out.println(ro.showInfo());
+        for (Services sv: Room.roomList) {
+            System.out.println(sv.showInfo());
         }
         displayList();
     }

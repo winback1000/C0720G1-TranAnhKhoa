@@ -6,17 +6,22 @@ import java.time.Year;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static case_study.common.ShowList.scr;
+
 public class Validator {
 
     public static Pattern pattern;
     public static Matcher matcher;
-    public static final String NAME_CHECKING = "([A-Z]([a-z]*)*\\s)+[A-Z]([a-z])*$";
+    public static final String HUMAN_NAME_CHECKING = "([A-Z]([a-z]*)*\\s)+[A-Z]([a-z])*$";
+    public static final String SERVICE_NAME_CHECKING = "^[A-Z][a-z]*$";
     public static final String DOB_CHECKING = "(\\d{1,2})[-](\\d{1,2})[-](\\d{4})";
     public static final String UTILITIES_NAME_CHECKING = "(Massage|Karaoke|Food|Drink|Car)";
     public static final String EMAIL_CHECKING = "^[\\w-.]+[\\w-.]*@([\\w-]+\\.)+[\\w-]{2,4}$";
     public static final String ID_CARD_CHECKING = "\\d{9}";
     public static final String PHONE_NUMBER_CHECKING = "\\d{10}";
     public static final String CUSTOMER_TYPE_CHECKING = "(Member|Silver|Gold|Platinum|Diamond)";
+    public static final String POSITION_CHECKING = "(Junior|Senior|Supervisor|Leader|Manager)";
+
 
     public static boolean isValidName(String name, String regex) throws NameException {
         pattern = Pattern.compile(regex);
@@ -25,7 +30,7 @@ public class Validator {
             return matcher.matches();
         } else throw new NameException();
     }
-    public static boolean isValidDate (String date, String regex) throws BirthdayException, DateFormatException {
+    public static boolean isValidDateOfBirth(String date, String regex) throws BirthdayException, DateFormatException {
 
         pattern = Pattern.compile(regex);
         matcher = pattern.matcher(date);
@@ -39,11 +44,21 @@ public class Validator {
         } else throw new DateFormatException();
         return true;
     }
-    public static boolean isValidArea (double area) {
-        return area > 30;
-    }
-    public static boolean isValidRentCost(double rentCost) {
-        return rentCost > 0;
+    public static double getDoubleValue(String message, double min)  {
+        boolean correct;
+        double temp = 0;
+        do {
+            correct = true;
+            try {
+                System.out.println(message);
+                temp = Double.parseDouble(scr.nextLine());
+                if (temp < min) correct =false;
+            } catch (Exception e) {
+                System.out.println("invalid input, please try again");
+                correct = false;
+            }
+        } while (!correct);
+        return temp;
     }
     public static boolean isValidMaxPeople (byte people) {
         return (people > 0 && people < 20);
@@ -86,5 +101,25 @@ public class Validator {
             return matcher.matches();
         } else throw new Exception();
     }
+    public static boolean isValidNameType (String nameType,String regex) throws Exception {
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(nameType);
+        if (matcher.matches()) {
+            return matcher.matches();
+        } else throw new Exception();
+    }
+    public static boolean isValidDate(String date, String regex) throws DateFormatException {
 
+        pattern = Pattern.compile(regex);
+        matcher = pattern.matcher(date);
+        if (matcher.matches()) {
+            int dd = Integer.parseInt(matcher.group(1));
+            int mm = Integer.parseInt(matcher.group(2));
+            int yyyy = Integer.parseInt(matcher.group(3));
+            if(dd<0 || dd>31 || mm <0 || mm > 12 || yyyy<Year.now().getValue() || yyyy> Year.now().getValue()+10) {
+                throw new DateFormatException();
+            }
+        } else throw new DateFormatException();
+        return true;
+    }
 }

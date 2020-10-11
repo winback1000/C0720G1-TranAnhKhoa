@@ -1,6 +1,8 @@
 package case_study.models;
 
 
+import case_study.models.maker.HumanMaker;
+
 import java.util.Map;
 
 import static case_study.models.Employee.employeeMap;
@@ -22,15 +24,16 @@ public class TestEmployee {
 //        System.out.println(a.substring(a.lastIndexOf(" ")+1).compareTo(b));
 //        int d = Integer.parseInt(c);
 //        System.out.println(2020-d);
-        Customer c1 = new Customer();
-
-        Villa vl1 = new Villa("Daisy",40d,1000000,(byte) 4,"Luxury","Free breakfast",30,(byte) 20);
-        System.out.println(servicesList);
-        c1.setRentType(servicesList.get(0));
-        System.out.println(c1);
+//        Customer c1 = new Customer();
+//
+//        Villa vl1 = new Villa("Daisy",40d,1000000,(byte) 4,"Luxury","Free breakfast",30,(byte) 20);
+//        System.out.println(servicesList);
+//        c1.setRentType(servicesList.get(0));
+//        System.out.println(c1);
 //        System.out.println(employeeMap.values());
 //        for (Map.Entry<String,Employee> e: employeeMap.entrySet()) {
 //            System.out.println(e.getValue().showInfo());
 //        }
+
     }
 }

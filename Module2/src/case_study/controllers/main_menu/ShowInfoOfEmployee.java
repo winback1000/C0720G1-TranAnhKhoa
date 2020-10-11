@@ -8,16 +8,15 @@ import java.util.List;
 import java.util.Map;
 
 public class ShowInfoOfEmployee extends MainMenu {
-    public static List<MainMenu> menuList = new ArrayList<>();
+    public static List<MainMenu> showInfoOfEmployeeList = new ArrayList<>();
 
     public ShowInfoOfEmployee() {
         this.name = "Show Employee info";
-        MainMenu.menuList.add(this);
     }
 
     @Override
     public void displayList() {
-        showMenu(menuList);
+        showMenu(showInfoOfEmployeeList);
     }
 
     @Override
