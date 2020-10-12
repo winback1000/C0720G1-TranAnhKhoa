@@ -1,5 +1,6 @@
 package case_study.controllers.main_menu;
 
+import case_study.common.Writer;
 import case_study.controllers.MainMenu;
 import static case_study.controllers.main_menu.AddNewBooking.addNewBookingList;
 import static case_study.controllers.main_menu.AddNewCustomer.addNewCustomerList;
@@ -50,6 +51,7 @@ public class Exit extends MainMenu {
 
     @Override
     public void execute() {
+        Writer.allWriter();
         System.exit(0);
     }
 }

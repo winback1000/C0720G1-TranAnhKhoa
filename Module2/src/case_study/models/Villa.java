@@ -1,5 +1,7 @@
 package case_study.models;
 
+import case_study.common.Writer;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeSet;
@@ -19,7 +21,7 @@ public class Villa extends Services {
         villaNum++;
         this.id = this.id + "VL-" + nf.format(villaNum);
         this.roomStandard = roomStandard;
-        this.otherUtilities = otherUtilities;
+        this.otherUtilities = otherUtilities.replaceAll(",","+");
         this.swimmingPoolArea = swimmingPoolArea;
         this.numberOfFloor = numberOfFloor;
         villaList.add(this);
@@ -61,7 +63,7 @@ public class Villa extends Services {
 
     @Override
     public String toString() {
-        return id + COMMA + name + COMMA + area + COMMA + rentCost + COMMA + maxPeople + COMMA + rentType + COMMA + roomStandard + COMMA + otherUtilities + COMMA + swimmingPoolArea + COMMA + numberOfFloor;
+        return name + COMMA + area + COMMA + rentCost + COMMA + maxPeople + COMMA + rentType + COMMA + roomStandard + COMMA + otherUtilities + COMMA + swimmingPoolArea + COMMA + numberOfFloor;
     }
 
     @Override

@@ -1,5 +1,6 @@
 package case_study.controllers;
 
+import case_study.common.Loader;
 import case_study.controllers.main_menu.*;
 import case_study.controllers.main_menu.add_new_booking.BookingHouse;
 import case_study.controllers.main_menu.add_new_booking.BookingRoom;
@@ -52,10 +53,7 @@ public class MainController {
     addNewServiceList.add(new AddUtilitiesService());
     new Exit();
     new BackToMainMenu();
-    new Villa("Summer",70,600,(byte) 7,"year","Luxury","Karaoke",40,(byte) 4);
-    new UtilitiesServices("Karaoke",80,"room");
-    new Contract("20-10-2020","20-10-2021",800,1700);
-
+    Loader.loadAllData();
     mm.execute();
     }
 }

@@ -1,5 +1,7 @@
 package case_study.models;
 
+import case_study.common.Writer;
+
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -80,12 +82,15 @@ public class Customer extends Human {
         for (UtilitiesServices sv: otherUtility) {
             utilitiesName.append(sv.getName()).append("+");
         }
+        if(utilitiesName.length()>1) {
+            utilitiesName.deleteCharAt(utilitiesName.length() - 1);
+        }
         return utilitiesName;
     }
 
     @Override
     public String toString() {
-        return this.getCustomerId() + COMMA + name + COMMA + dateOfBirth + COMMA + phoneNumber + COMMA  +email + COMMA + gender + COMMA + address + COMMA + identityNumber + rentType + COMMA+ customerType+ COMMA + otherUtilitiesInfo() + contract;
+        return name + COMMA + dateOfBirth + COMMA + phoneNumber + COMMA  +email + COMMA + gender + COMMA + address + COMMA + identityNumber +COMMA+ rentType + COMMA+ customerType+ COMMA + otherUtilitiesInfo() +COMMA+ contract;
     }
 
     @Override

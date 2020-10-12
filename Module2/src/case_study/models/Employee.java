@@ -1,13 +1,18 @@
 package case_study.models;
 
+import case_study.common.Writer;
+
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.TreeMap;
 
 public class Employee extends Human {
 
     static int employeeNum = 0;
     public static TreeMap<String, Employee> employeeMap = new TreeMap<>();
+    public static List<Employee> employeeList = new ArrayList<>();
     NumberFormat nf = new DecimalFormat("000000");
     private String employeeId;
     byte level;
@@ -18,6 +23,7 @@ public class Employee extends Human {
         employeeNum++;
         this.employeeId = "EP-"+nf.format(employeeNum);
         employeeMap.put(this.getEmployeeId(),this);
+        employeeList.add(this);
     }
 
     public Employee(String name, String dateOfBirth, String phoneNumber, String email, String gender, String address, String identityNumber, byte level, String position, double salary) {
@@ -28,6 +34,7 @@ public class Employee extends Human {
         this.position = position;
         this.salary = salary;
         employeeMap.put(this.getEmployeeId(),this);
+        employeeList.add(this);
     }
 
     public String getEmployeeId() {
@@ -60,7 +67,7 @@ public class Employee extends Human {
 
     @Override
     public String toString() {
-        return this.getEmployeeId()+COMMA+dateOfBirth+COMMA+phoneNumber+COMMA+email+COMMA+gender+COMMA+address+COMMA+identityNumber+COMMA+level+COMMA+position+COMMA+salary;
+        return name+COMMA+dateOfBirth+COMMA+phoneNumber+COMMA+email+COMMA+gender+COMMA+address+COMMA+identityNumber+COMMA+level+COMMA+position+COMMA+salary;
     }
 
 

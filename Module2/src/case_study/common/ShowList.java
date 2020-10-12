@@ -9,29 +9,32 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
+import static case_study.models.Customer.customerList;
+import static case_study.models.Services.servicesList;
+
 public class ShowList {
     public static Scanner scr = new Scanner(System.in);
     public static int selection;
     public static UtilitiesServices otherUtilities;
 
-    public static String nameSelection(List<Services> list) {
-        SelectFromList(Collections.singletonList(list));
-        return list.get(selection-1).getName();
-    }
+//    public static String nameSelection(List<Services> list) {
+//        SelectFromList(list);
+//        return list.get(selection-1).getName();
+//    }
     public static String idSelection(List<Services> list) {
-        SelectFromList(Collections.singletonList(list));
+        SelectFromList(list);
         return list.get(selection-1).getId();
     }
     public static Services serviceSelection(List<Services> list) {
-        SelectFromList(Collections.singletonList(list));
+        SelectFromList(list);
         return list.get(selection-1);
     }
     public static Customer customerSelection(List<Customer> list) {
-        SelectFromList(Collections.singletonList(list));
+        SelectFromList(list);
         return list.get(selection-1);
     }
 
-    public static void SelectFromList(List<Object> list) {
+    public static void SelectFromList(List<?> list) {
         boolean correct;
         do {
             correct = true;
@@ -43,7 +46,7 @@ public class ShowList {
                     correct = false;
                 }
             } catch (Exception e) {
-                System.out.println("incorrect input, please try again");
+                System.out.println("Number is required, please try again");
                 correct = false;
             }
         } while(!correct);

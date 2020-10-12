@@ -27,9 +27,9 @@ public class BookingHouse extends AddNewBooking {
 
     @Override
     public void execute() {
-        for (Services vl: houseList) {
-            System.out.println(vl.showInfo());
-        }
+            for (Services vl: houseList) {
+                System.out.println(vl.showInfo());
+            }
         tempCustomer.setRentType(serviceSelection(houseList));
         displayList();
     }

@@ -1,5 +1,7 @@
 package case_study.models;
 
+import case_study.common.Writer;
+
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -67,7 +69,7 @@ public class Contract implements Comparable<Contract> {
 
     @Override
     public String toString() {
-        return id + COMMA + startDate + COMMA + endDate + COMMA + deposit + COMMA + totalCost;
+        return startDate + COMMA + endDate + COMMA + deposit + COMMA + totalCost;
     }
 
     public String showInfo() {

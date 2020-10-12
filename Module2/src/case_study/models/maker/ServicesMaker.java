@@ -160,7 +160,7 @@ public class ServicesMaker {
         } while (!correct);
     }
     public static void setOtherUtilities() {
-        System.out.println("Please describe the other utilities  ");
+        System.out.println("Please describe the other utilities");
         otherUtilities = scr.nextLine();
     }
     public static void setSwimmingPoolArea() {

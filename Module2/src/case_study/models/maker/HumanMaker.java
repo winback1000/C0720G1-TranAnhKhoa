@@ -187,7 +187,7 @@ public class HumanMaker {
                 available = true;
             try {
                 ShowList.showListUtilities(utilitiesServicesList);
-                ShowList.SelectFromList(Collections.singletonList(utilitiesServicesList));
+                ShowList.SelectFromList(utilitiesServicesList);
                 otherUtility.add(utilitiesServicesList.get(ShowList.selection - 1));
             } catch (IndexOutOfBoundsException e) {
                 System.out.println("Incorrect selection, please try again");
@@ -205,7 +205,7 @@ public class HumanMaker {
             available = true;
             try {
                 ShowList.showContractList(contractList);
-                ShowList.SelectFromList(Collections.singletonList(contractList));
+                ShowList.SelectFromList(contractList);
                 contract = contractList.get(ShowList.selection - 1).getId();
             } catch (IndexOutOfBoundsException e) {
                 System.out.println("Incorrect selection, please try again");

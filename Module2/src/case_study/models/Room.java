@@ -1,5 +1,7 @@
 package case_study.models;
 
+import case_study.common.Writer;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeSet;
@@ -31,13 +33,13 @@ public class Room extends Services {
     }
     @Override
     public String toString() {
-        return id + COMMA + name + COMMA + area + COMMA + rentCost + COMMA + maxPeople + COMMA + rentType + COMMA + freeServices;
+        return name + COMMA + area + COMMA + rentCost + COMMA + maxPeople + COMMA + rentType + COMMA + freeServices;
     }
 
     @Override
     public String showInfo() {
         return "Room{" +
-                ", id=" + id +
+                "id=" + id +
                 ", Name='" + name + '\'' +
                 ", Area=" + area +
                 ", Rent cost =" + rentCost +

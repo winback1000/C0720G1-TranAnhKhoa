@@ -1,5 +1,7 @@
 package case_study.models;
 
+import case_study.common.Writer;
+
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
