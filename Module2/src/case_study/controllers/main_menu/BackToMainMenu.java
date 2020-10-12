@@ -3,6 +3,7 @@ import case_study.controllers.MainMenu;
 import static case_study.controllers.main_menu.AddNewBooking.addNewBookingList;
 import static case_study.controllers.main_menu.AddNewCustomer.addNewCustomerList;
 import static case_study.controllers.main_menu.AddNewService.addNewServiceList;
+import static case_study.controllers.main_menu.BookCinemaTicket.bookCinemaTicketList;
 import static case_study.controllers.main_menu.ShowCustomerInfo.showCustomerInfoList;
 import static case_study.controllers.main_menu.ShowInfoOfEmployee.showInfoOfEmployeeList;
 import static case_study.controllers.main_menu.ShowServices.showServicesList;
@@ -44,6 +45,7 @@ public class BackToMainMenu extends MainMenu {
         showAllHouseNotDuplicateList.add(this);
         showAllRoomNotDuplicateList.add(this);
         showAllVillaNotDuplicateList.add(this);
+        bookCinemaTicketList.add(this);
     }
 
     @Override

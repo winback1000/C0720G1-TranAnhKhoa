@@ -56,6 +56,7 @@ public class HumanMaker {
         setEmail();
         setGender();
         setAddress();
+        setIdentityNumber();
         setEmployeeLevel();
         setEmployeePosition();
         setEmployeeSalary();

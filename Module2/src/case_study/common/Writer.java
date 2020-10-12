@@ -4,7 +4,6 @@ import case_study.models.*;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import static case_study.models.Contract.contractList;

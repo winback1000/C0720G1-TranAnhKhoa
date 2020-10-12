@@ -6,6 +6,7 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 
 public class Customer extends Human {
@@ -19,6 +20,7 @@ public class Customer extends Human {
     List<UtilitiesServices> otherUtility = new ArrayList<>();
     String contract;
     public static List<Customer> customerList = new ArrayList<>();
+
 
     public Customer() {
         customerNum++;

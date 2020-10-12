@@ -5,22 +5,13 @@ import case_study.models.Customer;
 import case_study.models.Services;
 import case_study.models.UtilitiesServices;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
-
-import static case_study.models.Customer.customerList;
-import static case_study.models.Services.servicesList;
 
 public class ShowList {
     public static Scanner scr = new Scanner(System.in);
     public static int selection;
-    public static UtilitiesServices otherUtilities;
 
-//    public static String nameSelection(List<Services> list) {
-//        SelectFromList(list);
-//        return list.get(selection-1).getName();
-//    }
     public static String idSelection(List<Services> list) {
         SelectFromList(list);
         return list.get(selection-1).getId();

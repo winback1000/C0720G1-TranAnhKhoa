@@ -10,17 +10,14 @@ import case_study.controllers.main_menu.add_new_service.AddNewHouse;
 import case_study.controllers.main_menu.add_new_service.AddNewRoom;
 import case_study.controllers.main_menu.add_new_service.AddNewVilla;
 import case_study.controllers.main_menu.add_new_service.AddUtilitiesService;
+import case_study.controllers.main_menu.book_cinema_ticket.PrintTicket;
 import case_study.controllers.main_menu.show_services.*;
-import case_study.models.Contract;
-import case_study.models.UtilitiesServices;
-import case_study.models.Villa;
-
 import static case_study.controllers.MainMenu.mainMenuList;
 import static case_study.controllers.main_menu.AddNewBooking.addNewBookingList;
 import static case_study.controllers.main_menu.AddNewCustomer.addNewCustomerList;
 import static case_study.controllers.main_menu.AddNewService.addNewServiceList;
+import static case_study.controllers.main_menu.BookCinemaTicket.bookCinemaTicketList;
 import static case_study.controllers.main_menu.ShowServices.showServicesList;
-
 
 public class MainController {
 
@@ -31,7 +28,10 @@ public class MainController {
     mainMenuList.add(new AddNewCustomer());
     mainMenuList.add(new ShowCustomerInfo());
     mainMenuList.add(new AddNewBooking());
+    mainMenuList.add(new AddNewEmployee());
     mainMenuList.add(new ShowInfoOfEmployee());
+    mainMenuList.add(new BookCinemaTicket());
+    mainMenuList.add(new SearchEmployeeProfile());
 
     addNewBookingList.add(new BookingVilla());
     addNewBookingList.add(new BookingHouse());
@@ -46,6 +46,7 @@ public class MainController {
     showServicesList.add(new ShowAllRoomNotDuplicate());
 
     addNewCustomerList.add(new AddNewContract());
+    bookCinemaTicketList.add(new PrintTicket());
 
     addNewServiceList.add(new AddNewVilla());
     addNewServiceList.add(new AddNewHouse());
