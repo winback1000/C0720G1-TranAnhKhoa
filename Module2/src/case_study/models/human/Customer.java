@@ -1,12 +1,13 @@
-package case_study.models;
+package case_study.models.human;
 
-import case_study.common.Writer;
+import case_study.models.Contract;
+import case_study.models.service.Services;
+import case_study.models.service.UtilitiesServices;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
 
 
 public class Customer extends Human {
@@ -92,7 +93,7 @@ public class Customer extends Human {
 
     @Override
     public String toString() {
-        return name + COMMA + dateOfBirth + COMMA + phoneNumber + COMMA  +email + COMMA + gender + COMMA + address + COMMA + identityNumber +COMMA+ rentType + COMMA+ customerType+ COMMA + otherUtilitiesInfo() +COMMA+ contract;
+        return name + COMMA + dateOfBirth + COMMA + phoneNumber + COMMA  +email + COMMA + gender + COMMA + address + COMMA + identityNumber +COMMA+ rentType + COMMA + customerType + COMMA + otherUtilitiesInfo() + COMMA+ contract;
     }
 
     @Override

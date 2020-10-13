@@ -1,7 +1,7 @@
 package case_study.controllers.main_menu;
 
 import case_study.controllers.MainMenu;
-import case_study.models.Employee;
+import case_study.models.human.Employee;
 
 import java.util.ArrayList;
 import java.util.List;

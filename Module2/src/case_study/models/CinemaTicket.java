@@ -1,5 +1,7 @@
 package case_study.models;
 
+import case_study.models.human.Customer;
+
 import java.util.ArrayDeque;
 import java.util.Queue;
 

@@ -1,13 +1,12 @@
 package case_study.controllers.main_menu;
 
 import case_study.controllers.MainMenu;
-import case_study.models.Customer;
-import case_study.models.Employee;
+import case_study.models.human.Employee;
 
 import java.util.Stack;
 
 import static case_study.common.ShowList.scr;
-import static case_study.models.Employee.employeeList;
+import static case_study.models.human.Employee.employeeList;
 
 public class SearchEmployeeProfile extends MainMenu {
     public SearchEmployeeProfile() {

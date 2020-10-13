@@ -1,6 +1,4 @@
-package case_study.models;
-
-import case_study.common.Writer;
+package case_study.models.human;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;

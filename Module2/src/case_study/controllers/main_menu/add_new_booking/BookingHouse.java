@@ -2,16 +2,13 @@ package case_study.controllers.main_menu.add_new_booking;
 
 import case_study.controllers.MainMenu;
 import case_study.controllers.main_menu.AddNewBooking;
-import case_study.models.House;
-import case_study.models.Services;
-import case_study.models.Villa;
+import case_study.models.service.Services;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static case_study.common.ShowList.serviceSelection;
-import static case_study.models.House.houseList;
-import static case_study.models.Villa.villaList;
+import static case_study.models.service.House.houseList;
 
 public class BookingHouse extends AddNewBooking {
     public static List<MainMenu> bookingHouseList = new ArrayList<>();

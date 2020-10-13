@@ -1,6 +1,4 @@
-package case_study.models;
-
-import case_study.common.Writer;
+package case_study.models.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +31,7 @@ public class Room extends Services {
     }
     @Override
     public String toString() {
-        return name + COMMA + area + COMMA + rentCost + COMMA + maxPeople + COMMA + rentType + COMMA + freeServices;
+        return this.getId()+COMMA+name + COMMA + area + COMMA + rentCost + COMMA + maxPeople + COMMA + rentType + COMMA + freeServices;
     }
 
     @Override

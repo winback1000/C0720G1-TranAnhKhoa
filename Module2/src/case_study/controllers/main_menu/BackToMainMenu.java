@@ -50,6 +50,7 @@ public class BackToMainMenu extends MainMenu {
 
     @Override
     public void execute() {
+        back.empty();
         showMenu(mainMenuList);
     }
 }

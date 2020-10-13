@@ -1,6 +1,4 @@
-package case_study.models;
-
-import case_study.controllers.MainController;
+package case_study.models.service;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -24,6 +22,10 @@ public abstract class Services implements Comparable<Services>{
         this.rentCost = rentCost;
         this.maxPeople = maxPeople;
         this.rentType = rentType;
+    }
+
+    public Services(String name) {
+        this.name = name;
     }
 
     public String getId() {

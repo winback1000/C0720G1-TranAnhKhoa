@@ -4,15 +4,17 @@ import case_study.common.Validator;
 import case_study.common.exception.*;
 import case_study.common.ShowList;
 import case_study.controllers.main_menu.add_new_customer.AddNewContract;
-import case_study.models.*;
+import case_study.models.human.Customer;
+import case_study.models.human.Employee;
+import case_study.models.service.Services;
+import case_study.models.service.UtilitiesServices;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 import static case_study.models.Contract.contractList;
-import static case_study.models.UtilitiesServices.utilitiesServicesList;
+import static case_study.models.service.UtilitiesServices.utilitiesServicesList;
 
 public class HumanMaker {
     static Scanner scr = new Scanner(System.in);

@@ -1,32 +1,28 @@
-package case_study.models;
-
-import case_study.common.Writer;
+package case_study.models.service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeSet;
 
-public class Villa extends Services {
+public class House extends Services {
 
-    public static int villaNum = 0;
-    public static List<Services> villaList = new ArrayList<>();
-    public static TreeSet<String> villaNameList = new TreeSet<>();
+    public static int houseNum = 0;
+    public static List<Services> houseList = new ArrayList<>();
+    public static TreeSet<String> houseNameList = new TreeSet<>();
     String roomStandard;
     String otherUtilities;
-    double swimmingPoolArea;
     byte numberOfFloor;
 
-    public Villa(String name, double area, double rentCost, byte maxPeople, String rentType, String roomStandard, String otherUtilities, double swimmingPoolArea, byte numberOfFloor) {
+    public House(String name, double area, double rentCost, byte maxPeople, String rentType, String roomStandard, String otherUtilities, byte numberOfFloor) {
         super(name, area, rentCost, maxPeople, rentType);
-        villaNum++;
-        this.id = this.id + "VL-" + nf.format(villaNum);
+        houseNum++;
+        this.id = this.id + "HO-" + nf.format(houseNum);
         this.roomStandard = roomStandard;
         this.otherUtilities = otherUtilities.replaceAll(",","+");
-        this.swimmingPoolArea = swimmingPoolArea;
         this.numberOfFloor = numberOfFloor;
-        villaList.add(this);
+        houseList.add(this);
         servicesList.add(this);
-        villaNameList.add(this.name);
+        houseNameList.add(this.name);
     }
 
     public String getRoomStandard() {
@@ -45,14 +41,6 @@ public class Villa extends Services {
         this.otherUtilities = otherUtilities;
     }
 
-    public double getSwimmingPoolArea() {
-        return swimmingPoolArea;
-    }
-
-    public void setSwimmingPoolArea(float swimmingPoolArea) {
-        this.swimmingPoolArea = swimmingPoolArea;
-    }
-
     public byte getNumberOfFloor() {
         return numberOfFloor;
     }
@@ -60,16 +48,14 @@ public class Villa extends Services {
     public void setNumberOfFloor(byte numberOfFloor) {
         this.numberOfFloor = numberOfFloor;
     }
-
     @Override
     public String toString() {
-        return name + COMMA + area + COMMA + rentCost + COMMA + maxPeople + COMMA + rentType + COMMA + roomStandard + COMMA + otherUtilities + COMMA + swimmingPoolArea + COMMA + numberOfFloor;
+        return this.getId() + COMMA +name + COMMA + area + COMMA + rentCost + COMMA + maxPeople + COMMA + rentType + COMMA + roomStandard + COMMA + otherUtilities + COMMA + numberOfFloor;
     }
-
     @Override
     public String showInfo() {
-        return "Villa{" +
-                " id=" + id +
+        return "House{" +
+                "id=" + id +
                 ", Name='" + name + '\'' +
                 ", Area=" + area +
                 ", Rent Cost=" + rentCost +
@@ -77,7 +63,6 @@ public class Villa extends Services {
                 ", Rent Type='" + rentType + '\'' +
                 ", Room Standard='" + roomStandard + '\'' +
                 ", Other Utilities='" + otherUtilities + '\'' +
-                ", Swimming Pool Area=" + swimmingPoolArea +
                 ", Number Of Floor=" + numberOfFloor +
                 "} ";
     }

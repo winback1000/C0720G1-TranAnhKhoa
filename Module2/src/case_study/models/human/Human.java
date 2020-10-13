@@ -1,4 +1,4 @@
-package case_study.models;
+package case_study.models.human;
 
 
 import java.text.ParseException;

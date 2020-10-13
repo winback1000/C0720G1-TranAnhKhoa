@@ -3,7 +3,7 @@ package case_study.common;
 import case_study.models.maker.HumanMaker;
 import case_study.models.maker.ServicesMaker;
 
-import static case_study.models.Customer.customerList;
+import static case_study.models.human.Customer.customerList;
 
 public class Test {
     public static void main(String[] args) {

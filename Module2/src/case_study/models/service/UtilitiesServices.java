@@ -1,10 +1,11 @@
-package case_study.models;
+package case_study.models.service;
 
-import case_study.common.Writer;
-
+import java.security.Provider;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+
+import static case_study.models.service.Services.servicesList;
 
 
 public class UtilitiesServices {
@@ -14,6 +15,7 @@ public class UtilitiesServices {
     String name;
     String price;
     String unit;
+    String id = "SVUS";
 
     public UtilitiesServices(String name, double price, String unit) {
         this.name = name;
@@ -48,7 +50,7 @@ public class UtilitiesServices {
 
     @Override
     public String toString() {
-        return name+COMMA+price+COMMA+unit;
+        return id + COMMA + name + COMMA + price + COMMA + unit;
     }
 
     public String showInfo() {

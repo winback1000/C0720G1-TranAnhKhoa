@@ -2,10 +2,10 @@ package case_study.models.maker;
 
 import case_study.common.Validator;
 import case_study.common.exception.NameException;
-import case_study.models.House;
-import case_study.models.Room;
-import case_study.models.UtilitiesServices;
-import case_study.models.Villa;
+import case_study.models.service.House;
+import case_study.models.service.Room;
+import case_study.models.service.UtilitiesServices;
+import case_study.models.service.Villa;
 
 import java.util.Scanner;
 

@@ -1,14 +1,11 @@
 package case_study.models;
 
-import case_study.common.Writer;
-
-import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-import static case_study.models.Human.COMMA;
+import static case_study.models.human.Human.COMMA;
 
 public class Contract implements Comparable<Contract> {
     NumberFormat nf = new DecimalFormat("000000");

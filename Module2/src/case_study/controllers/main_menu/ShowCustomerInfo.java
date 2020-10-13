@@ -1,13 +1,13 @@
 package case_study.controllers.main_menu;
 
 import case_study.controllers.MainMenu;
-import case_study.models.Customer;
+import case_study.models.human.Customer;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static case_study.models.Customer.customerList;
+import static case_study.models.human.Customer.customerList;
 
 public class ShowCustomerInfo extends MainMenu {
     public static List<MainMenu> showCustomerInfoList = new ArrayList<>();

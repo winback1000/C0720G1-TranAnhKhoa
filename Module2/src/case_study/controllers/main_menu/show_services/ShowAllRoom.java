@@ -2,8 +2,8 @@ package case_study.controllers.main_menu.show_services;
 
 import case_study.controllers.MainMenu;
 import case_study.controllers.main_menu.ShowServices;
-import case_study.models.Room;
-import case_study.models.Services;
+import case_study.models.service.Room;
+import case_study.models.service.Services;
 
 import java.util.ArrayList;
 import java.util.List;

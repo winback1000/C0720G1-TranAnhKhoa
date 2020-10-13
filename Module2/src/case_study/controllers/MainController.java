@@ -52,9 +52,13 @@ public class MainController {
     addNewServiceList.add(new AddNewHouse());
     addNewServiceList.add(new AddNewRoom());
     addNewServiceList.add(new AddUtilitiesService());
-    new Exit();
+    new Back();
     new BackToMainMenu();
+    new Exit();
+
     Loader.loadAllData();
+
     mm.execute();
+
     }
 }
