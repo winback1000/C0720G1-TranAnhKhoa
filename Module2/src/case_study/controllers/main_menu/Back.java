@@ -26,7 +26,7 @@ import static case_study.controllers.main_menu.show_services.ShowAllVillaNotDupl
 
 public class Back extends MainMenu {
     public Back() {
-        this.name = "Back to previous menu";
+        this.name = "Back";
         addNewBookingList.add(this);
         showServicesList.add(this);
         addNewCustomerList.add(this);

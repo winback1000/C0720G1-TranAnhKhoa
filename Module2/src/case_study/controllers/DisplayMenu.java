@@ -29,7 +29,13 @@ public static Stack<MainMenu> back = new Stack<>();
                 correct = false;
             }
         } while(!correct);
-        back.add(list.get(selected-1));
+        if(back.isEmpty()) {
+            back.add(list.get(selected - 1));
+        } else {
+            if (list.get(selected-1) != back.peek()) {
+                back.add(list.get(selected - 1));
+            }
+        }
         list.get(selected-1).execute();
     }
 }

@@ -55,9 +55,7 @@ public class MainController {
     new Back();
     new BackToMainMenu();
     new Exit();
-
     Loader.loadAllData();
-
     mm.execute();
 
     }

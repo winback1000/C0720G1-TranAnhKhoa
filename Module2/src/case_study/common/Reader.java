@@ -100,7 +100,7 @@ public class Reader {
                         break;
                     }
                     case "SVUS" : {
-                        new UtilitiesServices(lineList[1],Double.parseDouble(lineList[2].substring(3)),lineList[4]);
+                        new UtilitiesServices(lineList[1],Double.parseDouble(lineList[2].substring(1)),lineList[3]);
                         break;
                     }
                 }

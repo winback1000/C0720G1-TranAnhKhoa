@@ -23,6 +23,7 @@ public class ByteStream {
             e.printStackTrace();
         } finally {
             try {
+                assert oos != null;
                 oos.close();
             } catch (IOException e) {
                 e.printStackTrace();
